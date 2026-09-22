@@ -1,0 +1,344 @@
+/**
+ * AMAN KUMAR PORTFOLIO — BASE STYLES & FOUNDATIONS
+ * Coding Language: CSS3
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body);
+  background-color: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.45s var(--ease), color 0.4s var(--ease);
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+::selection {
+  background: var(--acc);
+  color: var(--acc-contrast);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: 999px;
+  border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--acc);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+/* Canvas & Ambient Background */
+#canvas-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.92;
+  transition: opacity 0.5s ease;
+}
+
+.readab {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 30%, transparent 40%, var(--bg) 95%);
+  transition: background 0.5s var(--ease);
+  opacity: 0.75;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  pointer-events: none;
+  opacity: 0.038;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='0.7'/></svg>");
+}
+
+[data-theme="obsidian"] .grain,
+[data-theme="acid"] .grain {
+  mix-blend-mode: overlay;
+  opacity: 0.048;
+}
+
+main {
+  position: relative;
+  z-index: 3;
+}
+
+/* Top Progress Bar */
+#bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--acc);
+  z-index: 300;
+  transition: width 0.1s linear, background 0.3s ease;
+  box-shadow: 0 0 12px var(--acc-glow);
+}
+
+/* ============================================================
+   PRELOADER — EDITORIAL MONOGRAPH
+   ============================================================ */
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: var(--bg);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(24px, 4vw, 48px);
+  transition: transform 0.95s var(--ease) 0.15s, opacity 0.5s ease 0.6s;
+  will-change: transform;
+}
+
+#loader.done {
+  transform: translateY(-101%);
+  pointer-events: none;
+}
+
+.ld-brand {
+  font: 600 0.76rem var(--body);
+  letter-spacing: 0.28em;
+  color: var(--mut);
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ld-brand b {
+  color: var(--acc);
+}
+
+.ld-center {
+  margin: auto 0;
+}
+
+.ld-word-wrap {
+  overflow: hidden;
+  height: clamp(3rem, 9vw, 6.5rem);
+}
+
+.ld-word {
+  display: block;
+  font: italic 400 clamp(3rem, 9vw, 6.5rem) var(--serif);
+  color: var(--ink);
+  line-height: 1;
+  animation: ldw 0.5s var(--ease);
+}
+
+.ld-tag {
+  font: 500 0.72rem var(--body);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--mut);
+  margin-top: 16px;
+}
+
+.ld-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.ld-count {
+  font: 700 clamp(4.5rem, 13vw, 10rem)/1 var(--disp);
+  color: var(--ink);
+  letter-spacing: -0.04em;
+}
+
+.ld-count sup {
+  font-size: 0.35em;
+  color: var(--acc);
+  margin-left: 4px;
+}
+
+.ld-bar-wrap {
+  width: 100%;
+  height: 2px;
+  background: var(--line);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.ld-bar {
+  width: 0%;
+  height: 100%;
+  background: var(--acc);
+  transition: width 0.05s linear;
+}
+
+/* ============================================================
+   CUSTOM INTERACTIVE CURSOR — CAD & DESIGNER RETICLE
+   ============================================================ */
+.cur-dot,
+.cur-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99990;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.cur-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--acc);
+  transition: background-color 0.3s ease, transform 0.15s ease;
+}
+
+.cur-ring {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.35s var(--ease), height 0.35s var(--ease), background 0.3s, border-color 0.3s, transform 0.1s ease;
+}
+
+.cur-ring span {
+  font: 600 0.55rem var(--body);
+  letter-spacing: 0.22em;
+  color: var(--acc-contrast);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.cur-ring.hover {
+  width: 58px;
+  height: 58px;
+  border-color: var(--acc);
+  background: var(--acc-glow);
+}
+
+.cur-ring.view {
+  width: 84px;
+  height: 84px;
+  background: var(--acc);
+  border-color: var(--acc);
+  box-shadow: 0 0 30px var(--acc-glow);
+}
+
+.cur-ring.view span {
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.cur-on,
+  body.cur-on a,
+  body.cur-on button,
+  body.cur-on .case-study-card,
+  body.cur-on .gallery-item {
+    cursor: none;
+  }
+
+  .cur-dot {
+    display: block;
+  }
+
+  .cur-ring {
+    display: flex;
+  }
+}
+
+/* ============================================================
+   FIGMA / SWISS SPEC MODE (REDLINE INSPECTION)
+   Interactive UI/UX Designer Feature
+   ============================================================ */
+.spec-grid-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+  background-image:
+    repeating-linear-gradient(90deg, var(--spec-line) 0px, var(--spec-line) 1px, transparent 1px, transparent calc((100% - 11px) / 12)),
+    linear-gradient(rgba(255, 0, 85, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 24px;
+}
+
+body.spec-mode-active .spec-grid-overlay {
+  opacity: 1;
+}
+
+body.spec-mode-active .sec,
+body.spec-mode-active .hero,
+body.spec-mode-active .case-study-card,
+body.spec-mode-active .toolkit-card,
+body.spec-mode-active .profile-card {
+  outline: 1px dashed var(--spec-color) !important;
+  position: relative;
+}
+
+body.spec-mode-active .case-study-card::before,
+body.spec-mode-active .toolkit-card::before {
+  content: attr(data-spec-label);
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font: 600 0.55rem var(--mono);
+  letter-spacing: 0.1em;
+  background: var(--spec-color);
+  color: #FFFFFF;
+  padding: 2px 6px;
+  border-radius: 4px;
+  z-index: 10;
+  pointer-events: none;
+}

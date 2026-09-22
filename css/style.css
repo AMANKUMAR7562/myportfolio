@@ -1,0 +1,11 @@
+/**
+ * AMAN KUMAR — PORTFOLIO MAIN STYLESHEET
+ * Master stylesheet orchestrating all modular design system layers.
+ * Coding Language: CSS3
+ */
+
+@import url('variables.css?v=6.0');
+@import url('base.css?v=6.0');
+@import url('animations.css?v=6.0');
+@import url('layout.css?v=6.0');
+@import url('components.css?v=6.0');

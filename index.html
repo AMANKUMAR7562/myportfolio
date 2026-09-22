@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F8F5EE" />
+
+  <!-- Primary SEO Meta Tags -->
+  <title>Aman Kumar — UI/UX &amp; Product Designer | Visual &amp; Brand Systems</title>
+  <meta name="title" content="Aman Kumar — UI/UX &amp; Product Designer" />
+  <meta name="description"
+    content="Aman Kumar — Senior UI/UX, Product &amp; Brand Designer. Crafting intuitive digital experiences, scalable design systems, and quiet visual intelligence." />
+  <meta name="author" content="Aman Kumar" />
+  <meta name="keywords"
+    content="Aman Kumar, UI/UX Designer, Product Designer, Brand Designer, Design Systems, Figma, Graphic Design, Portfolio" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://amankumar.design/" />
+  <meta property="og:title" content="Aman Kumar — UI/UX &amp; Product Designer" />
+  <meta property="og:description"
+    content="UI/UX, Product &amp; Brand Designer. Translating complex problems into liquid-smooth interfaces and enduring visual systems." />
+  <meta property="og:image" content="assets/images/aman.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Aman Kumar — UI/UX &amp; Product Designer" />
+  <meta property="twitter:description"
+    content="UI/UX, Product &amp; Brand Designer crafting human-centered digital interfaces." />
+  <meta property="twitter:image" content="assets/images/aman.png" />
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23FF451A'>✦</text></svg>" />
+
+  <!-- Typography & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Modular Stylesheet System -->
+  <link rel="stylesheet" href="css/style.css?v=6.0" />
+
+  <style>
+    .hud,
+    .hud-cluster {
+      will-change: transform;
+    }
+  </style>
+</head>
+
+<body class="lock">
+
+  <!-- Preloader -->
+  <div id="loader" aria-hidden="true">
+    <div class="ld-brand">
+      <span>AMAN KUMAR ✦ ATELIER © 2026</span>
+      <span>NEW DELHI, IN</span>
+    </div>
+    <div class="ld-center">
+      <div class="ld-word-wrap"><span class="ld-word" id="ldWord">quiet intelligence</span></div>
+      <div class="ld-tag">distilling messy problems into pure systems</div>
+    </div>
+    <div class="ld-bottom">
+      <div class="ld-brand">SYSTEMS · INTERFACES · EXPERIENCES</div>
+      <div class="ld-count"><span id="ldNum">0</span><sup>%</sup></div>
+    </div>
+    <div class="ld-bar-wrap">
+      <div class="ld-bar" id="ldBar"></div>
+    </div>
+  </div>
+
+  <!-- Interactive Kinetic Studio Canvas -->
+  <canvas id="canvas-bg" aria-hidden="true"></canvas>
+  <div class="readab" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="spec-grid-overlay" aria-hidden="true"></div>
+  <div id="bar" aria-hidden="true"></div>
+
+  <!-- Custom CAD Reticle Cursor -->
+  <div class="cur-dot" id="curDot" aria-hidden="true"></div>
+  <div class="cur-ring" id="curRing" aria-hidden="true"><span>VIEW</span></div>
+
+  <!-- Fixed Navigation Bar with Theme / Mood Switcher -->
+  <nav id="nav">
+    <a class="n-logo" href="#hero" aria-label="Aman Kumar Home">
+      <div class="logo-mark">
+        <svg class="logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.6" />
+          <path class="logo-spark" d="M12 4L13.5 10.5L20 12L13.5 13.5L12 20L10.5 13.5L4 12L10.5 10.5L12 4Z"
+            fill="var(--acc)" />
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">AMAN<b>✦</b>KUMAR</span>
+        <span class="logo-sub">STUDIO ARCHIVE</span>
+      </div>
+    </a>
+
+    <ul class="n-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Works</a></li>
+      <li><a href="#gallery">Archive</a></li>
+      <li><a href="#skills">Capabilities</a></li>
+      <li><a href="#experience">Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="n-right">
+      <!-- Theme / Mood Selector -->
+      <div class="theme-switch-pill" role="radiogroup" aria-label="Theme Mood Switcher">
+        <button class="theme-opt-btn active" data-theme-set="cream" aria-label="Studio Cream Theme">☼ Studio</button>
+        <button class="theme-opt-btn" data-theme-set="obsidian" aria-label="Obsidian Dark Theme">☾ Dark</button>
+        <button class="theme-opt-btn" data-theme-set="acid" aria-label="Cyber Acid Theme">✦ Acid</button>
+        <button class="theme-opt-btn" data-theme-set="spectrum" aria-label="Spectrum Rainbow Mode">🌈 Spectrum</button>
+      </div>
+
+      <!-- Spec Mode Toggle -->
+      <button class="spec-toggle-btn" id="specToggleBtn" title="Toggle Figma Spec Inspection Mode">
+        <span>⌘ Spec</span>
+      </button>
+
+      <span class="n-time"><b id="clock">--:--:-- IST</b></span>
+
+      <a class="n-cta" href="assets/docs/Aman_Kumar_CV_Ui_Ux_Graphic_Design.pdf" target="_blank" download>
+        <span>Resume</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+        </svg>
+      </a>
+
+      <button class="burger" id="burger" aria-label="Toggle Navigation Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#hero">Home <small>01</small></a>
+    <a href="#about">About <small>02</small></a>
+    <a href="#work">Works <small>03</small></a>
+    <a href="#gallery">Archive <small>04</small></a>
+    <a href="#skills">Capabilities <small>05</small></a>
+    <a href="#experience">Journey <small>06</small></a>
+    <a href="#contact">Contact <small>07</small></a>
+  </div>
+
+  <!-- HUD Telemetry Display -->
+  <div class="hud" aria-hidden="true"><b id="hudIdx">01</b><span id="hudName">Intro</span></div>
+  <div class="hud-cluster" aria-hidden="true">
+    <span class="hud-coords" id="hudCoords">X: 000 Y: 000</span>
+    <span class="hud-divider">✦</span>
+    <span class="hud-pct">SCROLL — <span id="hudPct">0%</span></span>
+  </div>
+
+  <main>
+
+    <!-- Hero Section — Editorial Poster & Split Studio -->
+    <section class="hero" id="hero" data-spec-label="[HERO // 100vh]">
+      <div class="hero-grid-overlay" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <!-- Left: Metadata column -->
+        <div class="h-meta-col rv" style="--d:300ms">
+          <div class="h-available">
+            <span class="live-dot"></span>
+            <span>Available for Roles</span>
+          </div>
+          <div class="h-meta-stack">
+            <span>Location: <b>New Delhi, IN</b></span>
+            <span>Focus: <b>UI/UX &amp; Brand Systems</b></span>
+            <span>Year: <b>2026 Archive</b></span>
+          </div>
+        </div>
+
+        <!-- Center: Massive editorial title -->
+        <h1 class="h-editorial-title" aria-label="Aman Kumar">
+          <span class="het-line"><span class="het-word rv" style="--d:100ms">AMAN</span></span>
+          <span class="het-line"><em class="het-serif rv" style="--d:250ms">kumar</em><span class="het-accent rv"
+              style="--d:350ms">✦</span></span>
+        </h1>
+
+        <!-- Right: Role + CTA -->
+        <div class="h-role-col">
+          <p class="h-role rv" style="--d:400ms">
+            Shaping complex digital products into <em>liquid-smooth</em>, human-centered interfaces — research first,
+            pixels second.
+          </p>
+          <div class="h-actions rv" style="--d:500ms">
+            <a class="h-cta primary" href="#work">
+              <span>View Works</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </a>
+            <a class="h-cta secondary" href="assets/docs/Aman_Kumar_CV_Ui_Ux_Graphic_Design.pdf" target="_blank">Resume
+              ↗</a>
+          </div>
+          <!-- Discipline tags -->
+          <div class="h-disciplines rv" style="--d:600ms">
+            <span>UI/UX</span>
+            <span>Design Systems</span>
+            <span>Brand Identity</span>
+            <span>Motion</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom strip -->
+      <div class="h-bottom-strip rv" style="--d:700ms">
+        <span class="h-year">© 2026 AMAN KUMAR</span>
+        <span class="h-scroll-cue">Scroll to explore ↓</span>
+        <span class="h-craft">Designed with precision &amp; taste</span>
+      </div>
+    </section>
+
+    <!-- Marquee Ticker -->
+    <div class="mq" aria-hidden="true">
+      <div class="mq-track">
+        <span class="fill">UI/UX Architecture</span><span>✦</span>
+        <span>Figma Auto-Layout v5</span><span>✦</span>
+        <span class="fill">Brand Systems &amp; Tokens</span><span>✦</span>
+        <span>Adobe Illustrator</span><span>✦</span>
+        <span class="fill">Design Systems</span><span>✦</span>
+        <span>Adobe Photoshop</span><span>✦</span>
+        <span class="fill">User Research &amp; Flows</span><span>✦</span>
+        <span>DaVinci Resolve</span><span>✦</span>
+        <span class="fill">Wireframing &amp; Prototyping</span><span>✦</span>
+        <span>Adobe XD</span><span>✦</span>
+        <span class="fill">UI/UX Architecture</span><span>✦</span>
+        <span>Figma Auto-Layout v5</span><span>✦</span>
+        <span class="fill">Brand Systems &amp; Tokens</span><span>✦</span>
+        <span>Adobe Illustrator</span><span>✦</span>
+        <span class="fill">Design Systems</span><span>✦</span>
+        <span>Adobe Photoshop</span><span>✦</span>
+        <span class="fill">User Research &amp; Flows</span><span>✦</span>
+        <span>DaVinci Resolve</span><span>✦</span>
+        <span class="fill">Wireframing &amp; Prototyping</span><span>✦</span>
+        <span>Adobe XD</span><span>✦</span>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="sec" id="about" data-spec-label="[SECTION // ABOUT]">
+      <div class="wrap">
+        <div class="slabel rv">02 — About Me</div>
+        <p class="statement rv">Design is not just what it looks like. It is how clarity, empathy, and <em>systems move
+            in total sync</em>.</p>
+
+        <div class="about-grid">
+          <!-- Portrait Card -->
+          <div class="profile-card rv" style="--d:100ms" data-spec-label="[PROFILE CARD]">
+            <div class="profile-img-wrap">
+              <img src="assets/images/aman.png" alt="Aman Kumar — UI/UX &amp; Brand Designer" loading="lazy" />
+              <div class="profile-overlay">
+                <div class="profile-name">
+                  <span>Aman Kumar</span>
+                  <span class="dot"></span>
+                </div>
+                <div class="profile-chips">
+                  <span class="profile-chip">Delhi, IN ✦</span>
+                  <span class="profile-chip">Product Design</span>
+                  <span class="profile-chip">UI/UX + Brand</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bio Copy & Metrics -->
+          <div class="about-content">
+            <div class="a-copy rv" style="--d:150ms">
+              <p>I'm a <b>UI/UX, Product &amp; Brand Designer</b> dedicated to turning complex workflows into intuitive,
+                human-centered digital experiences. My process balances exploratory user research with rigorous visual
+                craft, design tokens, and modular components.</p>
+              <p>Over the past <b>4+ years</b>, I have shaped digital products, high-converting brand engines reaching
+                students across <b>51+ countries</b>, and viral creator media architecture generating over <b>400K+
+                  impressions</b>.
+              </p>
+            </div>
+
+            <div class="stats-grid rv" style="--d:250ms">
+              <div class="stat-box" data-spec-label="[STAT // 15+]">
+                <b>15<sup>+</sup></b>
+                <span>Brand Systems</span>
+              </div>
+              <div class="stat-box" data-spec-label="[STAT // 51+]">
+                <b>51<sup>+</sup></b>
+                <span>Countries Reached</span>
+              </div>
+              <div class="stat-box" data-spec-label="[STAT // 04+]">
+                <b>04<sup>+</sup></b>
+                <span>Years Visual Craft</span>
+              </div>
+              <div class="stat-box" data-spec-label="[STAT // 400K+]">
+                <b>400K<sup>+</sup></b>
+                <span>Creator Impressions</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Works Section (Case Studies & Graphic Design) -->
+    <section class="sec" id="work" data-spec-label="[SECTION // WORKS]">
+      <div class="wrap">
+        <!-- Editorial Section Header from Screenshot -->
+        <div class="works-editorial-header rv" style="--d:80ms">
+          <div class="works-editorial-left">
+            <div class="slabel">03 — Works</div>
+            <h2 class="works-editorial-title">
+              <span class="wet-block">Work that</span>
+              <span class="wet-block">moves between</span>
+              <span class="wet-serif">pixels, products &amp;</span>
+              <span class="wet-serif wet-inline-end">systems. <span class="wet-badge"
+                  aria-hidden="true">VIEW</span></span>
+            </h2>
+          </div>
+          <div class="works-editorial-right">
+            <p class="works-editorial-desc">
+              A curated selection of product design, website redesign, interface systems and development work.
+            </p>
+          </div>
+        </div>
+
+        <!-- Split Showcase: Sticky Feature Poster + Interactive Editorial List -->
+        <div class="works-showcase-split" id="worksShowcaseSplit">
+
+          <!-- Left Column: Sticky Feature Poster Card -->
+          <aside class="works-poster-col" aria-label="Featured Project Preview">
+            <div class="works-poster-card" id="worksPosterCard">
+              <div class="wp-top">
+                <span class="wp-num" id="wpNum">01</span>
+                <span class="wp-tag" id="wpTag">ENTERPRISE UX</span>
+              </div>
+
+              <div class="wp-visual-stage">
+                <div class="wp-orb orb-nexus" id="wpOrb"></div>
+                <div class="wp-grid-texture" aria-hidden="true"></div>
+                <div class="wp-reticle-circle" aria-hidden="true">
+                  <span>VIEW</span>
+                </div>
+              </div>
+
+              <div class="wp-bottom">
+                <h3 class="wp-title" id="wpTitle">NEXUS AI</h3>
+                <div class="wp-subrow">
+                  <span class="wp-sub" id="wpSub">CONTROL TOWER</span>
+                  <div class="wp-equalizer" aria-label="Telemetry Activity">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Full Card Click Link -->
+              <a class="wp-card-link" id="wpCardLink" href="nexus.html"
+                aria-label="Explore Nexus AI 3D Walkthrough"></a>
+            </div>
+          </aside>
+
+          <!-- Right Column: Editorial Case Study Rows -->
+          <div class="works-list-col" id="projectList">
+
+            <!-- Item 01: Nexus AI -->
+            <article class="case-study-row rv active" data-study="01" data-title="NEXUS AI" data-tag="ENTERPRISE UX"
+              data-sub="CONTROL TOWER" data-color="#D4FF00" data-orb-class="orb-nexus" data-link="nexus.html"
+              data-spec-label="[CASE // 01]">
+              <div class="csr-meta-top">
+                <span class="csr-idx">01</span>
+                <span class="csr-date">SEP 2025 — ONGOING</span>
+                <span class="csr-category">UI/UX / DATA VIZ</span>
+              </div>
+              <div class="csr-head">
+                <h3 class="csr-title"><a href="nexus.html">Nexus AI — Logistics Control Tower</a></h3>
+                <a class="csr-open-btn" href="nexus.html" aria-label="Open Nexus AI Case Study">
+                  <span class="cob-txt">OPEN</span>
+                  <span class="cob-icon">↗</span>
+                </a>
+              </div>
+              <p class="csr-desc">Mission-critical dashboard concept for dispatch, fleet telemetry and rapid incident
+                triage.</p>
+              <div class="csr-tags">
+                <span class="csr-tag">Enterprise UX</span>
+                <span class="csr-tag">Real-time systems</span>
+                <span class="csr-tag">Data visualization</span>
+              </div>
+            </article>
+
+            <!-- Item 02: Career Plan B -->
+            <article class="case-study-row rv" data-study="02" data-title="CAREER PLAN B" data-tag="WEB / EDTECH"
+              data-sub="WEBSITE REDESIGN" data-color="#FF451A" data-orb-class="orb-cpb"
+              data-link="https://github.com/AMANKUMAR7562" data-spec-label="[CASE // 02]">
+              <div class="csr-meta-top">
+                <span class="csr-idx">02</span>
+                <span class="csr-date">JUN 2025 — AUG 2025</span>
+                <span class="csr-category">WEB / EDTECH</span>
+              </div>
+              <div class="csr-head">
+                <h3 class="csr-title"><a href="https://github.com/AMANKUMAR7562" target="_blank" rel="noopener">Career
+                    Plan B — Website Redesign</a></h3>
+                <a class="csr-open-btn" href="https://github.com/AMANKUMAR7562" target="_blank" rel="noopener"
+                  aria-label="Open Career Plan B project">
+                  <span class="cob-txt">OPEN</span>
+                  <span class="cob-icon">↗</span>
+                </a>
+              </div>
+              <p class="csr-desc">Information architecture and visual system redesign for an education and admissions
+                platform.</p>
+              <div class="csr-tags">
+                <span class="csr-tag">Web redesign</span>
+                <span class="csr-tag">Information architecture</span>
+                <span class="csr-tag">Content system</span>
+              </div>
+            </article>
+
+            <!-- Item 03: Hushh Wallet -->
+            <article class="case-study-row rv" data-study="03" data-title="HUSHH WALLET" data-tag="MOBILE / PRODUCT"
+              data-sub="DIGITAL WALLET" data-color="#6366F1" data-orb-class="orb-hushh"
+              data-link="https://github.com/AMANKUMAR7562" data-spec-label="[CASE // 03]">
+              <div class="csr-meta-top">
+                <span class="csr-idx">03</span>
+                <span class="csr-date">JAN 2025 — MAR 2025</span>
+                <span class="csr-category">MOBILE / PRODUCT</span>
+              </div>
+              <div class="csr-head">
+                <h3 class="csr-title"><a href="https://github.com/AMANKUMAR7562" target="_blank" rel="noopener">Hushh
+                    Wallet — Digital Wallet</a></h3>
+                <a class="csr-open-btn" href="https://github.com/AMANKUMAR7562" target="_blank" rel="noopener"
+                  aria-label="Open Hushh Wallet project">
+                  <span class="cob-txt">OPEN</span>
+                  <span class="cob-icon">↗</span>
+                </a>
+              </div>
+              <p class="csr-desc">Security-first mobile wallet concept built around low-friction transfers, biometric
+                entry and clear transaction states.</p>
+              <div class="csr-tags">
+                <span class="csr-tag">FinTech</span>
+                <span class="csr-tag">Mobile UX</span>
+                <span class="csr-tag">Design system</span>
+              </div>
+            </article>
+
+            <!-- Item 04: E-Commerce App Redesign -->
+            <article class="case-study-row rv" data-study="04" data-title="APPAREL REDESIGN"
+              data-tag="MOBILE / E-COMMERCE" data-sub="APP REDESIGN" data-color="#F59E0B" data-orb-class="orb-ecom-app"
+              data-link="https://github.com/AMANKUMAR7562" data-spec-label="[CASE // 04]">
+              <div class="csr-meta-top">
+                <span class="csr-idx">04</span>
+                <span class="csr-date">OCT 2025 — DEC 2025</span>
+                <span class="csr-category">MOBILE / E-COMMERCE</span>
+              </div>
+              <div class="csr-head">
+                <h3 class="csr-title"><a href="https://github.com/AMANKUMAR7562" target="_blank"
+                    rel="noopener">E-Commerce App Redesign</a></h3>
+                <a class="csr-open-btn" href="https://github.com/AMANKUMAR7562" target="_blank" rel="noopener"
+                  aria-label="Open E-Commerce App project">
+                  <span class="cob-txt">OPEN</span>
+                  <span class="cob-icon">↗</span>
+                </a>
+              </div>
+              <p class="csr-desc">End-to-end shopping redesign focused on discovery, comparison, checkout and
+                interaction clarity.</p>
+              <div class="csr-tags">
+                <span class="csr-tag">User flows</span>
+                <span class="csr-tag">Wireframes</span>
+                <span class="csr-tag">High fidelity</span>
+              </div>
+            </article>
+
+            <!-- Item 05: E-Commerce Website -->
+            <article class="case-study-row rv" data-study="05" data-title="STOREFRONT UI" data-tag="WEB / FRONTEND"
+              data-sub="UI + DEVELOPMENT" data-color="#00E5FF" data-orb-class="orb-ecom-web"
+              data-link="https://github.com/AMANKUMAR7562" data-spec-label="[CASE // 05]">
+              <div class="csr-meta-top">
+                <span class="csr-idx">05</span>
+                <span class="csr-date">MAY 2025 — JUL 2025</span>
+                <span class="csr-category">WEB / FRONTEND</span>
+              </div>
+              <div class="csr-head">
+                <h3 class="csr-title"><a href="https://github.com/AMANKUMAR7562" target="_blank"
+                    rel="noopener">E-Commerce Website — UI + Development</a></h3>
+                <a class="csr-open-btn" href="https://github.com/AMANKUMAR7562" target="_blank" rel="noopener"
+                  aria-label="Open E-Commerce Website project">
+                  <span class="cob-txt">OPEN</span>
+                  <span class="cob-icon">↗</span>
+                </a>
+              </div>
+              <p class="csr-desc">Responsive storefront architecture with reusable components, search/filter
+                interactions and tokenized styling.</p>
+              <div class="csr-tags">
+                <span class="csr-tag">Frontend</span>
+                <span class="csr-tag">Design tokens</span>
+                <span class="csr-tag">Responsive systems</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Lower Part: Graphic Design Archive -->
+        <div class="works-subhead rv" id="gallery" style="margin-top:64px;">
+          <div>
+            <h3>Graphic Design Archive</h3>
+            <p class="g-sub" style="margin:6px 0 0 0;">Curated visual identities, YouTube architecture &amp; high-CTR
+              assets.</p>
+          </div>
+          <span>Curated Vault (12)</span>
+        </div>
+
+        <!-- Gallery Filter Tabs -->
+        <div class="gallery-filter rv" style="--d:120ms">
+          <button class="g-tab active" data-filter="all">All Designs (12)</button>
+          <button class="g-tab" data-filter="banners">Banners</button>
+          <button class="g-tab" data-filter="thumbnails">Thumbnails</button>
+          <button class="g-tab" data-filter="headers">Headers</button>
+        </div>
+
+        <!-- Gallery Grid (Rendered dynamically via js/gallery.js) -->
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <!-- Capabilities / Multidisciplinary Toolkit -->
+    <section class="sec" id="skills" data-spec-label="[SECTION // CAPABILITIES]">
+      <div class="wrap">
+        <div class="slabel rv">04 — Capabilities</div>
+        <h2 class="stitle rv" style="--d:80ms">The multidisciplinary <em>toolkit</em>.</h2>
+
+        <div class="toolkit-bento">
+
+          <!-- 01. UI/UX & Product Design -->
+          <div class="toolkit-card rv" style="--d:100ms" data-spec-label="[BENTO // 01]">
+            <div>
+              <div class="tk-top">
+                <span class="tk-idx">01</span>
+                <span class="tk-badge">Architecture</span>
+              </div>
+              <h3 class="tk-title">UI/UX &amp; Product Design</h3>
+              <p class="tk-desc">Translating user needs into intuitive wireframes, scalable components, and delightful
+                micro-interactions.</p>
+            </div>
+            <div class="tk-tags">
+              <span class="tk-tag">User Research</span>
+              <span class="tk-tag">Wireframing</span>
+              <span class="tk-tag">Interactive Prototyping</span>
+              <span class="tk-tag">Design Systems</span>
+              <span class="tk-tag">Information Architecture</span>
+              <span class="tk-tag">Usability Testing</span>
+              <span class="tk-tag">User Flow Mapping</span>
+            </div>
+          </div>
+
+          <!-- 02. Visual & Brand Systems (with Interactive Token Swatches) -->
+          <div class="toolkit-card rv" style="--d:150ms" data-spec-label="[BENTO // 02]">
+            <div>
+              <div class="tk-top">
+                <span class="tk-idx">02</span>
+                <span class="tk-badge">Visual Tokens</span>
+              </div>
+              <h3 class="tk-title">Visual &amp; Brand Systems</h3>
+              <p class="tk-desc">Crafting distinct visual identities, high-converting creator media, and robust
+                multi-brand token frameworks.</p>
+
+              <!-- Interactive Swatches Widget -->
+              <div class="tk-swatches">
+                <div class="tk-swatch" data-hex="#FF451A" title="Click to copy HEX token">
+                  <span class="tk-swatch-dot" style="background:#FF451A;"></span>
+                  <span>#FF451A</span>
+                </div>
+                <div class="tk-swatch" data-hex="#F8F5EE" title="Click to copy HEX token">
+                  <span class="tk-swatch-dot" style="background:#F8F5EE;"></span>
+                  <span>#F8F5EE</span>
+                </div>
+                <div class="tk-swatch" data-hex="#111215" title="Click to copy HEX token">
+                  <span class="tk-swatch-dot" style="background:#111215;"></span>
+                  <span>#111215</span>
+                </div>
+                <div class="tk-swatch" data-hex="#EFEAE0" title="Click to copy HEX token">
+                  <span class="tk-swatch-dot" style="background:#EFEAE0;"></span>
+                  <span>#EFEAE0</span>
+                </div>
+              </div>
+            </div>
+            <div class="tk-tags">
+              <span class="tk-tag">Brand Identity</span>
+              <span class="tk-tag">Editorial Typography</span>
+              <span class="tk-tag">Color Harmony</span>
+              <span class="tk-tag">High-CTR Thumbnails</span>
+              <span class="tk-tag">Vector Illustration</span>
+              <span class="tk-tag">Design Tokens</span>
+              <span class="tk-tag">Grid Systems</span>
+            </div>
+          </div>
+
+          <!-- 03. Design Tools & Studio -->
+          <div class="toolkit-card rv" style="--d:200ms" data-spec-label="[BENTO // 03]">
+            <div>
+              <div class="tk-top">
+                <span class="tk-idx">03</span>
+                <span class="tk-badge">Production</span>
+              </div>
+              <h3 class="tk-title">Design Tools &amp; Studio</h3>
+              <p class="tk-desc">Deep mastery over modern industry-standard design tools and creative suites for
+                pixel-perfect delivery.</p>
+            </div>
+            <div class="tk-tags">
+              <span class="tk-tag">Figma (Auto-Layout v5 &amp; Variables)</span>
+              <span class="tk-tag">Adobe Photoshop</span>
+              <span class="tk-tag">Adobe Illustrator</span>
+              <span class="tk-tag">Adobe XD</span>
+              <span class="tk-tag">Canva Pro</span>
+              <span class="tk-tag">DaVinci Resolve</span>
+            </div>
+          </div>
+
+          <!-- 04. Product Strategy & Research -->
+          <div class="toolkit-card rv" style="--d:250ms" data-spec-label="[BENTO // 04]">
+            <div>
+              <div class="tk-top">
+                <span class="tk-idx">04</span>
+                <span class="tk-badge">Methodology</span>
+              </div>
+              <h3 class="tk-title">Product Strategy &amp; Research</h3>
+              <p class="tk-desc">Validating product hypotheses through structured interviews, heuristic evaluation, and
+                iterative feedback loops.</p>
+            </div>
+            <div class="tk-tags">
+              <span class="tk-tag">Empathy Mapping</span>
+              <span class="tk-tag">Heuristic Audits</span>
+              <span class="tk-tag">User Interviews</span>
+              <span class="tk-tag">Competitor Analysis</span>
+              <span class="tk-tag">A/B Testing Strategy</span>
+              <span class="tk-tag">Journey Mapping</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section class="sec" id="experience" data-spec-label="[SECTION // JOURNEY]">
+      <div class="wrap">
+        <div class="slabel rv">05 — Experience &amp; Journey</div>
+        <h2 class="stitle rv" style="--d:80ms">Where I've <em>levelled up</em>.</h2>
+
+        <div style="margin-top:30px">
+          <div class="xp-row rv" data-spec-label="[ROLE // CPB]">
+            <span class="xp-when">June 2026 — Present</span>
+            <div>
+              <div class="xp-role">Brand Designer</div>
+              <div class="xp-org">Career Plan B / Uentree Services · Global education consultancy across 51+ countries
+              </div>
+              <ul class="xp-bullets">
+                <li>Designed Instagram carousels, thumbnails, and visual assets for an education consultancy serving
+                  students across 51+ countries.</li>
+                <li>Developed a reusable AI image generation prompt framework to automate educational thumbnail
+                  production and reduce repetitive compositions.</li>
+                <li>Contributed to a full website UI redesign, translating brand identity into digital product visuals.
+                </li>
+                <li>Managed end-to-end content scheduling and performance tracking for an active Instagram pipeline.
+                </li>
+              </ul>
+            </div>
+            <span class="xp-place">Gurgaon, IN</span>
+          </div>
+
+          <div class="xp-row rv" style="--d:70ms" data-spec-label="[ROLE // ZEPTO]">
+            <span class="xp-when">Jul 2025 — Oct 2025</span>
+            <div>
+              <div class="xp-role">Delivery Hub Operations</div>
+              <div class="xp-org">Zepto (Kiranakart Technologies) · High-growth quick-commerce logistics network</div>
+              <ul class="xp-bullets">
+                <li>Selected for structured traineeship in a fast-growing startup.</li>
+                <li>Gained exposure to delivery hub operations and workflows.</li>
+                <li>Worked on process optimization and efficiency improvements.</li>
+                <li>Understood integration of data, technology, and logistics.</li>
+              </ul>
+            </div>
+            <span class="xp-place">Delhi NCR</span>
+          </div>
+
+          <div class="xp-row rv" style="--d:140ms" data-spec-label="[ROLE // FREELANCE]">
+            <span class="xp-when">Mar 2020 — Jul 2024</span>
+            <div>
+              <div class="xp-role">Freelance Graphic Designer</div>
+              <div class="xp-org">Self-Employed · Global Creators &amp; Brands</div>
+              <ul class="xp-bullets">
+                <li>Designed high-CTR thumbnails and branding assets for YouTube creators, boosting reach and
+                  engagement.</li>
+                <li>Created 50+ custom banners, channel art, and stream packages for gaming and esports clients.</li>
+                <li>Produced end-to-end promotional graphics for events, product launches, and social media campaigns.
+                </li>
+                <li>Collaborated directly with 30+ international clients, delivering tailored visual solutions on tight
+                  deadlines.</li>
+                <li>Maintained a 98% client satisfaction rate through iterative feedback and consistent visual quality.
+                </li>
+              </ul>
+            </div>
+            <span class="xp-place">Remote</span>
+          </div>
+        </div>
+
+        <div class="xsub rv">Formal Education</div>
+        <div>
+          <div class="xp-row rv" data-spec-label="[EDU // LPU]">
+            <span class="xp-when">2022 — 2026</span>
+            <div>
+              <div class="xp-role">B.Tech in Computer Science &amp; Engineering</div>
+              <div class="xp-org">Lovely Professional University · Punjab, IN</div>
+            </div>
+            <span class="xp-place">Punjab, IN</span>
+          </div>
+
+          <div class="xp-row rv" style="--d:60ms">
+            <span class="xp-when">2021 — 2022</span>
+            <div>
+              <div class="xp-role">Senior Secondary (Class XII CBSE)</div>
+              <div class="xp-org">Kendriya Vidyalaya Delhi Cantt · Science &amp; Computer Science Stream</div>
+            </div>
+            <span class="xp-place">New Delhi</span>
+          </div>
+
+          <div class="xp-row rv" style="--d:120ms">
+            <span class="xp-when">2019 — 2020</span>
+            <div>
+              <div class="xp-role">Secondary School (Class X CBSE)</div>
+              <div class="xp-org">Kendriya Vidyalaya Delhi Cantt</div>
+            </div>
+            <span class="xp-place">New Delhi</span>
+          </div>
+        </div>
+
+        <!-- Verified Professional Certifications -->
+        <div class="cert-section rv" style="--d:150ms" data-spec-label="[CREDENTIALS]">
+          <div class="cert-header">
+            <div class="slabel">Credentials &amp; Continuous Learning</div>
+            <h3>Verified Professional <em>Certifications</em></h3>
+          </div>
+
+          <div class="cert-grid">
+            <div class="cert-card">
+              <div class="cert-top">
+                <span class="cert-badge">✦ NPTEL Certified</span>
+                <span class="cert-date">Nov 2024</span>
+              </div>
+              <div>
+                <h4 class="cert-title">Cyber Security &amp; Privacy</h4>
+                <p class="cert-issuer">National Programme on Technology Enhanced Learning (IIT)</p>
+              </div>
+              <div class="cert-tags">
+                <span class="cert-tag">Cyber Security</span>
+                <span class="cert-tag">Privacy Systems</span>
+                <span class="cert-tag">NPTEL</span>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-top">
+                <span class="cert-badge">✦ Udemy Verified</span>
+                <span class="cert-date">Oct 2023</span>
+              </div>
+              <div>
+                <h4 class="cert-title">Data Structures &amp; Algorithms</h4>
+                <p class="cert-issuer">Algorithmic Problem Solving, Data Structures &amp; Optimization</p>
+              </div>
+              <div class="cert-tags">
+                <span class="cert-tag">Data Structures</span>
+                <span class="cert-tag">Algorithms</span>
+                <span class="cert-tag">Udemy</span>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-top">
+                <span class="cert-badge">✦ Industry Credential</span>
+                <span class="cert-date">2024</span>
+              </div>
+              <div>
+                <h4 class="cert-title">Enterprise UI/UX Systems &amp; Prototyping</h4>
+                <p class="cert-issuer">Design Tokens, Design Systems, Figma Variables &amp; User Flow Architecture</p>
+              </div>
+              <div class="cert-tags">
+                <span class="cert-tag">Design Systems</span>
+                <span class="cert-tag">Figma Tokens</span>
+                <span class="cert-tag">Interactive Prototyping</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Contact Section -->
+    <section class="sec contact" id="contact" data-spec-label="[SECTION // CONTACT]">
+      <div class="wrap contact-wrap">
+        <div class="slabel rv">06 — Contact &amp; Inquiry</div>
+        <h2 class="c-title rv" style="--d:100ms">
+          <span>Let's make</span><br />
+          <span class="out">it real</span>
+        </h2>
+
+        <div class="c-info-wrap rv" style="--d:200ms">
+          <a class="c-mail" href="mailto:akpadkill@gmail.com">akpadkill@gmail.com</a>
+
+          <div class="c-socials">
+            <a href="https://linkedin.com/in/aman7562" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://github.com/AMANKUMAR7562" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="tel:+918851284569">+91 88512 84569</a>
+            <a href="assets/docs/Aman_Kumar_CV_Ui_Ux_Graphic_Design.pdf" target="_blank" download>Download CV ↓</a>
+          </div>
+        </div>
+
+        <!-- Interactive Contact Inquiry Form -->
+        <div class="contact-form-wrap rv" style="--d:300ms">
+          <div class="form-header">
+            <h3>Direct Transmission</h3>
+            <p>Have an enterprise product, brand inquiry, or collaboration in mind? Send a message directly.</p>
+          </div>
+          <form id="contactForm" class="contact-form" novalidate>
+            <input type="hidden" name="_subject" value="✦ New Portfolio Inquiry from Aman's Website" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="formName">Full Name *</label>
+                <input class="form-input" type="text" id="formName" name="name" placeholder="Alex Mercer" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="formEmail">Email Address *</label>
+                <input class="form-input" type="email" id="formEmail" name="email" placeholder="alex@company.com"
+                  required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="formService">Engagement Scope</label>
+              <select class="form-input" id="formService" name="service">
+                <option value="Enterprise UI/UX Design System">Enterprise UI/UX &amp; Design System</option>
+                <option value="Interactive Product Design &amp; Prototyping">Interactive Product Design &amp;
+                  Prototyping</option>
+                <option value="Brand Identity &amp; High-CTR Media">Brand Identity &amp; High-CTR Media</option>
+                <option value="Full-Time / Contract Role">Full-Time / Contract Role</option>
+                <option value="Other Exploration">Other Exploration</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="formMessage">Project Context or Message *</label>
+              <textarea class="form-textarea" id="formMessage" name="message"
+                placeholder="Briefly describe your objectives, timelines, or role details..." required></textarea>
+            </div>
+            <div class="form-btn-wrap">
+              <button type="submit" id="contactSubmitBtn" class="form-submit-btn">
+                <span>Send Message</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+              </button>
+            </div>
+            <div id="contactStatusMsg" class="form-status"></div>
+          </form>
+        </div>
+
+        <p class="c-hint rv" style="--d:400ms">psst — try typing <b>aman</b> anywhere or switch moods in the header ✦</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visual Archive Screen Detail">
+    <div class="lb-top">
+      <div class="lb-title-wrap">
+        <h3 id="lbTitle">Screen Title</h3>
+        <p id="lbDesc">Screen description and UX context</p>
+      </div>
+      <div class="lb-actions">
+        <button class="lb-close" id="lbClose" aria-label="Close Lightbox">✕</button>
+      </div>
+    </div>
+
+    <div class="lb-body">
+      <button class="lb-nav-btn prev" id="lbPrev" aria-label="Previous Screen">←</button>
+      <div class="lb-img-wrap">
+        <img id="lbImg" src="" alt="Visual screen preview" />
+      </div>
+      <button class="lb-nav-btn next" id="lbNext" aria-label="Next Screen">→</button>
+    </div>
+
+    <div class="lb-bottom">
+      <span class="lb-counter"><span id="lbCurrent">01</span> / <span id="lbTotal">12</span> · <b>Graphic Design
+          Archive</b></span>
+      <span>Use Arrow Keys (← / →) or Esc to navigate</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="f-bar">
+      <span>© 2026 <b>Aman Kumar</b> — Designed &amp; Crafted with Precision</span>
+      <span>New Delhi, India — <b id="clock2">--:-- IST</b></span>
+      <a href="inquiries.html" class="f-inquiries-link" title="Open Inquiries Hub" style="color:var(--text-muted);font-size:11px;text-decoration:none;letter-spacing:0.06em;font-family:var(--font-mono);transition:color 0.2s;">[✦ INQUIRIES HUB]</a>
+      <button id="top">Back to top ↑</button>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" role="status" aria-live="polite">
+    <span class="toast-dot"></span>
+    <span id="toastMsg">✦ MOOD: STUDIO</span>
+  </div>
+
+  <!-- Modular Scripts Architecture -->
+  <script src="js/theme.js?v=6.0"></script>
+  <script src="js/cursor.js?v=6.0"></script>
+  <script src="js/world.js?v=18.0"></script>
+  <script src="js/gallery.js?v=6.0"></script>
+  <script src="js/contact.js?v=6.0"></script>
+  <script src="js/app.js?v=6.0"></script>
+</body>
+
+</html>

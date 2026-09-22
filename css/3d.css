@@ -1,0 +1,258 @@
+/* ════════════════════════════════════════════════════════════════
+   3D.CSS — AMAN KUMAR PORTFOLIO
+   CSS 3D scene layer: glassmorphism panels, perspective depth,
+   floating card system, scroll-driven 3D transforms
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Root ─────────────────────────────────────────────────────── */
+:root {
+  --glass-bg:      rgba(11, 9, 20, 0.52);
+  --glass-border:  rgba(255, 255, 255, 0.07);
+  --glass-blur:    20px;
+  --card-radius:   18px;
+  --panel-shadow:  0 24px 80px rgba(0,0,0,0.55), 0 2px 0 rgba(255,255,255,0.04) inset;
+  --acc-glow:      0 0 32px rgba(123, 97, 255, 0.25);
+}
+
+/* ── World Canvas (Three.js) ─────────────────────────────────── */
+#world-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Perspective Container ───────────────────────────────────── */
+body {
+  perspective: 1400px;
+  perspective-origin: 50% 38vh;
+}
+
+main {
+  transform-style: preserve-3d;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Section 3D Panel Base ───────────────────────────────────── */
+section.hero,
+section.sec {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--panel-shadow);
+  margin: 0 auto 3vh auto;
+  max-width: 1180px;
+  width: calc(100% - 48px);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity   0.5s ease,
+              box-shadow 0.4s ease;
+  will-change: transform, opacity;
+  transform-origin: 50% 80%;
+}
+
+/* ── Hero gets a slightly more open feel ─────────────────────── */
+section.hero {
+  margin-top: 16vh;
+  min-height: 84vh;
+  border-radius: 24px;
+}
+
+/* ── Section 3D hover tilt (JS adds --rx and --ry CSS vars) ──── */
+section.sec:hover,
+section.hero:hover {
+  box-shadow: var(--panel-shadow), var(--acc-glow);
+  border-color: rgba(123, 97, 255, 0.18);
+}
+
+/* ── 3D reveal entrance ──────────────────────────────────────── */
+section.hero,
+section.sec {
+  opacity: 0;
+  transform: translateY(40px) translateZ(-60px) rotateX(6deg);
+}
+section.hero.panel-visible,
+section.sec.panel-visible {
+  opacity: 1;
+  transform: translateY(0) translateZ(0) rotateX(0deg);
+}
+
+/* ── Scroll-out state (panel scrolled past) ──────────────────── */
+section.panel-past {
+  opacity: 0.35;
+  transform: translateY(-20px) translateZ(-80px) rotateX(-4deg) scale(0.97);
+  pointer-events: none;
+}
+
+/* ── Glassmorphism Card overrides ────────────────────────────── */
+.toolkit-card,
+.cert-card,
+.stat-box,
+.profile-card,
+.case-study-card {
+  background: rgba(18, 14, 36, 0.60) !important;
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid rgba(255,255,255,0.07) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.40), 0 1px 0 rgba(255,255,255,0.04) inset !important;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease !important;
+}
+.toolkit-card:hover,
+.cert-card:hover,
+.stat-box:hover {
+  transform: translateY(-6px) translateZ(12px) scale(1.02) !important;
+  box-shadow: 0 16px 60px rgba(0,0,0,0.50), 0 0 28px rgba(123,97,255,0.22) !important;
+  border-color: rgba(123,97,255,0.25) !important;
+}
+
+/* Case study cards – 3D lift on hover */
+.case-study-card:hover {
+  transform: translateY(-8px) translateZ(20px) rotateX(-2deg) !important;
+  box-shadow: 0 20px 70px rgba(0,0,0,0.55), 0 0 36px rgba(255,107,157,0.18) !important;
+  border-color: rgba(255,107,157,0.22) !important;
+}
+
+/* ── Nav glass ───────────────────────────────────────────────── */
+#nav {
+  background: rgba(11, 9, 20, 0.55) !important;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+/* ── Contact form glass ──────────────────────────────────────── */
+.contact-form-wrap {
+  background: rgba(14, 11, 26, 0.60) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.07) !important;
+  border-radius: 18px !important;
+}
+
+/* ── XP rows glass ───────────────────────────────────────────── */
+.xp-row {
+  background: rgba(14, 11, 26, 0.45);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.055);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.xp-row:hover {
+  transform: translateX(6px) translateZ(8px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35), 0 0 20px rgba(123,97,255,0.15);
+}
+
+/* ── Gallery grid item 3D hover ──────────────────────────────── */
+.g-item {
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.4s ease !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+.g-item:hover {
+  transform: translateZ(18px) scale(1.03) rotateX(-2deg) !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 32px rgba(123,97,255,0.20) !important;
+}
+
+/* ── Toolkit bento cards 3D ──────────────────────────────────── */
+.toolkit-bento {
+  transform-style: preserve-3d;
+}
+
+/* ── Stats 3D float ──────────────────────────────────────────── */
+.stats-grid {
+  transform-style: preserve-3d;
+}
+
+/* ── Profile card 3D ─────────────────────────────────────────── */
+.profile-card {
+  transition: transform 0.5s cubic-bezier(0.22,1,0.36,1) !important;
+}
+.profile-card:hover {
+  transform: rotateY(-6deg) rotateX(3deg) translateZ(16px) !important;
+}
+
+/* ── Mouse-tilt on sections (JS writes --tiltX, --tiltY) ────── */
+section.hero,
+section.sec {
+  --tiltX: 0deg;
+  --tiltY: 0deg;
+  --tiltScale: 1;
+}
+/* When panel is visible AND tilt is active, apply tilt ON TOP of the base visible transform */
+section.hero.panel-visible.tilt-active,
+section.sec.panel-visible.tilt-active {
+  transform: translateY(0) translateZ(0)
+             rotateX(var(--tiltX)) rotateY(var(--tiltY)) !important;
+}
+
+
+/* ── Scroll depth parallax layers ────────────────────────────── */
+.wrap {
+  transform-style: preserve-3d;
+}
+
+/* ── Floating decorative accent bar in Hero ──────────────────── */
+.h-title {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+/* ── Section labels pull slightly forward ─────────────────────── */
+.slabel {
+  transform: translateZ(4px);
+}
+.stitle,
+.h-title {
+  transform: translateZ(8px);
+}
+
+/* ── Footer glass ────────────────────────────────────────────── */
+footer {
+  background: rgba(10, 8, 18, 0.70) !important;
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+/* ── Marquee glass band ──────────────────────────────────────── */
+.mq {
+  background: rgba(10,8,18,0.55) !important;
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,0.05) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+  margin-bottom: 0 !important;
+}
+
+/* ── Mobile: reduce heavy effects ─────────────────────────────── */
+@media (max-width: 768px) {
+  body {
+    perspective: none;
+  }
+  section.hero,
+  section.sec {
+    width: calc(100% - 24px);
+    border-radius: 14px;
+    backdrop-filter: blur(14px);
+  }
+  section.hero,
+  section.sec {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  section.hero.panel-visible,
+  section.sec.panel-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  section.panel-past {
+    opacity: 0.4;
+    transform: translateY(-15px);
+  }
+}

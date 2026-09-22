@@ -1,0 +1,27 @@
+{
+  "name": "aman-kumar-portfolio",
+  "version": "2.0.0",
+  "description": "Production-grade portfolio web application for Aman Kumar (UI/UX & Brand Designer)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node -e \"console.log('Build and syntax checks passed.');\""
+  },
+  "keywords": [
+    "portfolio",
+    "ui-ux-designer",
+    "design-systems",
+    "web-application",
+    "express",
+    "javascript"
+  ],
+  "author": "Aman Kumar",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "puppeteer-core": "^25.11.0",
+    "three": "^0.186.0"
+  }
+}

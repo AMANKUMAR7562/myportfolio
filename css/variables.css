@@ -1,0 +1,129 @@
+/**
+ * AMAN KUMAR PORTFOLIO — DESIGN SYSTEM TOKENS & MULTI-MOOD ARCHITECTURE
+ * Engineered for UI/UX & Graphic Designers.
+ * Coding Language: CSS3
+ */
+
+:root {
+  /* ============================================================
+     THEME 01: "STUDIO CREAM" (DEFAULT)
+     High-End Editorial Magazine / Pentagram & Collins Aesthetic
+     Warm tactile paper, deep ink black typography, electric vermilion
+     ============================================================ */
+  --theme-name: 'cream';
+  --bg: #F8F5EE;
+  --bg-subtle: #EFEAE0;
+  --bg-card: rgba(255, 255, 255, 0.82);
+  --bg-card-hover: #FFFFFF;
+  --bg-card-solid: #FFFFFF;
+  --ink: #111215;
+  --ink-secondary: #2B2C33;
+  --mut: #686774;
+  --mut-light: #9897A4;
+  --line: rgba(17, 18, 21, 0.09);
+  --line-strong: rgba(17, 18, 21, 0.20);
+  --line-crisp: rgba(17, 18, 21, 0.35);
+
+  /* Primary Brand Accent — International Safety Orange / Vermilion */
+  --acc: #FF451A;
+  --acc-hover: #E33810;
+  --acc-glow: rgba(255, 69, 26, 0.20);
+  --acc-rgb: 255, 69, 26;
+  --acc-contrast: #FFFFFF;
+
+  /* Badges & Surface Overlays */
+  --badge-bg: rgba(17, 18, 21, 0.05);
+  --badge-border: rgba(17, 18, 21, 0.12);
+  --nav-bg: rgba(248, 245, 238, 0.88);
+  --card-shadow: 0 12px 35px rgba(17, 18, 21, 0.05);
+  --card-shadow-hover: 0 20px 50px rgba(17, 18, 21, 0.12);
+  --thumb-bg: #EAE6DC;
+
+  /* Typography Stacks */
+  --disp: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --serif: 'Instrument Serif', Georgia, serif;
+  --body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'Space Grotesk', monospace;
+
+  /* Motion & Easing */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.35s var(--ease);
+  --transition-slow: 0.6s var(--ease);
+
+  /* Layout Standards */
+  --max-width: 1360px;
+  --nav-height: 80px;
+
+  /* Spec Mode (Figma Redline Inspection) */
+  --spec-color: #FF0055;
+  --spec-line: rgba(255, 0, 85, 0.35);
+  --spec-bg: rgba(255, 0, 85, 0.06);
+}
+
+/* ============================================================
+   THEME 02: "OBSIDIAN" — DARK LUXURY
+   Cinematic, midnight carbon, gold/amber + electric orange
+   ============================================================ */
+[data-theme="obsidian"] {
+  --theme-name: 'obsidian';
+  --bg: #090A0E;
+  --bg-subtle: #12131A;
+  --bg-card: rgba(18, 19, 27, 0.72);
+  --bg-card-hover: rgba(26, 28, 38, 0.92);
+  --bg-card-solid: #151620;
+  --ink: #F5F4F0;
+  --ink-secondary: #DDD9D0;
+  --mut: #8C8B9A;
+  --mut-light: #5F5E6E;
+  --line: rgba(245, 244, 240, 0.10);
+  --line-strong: rgba(245, 244, 240, 0.22);
+  --line-crisp: rgba(245, 244, 240, 0.35);
+
+  --acc: #FF5E2B;
+  --acc-hover: #FF7547;
+  --acc-glow: rgba(255, 94, 43, 0.32);
+  --acc-rgb: 255, 94, 43;
+  --acc-contrast: #FFFFFF;
+
+  --badge-bg: rgba(245, 244, 240, 0.06);
+  --badge-border: rgba(245, 244, 240, 0.14);
+  --nav-bg: rgba(9, 10, 14, 0.88);
+  --card-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  --card-shadow-hover: 0 24px 60px rgba(0, 0, 0, 0.65);
+  --thumb-bg: #12131A;
+}
+
+/* ============================================================
+   THEME 03: "ACID" — NEO-BRUTALIST CREATIVE
+   Stark contrast, electric lime, bold grid lines
+   ============================================================ */
+[data-theme="acid"] {
+  --theme-name: 'acid';
+  --bg: #080A08;
+  --bg-subtle: #0F1310;
+  --bg-card: rgba(16, 20, 17, 0.82);
+  --bg-card-hover: rgba(23, 29, 24, 0.96);
+  --bg-card-solid: #121713;
+  --ink: #FFFFFF;
+  --ink-secondary: #E8EFEA;
+  --mut: #8A968D;
+  --mut-light: #5B655D;
+  --line: rgba(212, 255, 0, 0.16);
+  --line-strong: rgba(212, 255, 0, 0.35);
+  --line-crisp: rgba(212, 255, 0, 0.65);
+
+  --acc: #D4FF00;
+  --acc-hover: #E4FF4D;
+  --acc-glow: rgba(212, 255, 0, 0.35);
+  --acc-rgb: 212, 255, 0;
+  --acc-contrast: #080A08;
+
+  --badge-bg: rgba(212, 255, 0, 0.08);
+  --badge-border: rgba(212, 255, 0, 0.28);
+  --nav-bg: rgba(8, 10, 8, 0.90);
+  --card-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+  --card-shadow-hover: 0 24px 60px rgba(212, 255, 0, 0.18);
+  --thumb-bg: #0F1310;
+}

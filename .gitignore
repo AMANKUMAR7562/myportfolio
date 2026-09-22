@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Private inquiries database (keeps visitor emails & personal data secure)
+data/inquiries.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
