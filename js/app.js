@@ -9,6 +9,14 @@
   const $ = (s) => document.querySelector(s);
   const $$ = (s) => Array.from(document.querySelectorAll(s));
 
+  /* ============ CLEAN CANONICAL URL ============ */
+  if (window.location.pathname.endsWith('/index.html')) {
+    const cleanPath = window.location.pathname.replace(/\/index\.html$/, '/') + window.location.search + window.location.hash;
+    try {
+      window.history.replaceState(null, '', cleanPath);
+    } catch (_) {}
+  }
+
   /* ============ PRELOADER & COUNTER ============ */
   const ldNum = $('#ldNum');
   const ldBar = $('#ldBar');
