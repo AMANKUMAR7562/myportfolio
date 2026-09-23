@@ -314,7 +314,7 @@
       const sub = row.getAttribute('data-sub') || 'CONTROL TOWER';
       const color = row.getAttribute('data-color') || '#D4FF00';
       const orbClass = row.getAttribute('data-orb-class') || 'orb-nexus';
-      const link = row.getAttribute('data-link') || 'nexus';
+      const link = row.getAttribute('data-link') || 'nexus.html';
 
       const activeIdx = row.querySelector('.csr-idx');
       if (activeIdx) activeIdx.style.color = color;
