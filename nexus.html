@@ -23,6 +23,18 @@
   <!-- Modular Stylesheet System -->
   <link rel="stylesheet" href="css/style.css?v=6.0" />
   <link rel="stylesheet" href="css/case-study.css?v=2.0" />
+
+  <!-- Clean Canonical URL (Strips .html for a sleek, professional URL) -->
+  <script>
+    (function () {
+      if (window.location.pathname.endsWith('.html')) {
+        var clean = window.location.pathname.replace(/\.html$/, '') + window.location.search + window.location.hash;
+        try {
+          window.history.replaceState(null, '', clean);
+        } catch (_) {}
+      }
+    })();
+  </script>
 </head>
 
 <body class="case-study-page">
