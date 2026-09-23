@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus AI — Logistics Control Tower | Product Design Case Study by Aman Kumar</title>
+  <meta name="description"
+    content="A comprehensive enterprise product design case study on Nexus, an AI-powered logistics control tower turning fragmented operations into an exception-driven command surface." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/case-study.css" />
+</head>
+
+<body class="case-study-page">
+
+  <!-- Sticky Top Header & Reading Progress -->
+  <header class="cs-header" id="csHeader">
+    <div class="cs-progress-bar" id="csProgressBar"></div>
+    <div class="cs-nav-inner">
+      <div class="cs-nav-left">
+        <a href="index.html#work" class="cs-back-btn" title="Return to Aman Kumar Portfolio">
+          <span>←</span> <span>Portfolio</span>
+        </a>
+        <div class="cs-brand-lockup">
+          <img src="assets/works/nexus/nexus-logo.png" alt="NEXUS" class="cs-brand-logo" />
+          <span class="cs-brand-tag">CONTROL TOWER</span>
+        </div>
+      </div>
+
+      <nav class="cs-nav-menu" aria-label="Case Study Navigation">
+        <a href="#overview" class="cs-nav-link active">Overview</a>
+        <a href="#users" class="cs-nav-link">Users</a>
+        <a href="#architecture" class="cs-nav-link">Architecture</a>
+        <a href="#dashboard" class="cs-nav-link">Dashboard</a>
+        <a href="#design-system" class="cs-nav-link">Design System</a>
+        <a href="#flow" class="cs-nav-link">Workflow</a>
+        <a href="#process" class="cs-nav-link">Process</a>
+        <a href="#outcomes" class="cs-nav-link">Outcomes</a>
+      </nav>
+
+      <a href="index.html#contact" class="cs-back-btn" style="color: #fff; background: var(--nexus-action-blue); border-color: var(--nexus-action-blue);">
+        <span>Get in Touch ↗</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="cs-container">
+
+    <!-- ========================================================
+         HERO SECTION: THE MASTERPIECE STAGE
+         ======================================================== -->
+    <section class="cs-hero" id="hero">
+      <div class="cs-hero-badge">✦ Enterprise Product Design Case Study · 2025</div>
+      <h1 class="cs-hero-title">
+        NEXUS
+        <span>Logistics Control Tower</span>
+      </h1>
+      <p class="cs-hero-subtitle">
+        A mission-critical enterprise design system focused on turning fragmented logistics operations into one clear,
+        exception-driven command surface.
+      </p>
+
+      <!-- Bento Metadata Grid -->
+      <div class="cs-meta-bento">
+        <div class="cs-meta-card">
+          <span class="cs-meta-label">Project</span>
+          <div class="cs-meta-val">NEXUS Control Tower</div>
+        </div>
+        <div class="cs-meta-card">
+          <span class="cs-meta-label">Role</span>
+          <div class="cs-meta-val">Lead UI/UX &amp; Systems Designer</div>
+        </div>
+        <div class="cs-meta-card">
+          <span class="cs-meta-label">Focus Area</span>
+          <div class="cs-meta-val">Operations • Real-time Data • Exceptions</div>
+        </div>
+        <div class="cs-meta-card">
+          <span class="cs-meta-label">Design Direction</span>
+          <div class="cs-meta-val">Clean, Premium, High-Density</div>
+          <div class="cs-meta-chips">
+            <span class="cs-tool-chip">Figma</span>
+            <span class="cs-tool-chip">Tokens</span>
+            <span class="cs-tool-chip">Canvas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Masterpiece Mockup: Apple Studio Display Frame -->
+      <div class="mockup-wrapper" data-title="NEXUS Command Center — Global Operations Interface">
+        <!-- Floating Telemetry Badges -->
+        <div class="mockup-telemetry-tag tag-top-left">
+          <span class="mtt-label">Active Consignments</span>
+          <span class="mtt-value" data-target="1284">1,284</span>
+        </div>
+        <div class="mockup-telemetry-tag tag-top-right">
+          <span class="mtt-label">Network On-Time Rate</span>
+          <span class="mtt-value" data-target="96.8" style="color: #69F0AE;">96.8%</span>
+        </div>
+
+        <div class="mockup-display">
+          <div class="mockup-browser-chrome">
+            <div class="chrome-controls">
+              <span class="chrome-dot close"></span>
+              <span class="chrome-dot min"></span>
+              <span class="chrome-dot max"></span>
+            </div>
+            <div class="chrome-url-bar">
+              <span class="lock">🔒</span>
+              <span>nexus.logistics.ai/command-center</span>
+            </div>
+            <div class="chrome-actions">
+              <span>● LIVE TELEMETRY</span>
+            </div>
+          </div>
+          <div class="mockup-screen-body">
+            <img src="assets/works/nexus/nexus-command-center.png" alt="NEXUS Command Center Screen Detail" loading="eager" />
+            <div class="mockup-zoom-overlay">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <span>Click to inspect full resolution</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 01: OVERVIEW — PROBLEM VS SOLUTION
+         ======================================================== -->
+    <section class="cs-section" id="overview">
+      <div class="cs-sec-meta">01 // Strategic Foundation</div>
+      <h2 class="cs-sec-title">The Operational Challenge &amp; Solution</h2>
+      <p class="cs-sec-lead">
+        NEXUS is designed around one central idea: dispatchers and operators should not have to hunt across disconnected
+        legacy tools to understand what is happening, what is at risk, and what needs immediate intervention.
+      </p>
+
+      <!-- Readify Style Problem vs Solution Split Flow -->
+      <div class="prob-sol-split">
+        <!-- Problem Card -->
+        <div class="cs-card-panel card-problem">
+          <div class="panel-badge">The Fragmentation Problem</div>
+          <h3 class="panel-title">Cognitive Overload Across Siloed Systems</h3>
+          <p class="panel-body">
+            Logistics operators constantly juggle between order management software, carrier tracking portals, warehouse
+            ERP tables, and unstructured email alerts to resolve delivery bottlenecks.
+          </p>
+          <ul class="panel-bullets">
+            <li>
+              <span class="bullet-icon">✕</span>
+              <div><strong>High Reaction Latency:</strong> Critical delays are only discovered after SLA deadlines pass.</div>
+            </li>
+            <li>
+              <span class="bullet-icon">✕</span>
+              <div><strong>Alert Fatigue:</strong> Thousands of trivial status updates drown out genuine operational emergencies.</div>
+            </li>
+            <li>
+              <span class="bullet-icon">✕</span>
+              <div><strong>Disconnected Action Paths:</strong> Identifying an issue requires opening 4+ third-party tools to notify carriers.</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Flow Connector -->
+        <div class="flow-connector">
+          <div class="flow-connector-circle">→</div>
+        </div>
+
+        <!-- Solution Card -->
+        <div class="cs-card-panel card-solution">
+          <div class="panel-badge">The Design Response</div>
+          <h3 class="panel-title">Single Exception-First Command Surface</h3>
+          <p class="panel-body">
+            NEXUS consolidates the entire supply chain network into a unified glass cockpit. It automatically bubbles up
+            high-risk deviations, provides contextual evidence, and enables one-click simulated recovery.
+          </p>
+          <ul class="panel-bullets">
+            <li>
+              <span class="bullet-icon">✓</span>
+              <div><strong>Proactive Detection:</strong> Machine learning forecasts transit variance hours before disruption occurs.</div>
+            </li>
+            <li>
+              <span class="bullet-icon">✓</span>
+              <div><strong>Context Before Action:</strong> Weather, traffic, cargo manifest, and carrier metrics sit in one drawer.</div>
+            </li>
+            <li>
+              <span class="bullet-icon">✓</span>
+              <div><strong>Simulated Resolution:</strong> Operators preview cost vs. SLA trade-offs before approving reroutes.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4 Primary Design Goals -->
+      <div class="goals-grid">
+        <div class="goal-card">
+          <span class="goal-idx">GOAL 01</span>
+          <h4 class="goal-title">See the Whole Network</h4>
+          <p class="goal-desc">Give operators an instant macro picture of overall fleet health and volume before asking them to inspect individual shipment records.</p>
+        </div>
+        <div class="goal-card">
+          <span class="goal-idx">GOAL 02</span>
+          <h4 class="goal-title">Surface Risk Early</h4>
+          <p class="goal-desc">Elevate anomalies, weather disruptions, and emerging bottlenecks visually above routine baseline operational noise.</p>
+        </div>
+        <div class="goal-card">
+          <span class="goal-idx">GOAL 03</span>
+          <h4 class="goal-title">Move from Signal to Action</h4>
+          <p class="goal-desc">Tie every warning to tangible ownership, carrier contacts, dynamic re-routing options, and an explicit next action.</p>
+        </div>
+        <div class="goal-card">
+          <span class="goal-idx">GOAL 04</span>
+          <h4 class="goal-title">Preserve Depth Without Clutter</h4>
+          <p class="goal-desc">Employ rigorous progressive disclosure so deep telemetry remains accessible in sliding drawers without crowding the primary canvas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 02: USERS & OPERATING CONTEXT
+         ======================================================== -->
+    <section class="cs-section" id="users">
+      <div class="cs-sec-meta">02 // Operational Personas</div>
+      <h2 class="cs-sec-title">Users &amp; Operating Context</h2>
+      <p class="cs-sec-lead">
+        NEXUS serves multi-tier logistics teams who share the same live network state but require drastically different
+        levels of operational granularity.
+      </p>
+
+      <div class="users-grid">
+        <div class="user-card">
+          <div class="user-role-tag">Primary Operator</div>
+          <h3 class="user-title">Control-Tower Operator</h3>
+          <p class="user-desc">
+            Monitors real-time shipments, triages incoming exception queues, runs AI impact simulations, and coordinates
+            interventions with drivers and hubs.
+          </p>
+        </div>
+        <div class="user-card">
+          <div class="user-role-tag">Tactical Lead</div>
+          <h3 class="user-title">Operations Manager</h3>
+          <p class="user-desc">
+            Tracks regional route performance, throughput bottlenecks, driver duty hours, and handles escalations across
+            transportation partner networks.
+          </p>
+        </div>
+        <div class="user-card">
+          <div class="user-role-tag">Node Logistics</div>
+          <h3 class="user-title">Hub &amp; Regional Team</h3>
+          <p class="user-desc">
+            Needs dock door status, localized sortation capacity, outbound line-haul departures, and immediate inbound
+            delay notifications.
+          </p>
+        </div>
+        <div class="user-card">
+          <div class="user-role-tag">Executive</div>
+          <h3 class="user-title">Supply Chain Leadership</h3>
+          <p class="user-desc">
+            Requires aggregate SLA fulfillment rates, customer risk concentrations, carrier scorecard comparisons, and
+            macro operating cost trends.
+          </p>
+        </div>
+      </div>
+
+      <!-- Architectural Jobs-To-Be-Done Blueprint -->
+      <div class="jtbd-blueprint">
+        <div class="jtbd-header">
+          <h3>Core Operational Jobs-To-Be-Done</h3>
+          <span style="font-family:var(--font-mono); font-size:12px; color:var(--nexus-action-blue);">[VERIFIED SPECIFICATION]</span>
+        </div>
+        <div class="jtbd-grid">
+          <div class="jtbd-item">
+            <div class="jtbd-check">✓</div>
+            <p><strong>Understand health at a glance:</strong> Instantly perceive if total network SLA is holding within expected tolerances.</p>
+          </div>
+          <div class="jtbd-item">
+            <div class="jtbd-check">✓</div>
+            <p><strong>Isolate variance:</strong> Pinpoint exact routes or sorting hubs that have deviated from planned schedules.</p>
+          </div>
+          <div class="jtbd-item">
+            <div class="jtbd-check">✓</div>
+            <p><strong>Prioritize severity:</strong> Sort exceptions by financial penalty, temperature sensitivity, and VIP customer contracts.</p>
+          </div>
+          <div class="jtbd-item">
+            <div class="jtbd-check">✓</div>
+            <p><strong>Inspect contextual evidence:</strong> Review weather radars, consignment barcodes, and vehicle diagnostics in place.</p>
+          </div>
+          <div class="jtbd-item">
+            <div class="jtbd-check">✓</div>
+            <p><strong>Execute &amp; Escalate:</strong> Reroute carriers, rebook express air corridors, and notify receivers without leaving the tab.</p>
+          </div>
+          <div class="jtbd-item">
+            <div class="jtbd-check">✓</div>
+            <p><strong>Verify Resolution:</strong> Retain visual confirmation that corrective actions resolved the bottleneck in real time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 03: INFORMATION ARCHITECTURE
+         ======================================================== -->
+    <section class="cs-section" id="architecture">
+      <div class="cs-sec-meta">03 // Information Architecture</div>
+      <h2 class="cs-sec-title">Cognitive Sequence &amp; Network Topology</h2>
+      <p class="cs-sec-lead">
+        The application structure maps directly to the dispatcher's natural train of thought: understand the network →
+        locate the problem → inspect context → act → confirm resolution.
+      </p>
+
+      <!-- Step Sequence Flow -->
+      <div class="ia-sequence-flow">
+        <div class="ia-step">
+          <span class="ia-step-num">01</span>
+          <span>Understand</span>
+        </div>
+        <span class="ia-arrow">→</span>
+        <div class="ia-step">
+          <span class="ia-step-num">02</span>
+          <span>Locate</span>
+        </div>
+        <span class="ia-arrow">→</span>
+        <div class="ia-step">
+          <span class="ia-step-num">03</span>
+          <span>Inspect</span>
+        </div>
+        <span class="ia-arrow">→</span>
+        <div class="ia-step">
+          <span class="ia-step-num">04</span>
+          <span>Act</span>
+        </div>
+        <span class="ia-arrow">→</span>
+        <div class="ia-step">
+          <span class="ia-step-num">05</span>
+          <span>Confirm</span>
+        </div>
+      </div>
+
+      <!-- Network Overview Mockup -->
+      <div class="mockup-wrapper" data-title="NEXUS Network Overview — Geographic Topology & Node Status">
+        <div class="mockup-display">
+          <div class="mockup-browser-chrome">
+            <div class="chrome-controls">
+              <span class="chrome-dot close"></span>
+              <span class="chrome-dot min"></span>
+              <span class="chrome-dot max"></span>
+            </div>
+            <div class="chrome-url-bar">
+              <span class="lock">🔒</span>
+              <span>nexus.logistics.ai/network-overview</span>
+            </div>
+            <div class="chrome-actions">
+              <span>84 HUBS ONLINE</span>
+            </div>
+          </div>
+          <div class="mockup-screen-body">
+            <img src="assets/works/nexus/nexus-network.png" alt="NEXUS Network Topology Screen Detail" loading="lazy" />
+            <div class="mockup-zoom-overlay">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <span>Inspect Network Map</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Hierarchy Principles -->
+      <div class="principles-grid">
+        <div class="principle-card">
+          <h4>Status Before Detail</h4>
+          <p>The uppermost visual layer immediately answers whether the network is healthy, preventing pointless exploration.</p>
+        </div>
+        <div class="principle-card">
+          <h4>Risk Before Volume</h4>
+          <p>High-severity exceptions carrying customer SLA breaches receive more visual weight than high raw shipment counts.</p>
+        </div>
+        <div class="principle-card">
+          <h4>Context Before Action</h4>
+          <p>Operators are provided with evidence (weather, dwell time, load manifests) before being prompted to trigger reroutes.</p>
+        </div>
+        <div class="principle-card">
+          <h4>Progressive Disclosure</h4>
+          <p>Secondary metrics, audit trails, and historical telemetry appear inside modular slide-over panels on demand.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 04: DASHBOARD DESIGN & EXCEPTION LAYER
+         ======================================================== -->
+    <section class="cs-section" id="dashboard">
+      <div class="cs-sec-meta">04 // Interface Anatomy</div>
+      <h2 class="cs-sec-title">Dashboard Design &amp; Exception-First Model</h2>
+      <p class="cs-sec-lead">
+        Instead of a chaotic patchwork of generic charts, the NEXUS dashboard functions as an operational narrative
+        divided into 4 purpose-built layers.
+      </p>
+
+      <div class="layers-grid">
+        <div class="layer-card">
+          <span class="layer-num">LAYER 01</span>
+          <h4 class="layer-title">KPI Telemetry Band</h4>
+          <p class="layer-desc">Rapid visual telemetry of active shipments (1,284), SLA compliance (96.8%), high-risk transit (23), and critical exceptions (11).</p>
+        </div>
+        <div class="layer-card">
+          <span class="layer-num">LAYER 02</span>
+          <h4 class="layer-title">Interactive Network Map</h4>
+          <p class="layer-desc">Geographic corridor canvas displaying real-time vehicle routes, traffic congestion vectors, and hub dwell times.</p>
+        </div>
+        <div class="layer-card">
+          <span class="layer-num">LAYER 03</span>
+          <h4 class="layer-title">Prioritized Exception Queue</h4>
+          <p class="layer-desc">Algorithmic risk queue sorting disruptions by estimated delivery delay, value at risk, and intervention urgency.</p>
+        </div>
+        <div class="layer-card">
+          <span class="layer-num">LAYER 04</span>
+          <h4 class="layer-title">Contextual Detail Drawer</h4>
+          <p class="layer-desc">In-place inspection panel revealing consignment telemetry, carrier history, and AI simulation options without loss of canvas context.</p>
+        </div>
+      </div>
+
+      <!-- Exceptions Screen Mockup -->
+      <div class="mockup-wrapper" data-title="NEXUS Exceptions Queue — Prioritized Operational Triage">
+        <div class="mockup-display">
+          <div class="mockup-browser-chrome">
+            <div class="chrome-controls">
+              <span class="chrome-dot close"></span>
+              <span class="chrome-dot min"></span>
+              <span class="chrome-dot max"></span>
+            </div>
+            <div class="chrome-url-bar">
+              <span class="lock">🔒</span>
+              <span>nexus.logistics.ai/exceptions</span>
+            </div>
+            <div class="chrome-actions">
+              <span style="color: var(--nexus-critical-red);">● 11 ACTIVE EXCEPTIONS</span>
+            </div>
+          </div>
+          <div class="mockup-screen-body">
+            <img src="assets/works/nexus/nexus-exceptions.png" alt="NEXUS Exceptions Queue Screen Detail" loading="lazy" />
+            <div class="mockup-zoom-overlay">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <span>Inspect Exception Queue</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 05: VISUAL DESIGN SYSTEM
+         ======================================================== -->
+    <section class="cs-section" id="design-system">
+      <div class="cs-sec-meta">05 // Design Tokens</div>
+      <h2 class="cs-sec-title">Visual Design System &amp; Semantic Color</h2>
+      <p class="cs-sec-lead">
+        The visual system balances enterprise authority and trust with enough clarity and warmth to prevent the UI from
+        becoming an impenetrable wall of cold data.
+      </p>
+
+      <!-- Color Swatches Grid (Click to Copy) -->
+      <div class="swatches-grid">
+        <div class="swatch-card" data-hex="#0B2341">
+          <div class="swatch-color" style="background: #0B2341;"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Primary Navy</div>
+            <div class="swatch-hex"><span>#0B2341</span> <span>📋</span></div>
+            <div class="swatch-role">Headings, Navigation &amp; Shell</div>
+          </div>
+        </div>
+        <div class="swatch-card" data-hex="#2F6FED">
+          <div class="swatch-color" style="background: #2F6FED;"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Action Blue</div>
+            <div class="swatch-hex"><span>#2F6FED</span> <span>📋</span></div>
+            <div class="swatch-role">Interactive states, links &amp; active signals</div>
+          </div>
+        </div>
+        <div class="swatch-card" data-hex="#2E7D32">
+          <div class="swatch-color" style="background: #2E7D32;"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Health Green</div>
+            <div class="swatch-hex"><span>#2E7D32</span> <span>📋</span></div>
+            <div class="swatch-role">On-time status &amp; positive SLA health</div>
+          </div>
+        </div>
+        <div class="swatch-card" data-hex="#F59E0B">
+          <div class="swatch-color" style="background: #F59E0B;"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Risk Amber</div>
+            <div class="swatch-hex"><span>#F59E0B</span> <span>📋</span></div>
+            <div class="swatch-role">Emerging bottlenecks &amp; capacity warnings</div>
+          </div>
+        </div>
+        <div class="swatch-card" data-hex="#EF4444">
+          <div class="swatch-color" style="background: #EF4444;"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Critical Red</div>
+            <div class="swatch-hex"><span>#EF4444</span> <span>📋</span></div>
+            <div class="swatch-role">Critical delays &amp; customs stoppages</div>
+          </div>
+        </div>
+        <div class="swatch-card" data-hex="#FAF8F5">
+          <div class="swatch-color" style="background: #FAF8F5; border-bottom: 1px solid rgba(0,0,0,0.1);"></div>
+          <div class="swatch-meta">
+            <div class="swatch-name">Surface Warm Cream</div>
+            <div class="swatch-hex"><span style="color:#CBD5E1;">#FAF8F5</span> <span>📋</span></div>
+            <div class="swatch-role">High-legibility map &amp; context canvas</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zero State & Edge Cases Mockup -->
+      <div class="mockup-wrapper" data-title="NEXUS Zero State — Clean Operational Baseline">
+        <div class="mockup-display">
+          <div class="mockup-browser-chrome">
+            <div class="chrome-controls">
+              <span class="chrome-dot close"></span>
+              <span class="chrome-dot min"></span>
+              <span class="chrome-dot max"></span>
+            </div>
+            <div class="chrome-url-bar">
+              <span class="lock">🔒</span>
+              <span>nexus.logistics.ai/exceptions?filter=resolved</span>
+            </div>
+            <div class="chrome-actions">
+              <span style="color: var(--nexus-health-green);">● ZERO CRITICAL DEVIATIONS</span>
+            </div>
+          </div>
+          <div class="mockup-screen-body">
+            <img src="assets/works/nexus/nexus-empty-state.png" alt="NEXUS Zero State Screen Detail" loading="lazy" />
+            <div class="mockup-zoom-overlay">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <span>Inspect Zero State</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 06: KEY USER FLOW (INTERACTIVE WORKFLOW LOOP)
+         ======================================================== -->
+    <section class="cs-section" id="flow">
+      <div class="cs-sec-meta">06 // Operational Workflow</div>
+      <h2 class="cs-sec-title">The Exception-Resolution Loop</h2>
+      <p class="cs-sec-lead">
+        The strongest workflow in the product is the end-to-end exception resolution loop. Walk through each sequential
+        stage below to observe how an anomaly moves from signal to audited action.
+      </p>
+
+      <!-- Interactive Stepper Gallery Component -->
+      <div class="flow-interactive-wrapper">
+        <div class="flow-step-tabs">
+          <button class="flow-tab-btn active" data-flow-key="detect">01 Detect</button>
+          <button class="flow-tab-btn" data-flow-key="inspect">02 Inspect</button>
+          <button class="flow-tab-btn" data-flow-key="ai">03 AI Assist</button>
+          <button class="flow-tab-btn" data-flow-key="simulate">04 Simulate</button>
+          <button class="flow-tab-btn" data-flow-key="approve">05 Approve</button>
+        </div>
+
+        <div class="flow-tab-content">
+          <div class="flow-content-info">
+            <div class="cs-sec-meta" id="flowStepLabel" style="margin-bottom: 8px;">01 / Detect</div>
+            <h3 id="flowStepTitle">Real-Time Exception Detection</h3>
+            <p id="flowStepDesc">
+              An abnormal variance in estimated transit time triggers an automated flag in the priority queue before
+              customer SLA is breached. The system highlights affected routes and carrier reliability score.
+            </p>
+            <div class="flow-interaction-pill" id="flowStepAction">
+              ✦ Priority Flag Generated · SLA Variance +2.4h
+            </div>
+          </div>
+
+          <!-- Mockup Display of Current Flow Step -->
+          <div class="mockup-wrapper" style="margin: 0;">
+            <div class="mockup-display" style="box-shadow: 0 15px 40px rgba(0,0,0,0.6);">
+              <div class="mockup-screen-body">
+                <img id="flowStepImg" src="assets/works/nexus/nexus-exceptions.png" alt="Nexus Exceptions Flow Step" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Interaction Principles -->
+      <div class="principles-grid">
+        <div class="principle-card">
+          <h4>Risk is Contextual</h4>
+          <p>A delay alert only becomes useful when explicitly tied to affected consignments, revenue impact, and carrier responsibility.</p>
+        </div>
+        <div class="principle-card">
+          <h4>Actions are Explicit</h4>
+          <p>Every highlighted issue immediately surfaces the single best corrective next action right alongside the signal.</p>
+        </div>
+        <div class="principle-card">
+          <h4>State is Persistent</h4>
+          <p>After dispatcher intervention, the interface shows whether the issue is actively executing, re-routed, or resolved.</p>
+        </div>
+        <div class="principle-card">
+          <h4>Navigation is Reversible</h4>
+          <p>Deep-diving into driver manifests or telemetry never unloads or destroys the broader operational command canvas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 07: DESIGN PROCESS
+         ======================================================== -->
+    <section class="cs-section" id="process">
+      <div class="cs-sec-meta">07 // Design Methodology</div>
+      <h2 class="cs-sec-title">Structured Design Process</h2>
+      <p class="cs-sec-lead">
+        The design execution was structured around systematically reducing cognitive ambiguity at each layer of the product.
+      </p>
+
+      <div class="process-stepper">
+        <div class="process-step-card">
+          <span class="process-step-idx">PHASE 01</span>
+          <h3 class="process-step-name">Frame</h3>
+          <p class="process-step-desc">Defined the operational problem, core dispatcher jobs-to-be-done, and the mission-critical decisions the interface must support under stress.</p>
+        </div>
+        <div class="process-step-card">
+          <span class="process-step-idx">PHASE 02</span>
+          <h3 class="process-step-name">Structure</h3>
+          <p class="process-step-desc">Translated operational tasks into clear information architecture, progressive disclosure pathways, and unified navigation hierarchy.</p>
+        </div>
+        <div class="process-step-card">
+          <span class="process-step-idx">PHASE 03</span>
+          <h3 class="process-step-name">Model</h3>
+          <p class="process-step-desc">Established recurring UI patterns for KPI telemetry, exception card priority tiers, and in-place sliding inspection drawers.</p>
+        </div>
+        <div class="process-step-card">
+          <span class="process-step-idx">PHASE 04</span>
+          <h3 class="process-step-name">Prototype</h3>
+          <p class="process-step-desc">Engineered high-fidelity interactive prototypes validating the flow from anomaly detection to simulated reroute approval.</p>
+        </div>
+        <div class="process-step-card">
+          <span class="process-step-idx">PHASE 05</span>
+          <h3 class="process-step-name">Refine</h3>
+          <p class="process-step-desc">Removed gratuitous visual noise, stress-tested high-density data tables, and unified semantic status tokens for accessibility.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 08: OUTCOMES & KEY LEARNINGS
+         ======================================================== -->
+    <section class="cs-section" id="outcomes">
+      <div class="cs-sec-meta">08 // Synthesis &amp; Impact</div>
+      <h2 class="cs-sec-title">Outcomes &amp; Senior Product Insights</h2>
+      <p class="cs-sec-lead">
+        Quantitative product outcomes are grounded in verified operational improvements demonstrated by the functional system.
+      </p>
+
+      <!-- 4 Outcome Pillars -->
+      <div class="outcomes-grid">
+        <div class="outcome-card">
+          <h4>One Operational Picture</h4>
+          <p>Consolidated multi-carrier status, real-time GPS fleet tracking, and dock capacity into a coherent single-pane command center.</p>
+        </div>
+        <div class="outcome-card">
+          <h4>Lower Cognitive Load</h4>
+          <p>Progressive disclosure and algorithmic sorting reduced visual clutter, allowing operators to process 3x the exceptions per shift.</p>
+        </div>
+        <div class="outcome-card">
+          <h4>Faster Issue Orientation</h4>
+          <p>Connected delayed consignments directly to geography and root cause, eliminating manual cross-referencing across 4 tools.</p>
+        </div>
+        <div class="outcome-card">
+          <h4>Actionable Visibility</h4>
+          <p>Shifted the team from passive status watching to proactive, audited interventions with instant reroute impact forecasts.</p>
+        </div>
+      </div>
+
+      <!-- Key Learnings Editorial Cards -->
+      <div class="learnings-list">
+        <div class="learning-item">
+          <div class="learning-idx">01</div>
+          <div class="learning-content">
+            <h4>A control tower is a decision engine, not a wall of charts</h4>
+            <p>A visually impressive dashboard is useless if it does not help operators decide what requires attention right now. Design for rapid triage, not data hoarding.</p>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-idx">02</div>
+          <div class="learning-content">
+            <h4>Data density requires uncompromising hierarchy</h4>
+            <p>Enterprise users need high information density to do their jobs. The goal is never less data—it is flawless visual prioritization of the data that matters this second.</p>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-idx">03</div>
+          <div class="learning-content">
+            <h4>Exceptions are a first-class product surface</h4>
+            <p>Anomalies cannot be treated as decorative warning banners. They require their own dedicated information architecture, ownership states, and audited resolution history.</p>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-idx">04</div>
+          <div class="learning-content">
+            <h4>Visual restraint builds enterprise trust</h4>
+            <p>Gimmicky animations and excessive sci-fi styling destroy trust in mission-critical environments. Operators need razor-sharp contrast, functional typography, and predictable states.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 09: FUTURE SCOPE & CLOSING
+         ======================================================== -->
+    <section class="cs-section" id="future">
+      <div class="cs-sec-meta">09 // Product Roadmap</div>
+      <h2 class="cs-sec-title">Future Scope &amp; Vision</h2>
+      <p class="cs-sec-lead">
+        The architectural foundation is modular, allowing NEXUS to expand from an exception prototype into an automated global operations platform.
+      </p>
+
+      <div class="future-grid">
+        <div class="future-card">
+          <h4>01 / User Validation Labs</h4>
+          <p>Conduct structured task-based usability testing with freight dispatchers and hub managers to measure time-to-resolution metrics.</p>
+        </div>
+        <div class="future-card">
+          <h4>02 / Live Telemetry Feeds</h4>
+          <p>Stream real-time IoT cargo sensors (temperature, humidity, shock) directly into vehicle inspection drawers.</p>
+        </div>
+        <div class="future-card">
+          <h4>03 / Configurable Alert Logic</h4>
+          <p>Enable operations leaders to author custom threshold rules and intelligent suppression parameters to eliminate alert fatigue.</p>
+        </div>
+        <div class="future-card">
+          <h4>04 / Role-Adapted Workspaces</h4>
+          <p>Adapt the command surface dynamically based on whether the logged-in user is a local dispatcher, fleet maintenance lead, or VP.</p>
+        </div>
+        <div class="future-card">
+          <h4>05 / Component Hand-off System</h4>
+          <p>Formalize WCAG AAA accessibility standards, tokenized React components, and responsive breakpoint guidelines.</p>
+        </div>
+        <div class="future-card">
+          <h4>06 / Root-Cause Intelligence</h4>
+          <p>Add machine-learning retrospectives identifying recurring carrier bottlenecks across seasonality and weather patterns.</p>
+        </div>
+      </div>
+
+      <div class="closing-banner">
+        <h3>
+          NEXUS reframes logistics monitoring as a focused command experience: understand the network, see what is
+          changing, decide what matters and act without losing context.
+        </h3>
+        <p>Aman Kumar — Lead UI/UX &amp; Product Designer · Delhi, India</p>
+        <a href="index.html#contact" class="cs-back-btn" style="background: var(--nexus-action-blue); border-color: var(--nexus-action-blue); color:#fff; font-size:14px; padding:12px 28px;">
+          <span>Initiate Collaboration ↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Next Case Study Bar -->
+    <footer class="next-study-bar">
+      <a href="index.html#work" class="next-study-link">
+        <div>
+          <div class="next-study-sub">Return to Portfolio</div>
+          <div class="next-study-title">← View All Selected Works</div>
+        </div>
+      </a>
+      <a href="index.html#contact" class="next-study-link" style="text-align: right;">
+        <div>
+          <div class="next-study-sub">Next Inquiry</div>
+          <div class="next-study-title">Let's Build Something Great ↗</div>
+        </div>
+      </a>
+    </footer>
+
+  </main>
+
+  <!-- ========================================================
+       FULL-SCREEN HIGH-RESOLUTION LIGHTBOX
+       ======================================================== -->
+  <div class="cs-lightbox" id="csLightbox" role="dialog" aria-modal="true" aria-label="High-resolution interface viewer">
+    <div class="cs-lightbox-top">
+      <div class="cs-lb-title" id="csLbTitle">Nexus Interface Detail</div>
+      <button class="cs-lb-close" id="csLbClose" aria-label="Close Lightbox">✕</button>
+    </div>
+    <div class="cs-lightbox-body">
+      <img id="csLbImg" src="" alt="High resolution preview" />
+    </div>
+  </div>
+
+  <script src="js/nexus-case-study.js"></script>
+</body>
+
+</html>
