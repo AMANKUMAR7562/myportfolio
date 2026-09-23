@@ -1,15 +1,15 @@
 /**
- * NEXUS LOGISTICS CONTROL TOWER — INTERACTIVE CASE STUDY ENGINE
- * Coding Language: Modern JavaScript (ES6+)
+ * NEXUS LOGISTICS CONTROL TOWER — CASE STUDY ENGINE
+ * Seamlessly matches the Aman Kumar portfolio theme & interaction model
  */
 
 (function () {
   'use strict';
 
-  // 1. Scroll Progress Bar & ScrollSpy
+  // 1. Reading Progress Bar & Scrollspy
   const progressBar = document.getElementById('csProgressBar');
-  const navLinks = document.querySelectorAll('.cs-nav-link');
-  const sections = document.querySelectorAll('.cs-section');
+  const qlinks = document.querySelectorAll('.cs-qlink');
+  const sections = document.querySelectorAll('.cs-sec');
 
   function updateScroll() {
     const scrollY = window.scrollY;
@@ -19,17 +19,17 @@
       progressBar.style.width = progress + '%';
     }
 
-    // Scrollspy for active nav link
+    // Scrollspy for active quick link
     let currentId = '';
     sections.forEach(sec => {
-      const top = sec.offsetTop - 150;
+      const top = sec.offsetTop - 180;
       const height = sec.offsetHeight;
       if (scrollY >= top && scrollY < top + height) {
         currentId = sec.getAttribute('id');
       }
     });
 
-    navLinks.forEach(link => {
+    qlinks.forEach(link => {
       link.classList.remove('active');
       if (link.getAttribute('href') === '#' + currentId) {
         link.classList.add('active');
@@ -40,100 +40,117 @@
   window.addEventListener('scroll', updateScroll, { passive: true });
   updateScroll();
 
-  // 2. Interactive Flow Stepper (Section 06)
-  const flowData = {
+  // 2. Structured Interface Suite Cockpit Tabs (Section 04)
+  const suiteTabs = document.querySelectorAll('.cs-suite-tab');
+  const suitePanes = document.querySelectorAll('.cs-suite-pane');
+
+  suiteTabs.forEach(tab => {
+    tab.addEventListener('click', function () {
+      suiteTabs.forEach(t => t.classList.remove('active'));
+      suitePanes.forEach(p => p.classList.remove('active'));
+
+      this.classList.add('active');
+      const targetPaneId = this.getAttribute('data-suite-target');
+      const targetPane = document.getElementById(targetPaneId);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
+    });
+  });
+
+  // 3. Interactive Resolution Loop Stepper (Section 06)
+  const loopData = {
     detect: {
-      step: '01 / Detect',
-      title: 'Real-Time Exception Detection',
-      desc: 'An abnormal variance in estimated transit time triggers an automated flag in the priority queue before customer SLA is breached. The system highlights affected routes and carrier reliability score.',
-      action: '✦ Priority Flag Generated · SLA Variance +2.4h',
+      step: '01 / Detect Anomaly',
+      title: 'Real-Time Anomaly Flagging',
+      desc: 'Transit variance exceeding +2.0 hours automatically injects an incident record into the dispatcher priority queue. Impacted customer accounts and carrier contracts are highlighted instantly.',
+      action: '✦ Automated SLA Warning · Mumbai → Delhi Corridor',
       img: 'assets/works/nexus/nexus-exceptions.png',
       alt: 'Nexus Exceptions Queue Screen'
     },
     inspect: {
-      step: '02 / Inspect',
-      title: 'Contextual Shipment Deep Dive',
-      desc: 'The operator selects the exception to reveal complete consignment telemetry: manifest items, temperature sensor logs, driver telemetry, and weather disruption along the Mumbai-Delhi corridor.',
-      action: '✦ Manifest & Telemetry Synced · Node Context Loaded',
+      step: '02 / Inspect Context',
+      title: 'Deep Telemetry & Consignment Manifest',
+      desc: 'The dispatcher selects the affected line-haul to open real-time telemetry: manifest items, temperature sensor logs, driver duty hours, and live highway weather alerts along the transit corridor.',
+      action: '✦ Telemetry Synced · Dwell Time & Manifest Loaded',
       img: 'assets/works/nexus/nexus-shipment.png',
       alt: 'Nexus Shipment Detail Screen'
     },
     ai: {
-      step: '03 / AI Assist',
+      step: '03 / AI Predictor',
       title: 'Predictive Explanation Drawer',
-      desc: 'The predictive AI engine analyzes traffic patterns and vehicle density, providing a plain-language explanation of the bottleneck and confidence ratings for alternative delivery channels.',
-      action: '✦ Neural Predictor Active · 94.2% Confidence Score',
+      desc: 'The neural prediction engine explains root-cause probabilities (highway congestion vs hub intake slowdown) and suggests vetted alternative recovery strategies with confidence scoring.',
+      action: '✦ AI Engine Active · 94.2% Confidence Recommendation',
       img: 'assets/works/nexus/nexus-ai-drawer.png',
       alt: 'Nexus AI Explanation Drawer Screen'
     },
     simulate: {
-      step: '04 / Simulate',
-      title: 'Impact Simulation & Rerouting',
-      desc: 'Before taking action, the operator runs a dynamic simulation comparing two recovery routes: standard ground detour vs. expedited inter-hub transfer through Pune, visualizing cost vs. SLA recovery.',
-      action: '✦ Simulation Validated · +18m Saved at $42 Delta',
+      step: '04 / Simulate Impact',
+      title: 'Cost vs. SLA Reroute Simulation',
+      desc: 'Operators run dynamic multi-modal simulations in real time, comparing express air diversion vs. secondary ground rerouting through Pune Hub, balancing recovery speed against freight cost.',
+      action: '✦ Reroute Simulated · 18 Mins Saved at $42 Delta',
       img: 'assets/works/nexus/nexus-simulation.png',
       alt: 'Nexus Impact Simulation Screen'
     },
     approve: {
-      step: '05 / Approve',
-      title: 'Single-Click Authorization Modal',
-      desc: 'The dispatcher reviews financial impact and automated notifications before confirming the reroute. Stakeholders across both hubs are instantly alerted and vehicle telemetry updates.',
-      action: '✦ Action Dispatched · Fleet Telemetry Re-routed',
+      step: '05 / Approve & Dispatch',
+      title: 'One-Click Confirmation Modal',
+      desc: 'With a single authorization, the new route instructions push directly to the driver mobile terminal, the destination hub is rescheduled, and customer tracking portals reflect the updated ETA.',
+      action: '✦ Reroute Dispatched · Audit Trail Logged to Blockchain',
       img: 'assets/works/nexus/nexus-approval.png',
       alt: 'Nexus Approval Modal Screen'
     }
   };
 
-  const flowTabs = document.querySelectorAll('.flow-tab-btn');
-  const flowStepLabel = document.getElementById('flowStepLabel');
-  const flowStepTitle = document.getElementById('flowStepTitle');
-  const flowStepDesc = document.getElementById('flowStepDesc');
-  const flowStepAction = document.getElementById('flowStepAction');
-  const flowStepImg = document.getElementById('flowStepImg');
+  const loopTabs = document.querySelectorAll('.cs-loop-tab-btn');
+  const loopStepLabel = document.getElementById('loopStepLabel');
+  const loopStepTitle = document.getElementById('loopStepTitle');
+  const loopStepDesc = document.getElementById('loopStepDesc');
+  const loopStepAction = document.getElementById('loopStepAction');
+  const loopStepImg = document.getElementById('loopStepImg');
 
-  flowTabs.forEach(tab => {
+  loopTabs.forEach(tab => {
     tab.addEventListener('click', function () {
-      flowTabs.forEach(t => t.classList.remove('active'));
+      loopTabs.forEach(t => t.classList.remove('active'));
       this.classList.add('active');
 
-      const key = this.getAttribute('data-flow-key');
-      const data = flowData[key];
+      const key = this.getAttribute('data-loop-key');
+      const data = loopData[key];
       if (!data) return;
 
-      if (flowStepLabel) flowStepLabel.textContent = data.step;
-      if (flowStepTitle) flowStepTitle.textContent = data.title;
-      if (flowStepDesc) flowStepDesc.textContent = data.desc;
-      if (flowStepAction) flowStepAction.textContent = data.action;
+      if (loopStepLabel) loopStepLabel.textContent = data.step;
+      if (loopStepTitle) loopStepTitle.textContent = data.title;
+      if (loopStepDesc) loopStepDesc.textContent = data.desc;
+      if (loopStepAction) loopStepAction.textContent = data.action;
 
-      if (flowStepImg) {
-        flowStepImg.style.opacity = '0';
+      if (loopStepImg) {
+        loopStepImg.style.opacity = '0';
         setTimeout(() => {
-          flowStepImg.src = data.img;
-          flowStepImg.alt = data.alt;
-          flowStepImg.style.opacity = '1';
+          loopStepImg.src = data.img;
+          loopStepImg.alt = data.alt;
+          loopStepImg.style.opacity = '1';
         }, 150);
       }
     });
   });
 
-  // 3. Click-to-Copy Color Swatches
-  const swatches = document.querySelectorAll('.swatch-card');
-  swatches.forEach(swatch => {
+  // 4. Click-to-Copy Color Swatches
+  document.querySelectorAll('.cs-swatch').forEach(swatch => {
     swatch.addEventListener('click', function () {
       const hex = this.getAttribute('data-hex');
       if (!hex) return;
       navigator.clipboard.writeText(hex).then(() => {
-        const hexEl = this.querySelector('.swatch-hex span:first-child');
-        const origText = hexEl.textContent;
-        hexEl.textContent = 'COPIED!';
+        const hexSpan = this.querySelector('.cs-swatch-hex span:first-child');
+        const orig = hexSpan.textContent;
+        hexSpan.textContent = 'COPIED!';
         setTimeout(() => {
-          hexEl.textContent = origText;
-        }, 1500);
+          hexSpan.textContent = orig;
+        }, 1400);
       });
     });
   });
 
-  // 4. Lightbox Modal for High-Resolution Screen Inspection
+  // 5. Full-Resolution Lightbox Modal
   const lightbox = document.getElementById('csLightbox');
   const lbImg = document.getElementById('csLbImg');
   const lbTitle = document.getElementById('csLbTitle');
@@ -142,7 +159,7 @@
   function openLightbox(src, title) {
     if (!lightbox || !lbImg) return;
     lbImg.src = src;
-    if (lbTitle) lbTitle.textContent = title || 'Nexus Interface Detail';
+    if (lbTitle) lbTitle.textContent = title || 'Nexus High-Resolution Interface';
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
@@ -156,7 +173,7 @@
   if (lbClose) lbClose.addEventListener('click', closeLightbox);
   if (lightbox) {
     lightbox.addEventListener('click', function (e) {
-      if (e.target === lightbox || e.target.classList.contains('cs-lightbox-body')) {
+      if (e.target === lightbox || e.target.classList.contains('cs-lb-body')) {
         closeLightbox();
       }
     });
@@ -166,52 +183,14 @@
     if (e.key === 'Escape') closeLightbox();
   });
 
-  // Attach lightbox trigger to all mockup images
-  document.querySelectorAll('.mockup-wrapper').forEach(wrapper => {
-    wrapper.addEventListener('click', function () {
+  // Attach Lightbox to all mockup frames
+  document.querySelectorAll('.cs-mockup-frame, .cs-screen-card').forEach(wrapper => {
+    wrapper.addEventListener('click', function (e) {
       const img = this.querySelector('img');
-      const title = this.getAttribute('data-title') || (img ? img.alt : 'Nexus Interface Screen');
+      const title = this.getAttribute('data-title') || (img ? img.alt : 'Nexus Interface');
       if (img && img.src) {
         openLightbox(img.src, title);
       }
     });
   });
-
-  // 5. Animated KPI Counter on scroll into view
-  const kpiValues = document.querySelectorAll('.mtt-value, .stat-counter');
-  let animated = false;
-
-  function checkCounters() {
-    if (animated) return;
-    const hero = document.querySelector('.cs-hero');
-    if (!hero) return;
-    const rect = hero.getBoundingClientRect();
-    if (rect.top <= window.innerHeight) {
-      animated = true;
-      kpiValues.forEach(el => {
-        const target = el.getAttribute('data-target');
-        if (!target) return;
-        const count = parseFloat(target);
-        const isDecimal = target.includes('.');
-        let start = 0;
-        const duration = 1200;
-        const stepTime = 20;
-        const steps = duration / stepTime;
-        const increment = count / steps;
-
-        const timer = setInterval(() => {
-          start += increment;
-          if (start >= count) {
-            el.textContent = isDecimal ? count.toFixed(1) + '%' : Math.floor(count).toLocaleString();
-            clearInterval(timer);
-          } else {
-            el.textContent = isDecimal ? start.toFixed(1) + '%' : Math.floor(start).toLocaleString();
-          }
-        }, stepTime);
-      });
-    }
-  }
-
-  window.addEventListener('scroll', checkCounters, { passive: true });
-  checkCounters();
 })();
