@@ -78,7 +78,6 @@
   <canvas id="canvas-bg" aria-hidden="true"></canvas>
   <div class="readab" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
-  <div class="spec-grid-overlay" aria-hidden="true"></div>
   <div id="bar" aria-hidden="true"></div>
 
   <!-- Custom CAD Reticle Cursor -->
@@ -119,11 +118,6 @@
         <button class="theme-opt-btn" data-theme-set="spectrum" aria-label="Spectrum Rainbow Mode">🌈 Spectrum</button>
       </div>
 
-      <!-- Spec Mode Toggle -->
-      <button class="spec-toggle-btn" id="specToggleBtn" title="Toggle Figma Spec Inspection Mode">
-        <span>⌘ Spec</span>
-      </button>
-
       <span class="n-time"><b id="clock">--:--:-- IST</b></span>
 
       <a class="n-cta" href="assets/docs/Aman_Kumar_CV_Ui_Ux_Graphic_Design.pdf" target="_blank" download>
@@ -161,7 +155,7 @@
   <main>
 
     <!-- Hero Section — Editorial Poster & Split Studio -->
-    <section class="hero" id="hero" data-spec-label="[HERO // 100vh]">
+    <section class="hero" id="hero">
       <div class="hero-grid-overlay" aria-hidden="true"></div>
 
       <div class="hero-inner">
@@ -246,7 +240,7 @@
     </div>
 
     <!-- About Section -->
-    <section class="sec" id="about" data-spec-label="[SECTION // ABOUT]">
+    <section class="sec" id="about">
       <div class="wrap">
         <div class="slabel rv">02 — About Me</div>
         <p class="statement rv">Design is not just what it looks like. It is how clarity, empathy, and <em>systems move
@@ -254,7 +248,7 @@
 
         <div class="about-grid">
           <!-- Portrait Card -->
-          <div class="profile-card rv" style="--d:100ms" data-spec-label="[PROFILE CARD]">
+          <div class="profile-card rv" style="--d:100ms">
             <div class="profile-img-wrap">
               <img src="assets/images/aman.png" alt="Aman Kumar — UI/UX &amp; Brand Designer" loading="lazy" />
               <div class="profile-overlay">
@@ -284,19 +278,19 @@
             </div>
 
             <div class="stats-grid rv" style="--d:250ms">
-              <div class="stat-box" data-spec-label="[STAT // 15+]">
+              <div class="stat-box">
                 <b>15<sup>+</sup></b>
                 <span>Brand Systems</span>
               </div>
-              <div class="stat-box" data-spec-label="[STAT // 51+]">
+              <div class="stat-box">
                 <b>51<sup>+</sup></b>
                 <span>Countries Reached</span>
               </div>
-              <div class="stat-box" data-spec-label="[STAT // 04+]">
+              <div class="stat-box">
                 <b>04<sup>+</sup></b>
                 <span>Years Visual Craft</span>
               </div>
-              <div class="stat-box" data-spec-label="[STAT // 400K+]">
+              <div class="stat-box">
                 <b>400K<sup>+</sup></b>
                 <span>Creator Impressions</span>
               </div>
@@ -307,7 +301,7 @@
     </section>
 
     <!-- Works Section (Case Studies & Graphic Design) -->
-    <section class="sec" id="work" data-spec-label="[SECTION // WORKS]">
+    <section class="sec" id="work">
       <div class="wrap">
         <!-- Editorial Section Header from Screenshot -->
         <div class="works-editorial-header rv" style="--d:80ms">
@@ -368,8 +362,7 @@
 
             <!-- Item 01: Nexus AI -->
             <article class="case-study-row rv active" data-study="01" data-title="NEXUS AI" data-tag="ENTERPRISE UX"
-              data-sub="CONTROL TOWER" data-color="#D4FF00" data-orb-class="orb-nexus" data-link="nexus.html"
-              data-spec-label="[CASE // 01]">
+              data-sub="CONTROL TOWER" data-color="#D4FF00" data-orb-class="orb-nexus" data-link="nexus.html">
               <div class="csr-meta-top">
                 <span class="csr-idx">01</span>
                 <span class="csr-date">SEP 2025 — ONGOING</span>
@@ -394,7 +387,7 @@
             <!-- Item 02: Career Plan B -->
             <article class="case-study-row rv" data-study="02" data-title="CAREER PLAN B" data-tag="WEB / EDTECH"
               data-sub="WEBSITE REDESIGN" data-color="#FF451A" data-orb-class="orb-cpb"
-              data-link="https://github.com/AMANKUMAR7562" data-spec-label="[CASE // 02]">
+              data-link="https://github.com/AMANKUMAR7562">
               <div class="csr-meta-top">
                 <span class="csr-idx">02</span>
                 <span class="csr-date">JUN 2025 — AUG 2025</span>
@@ -421,7 +414,7 @@
             <!-- Item 03: Hushh Wallet -->
             <article class="case-study-row rv" data-study="03" data-title="HUSHH WALLET" data-tag="MOBILE / PRODUCT"
               data-sub="DIGITAL WALLET" data-color="#6366F1" data-orb-class="orb-hushh"
-              data-link="https://github.com/AMANKUMAR7562" data-spec-label="[CASE // 03]">
+              data-link="https://github.com/AMANKUMAR7562">
               <div class="csr-meta-top">
                 <span class="csr-idx">03</span>
                 <span class="csr-date">JAN 2025 — MAR 2025</span>
@@ -448,7 +441,7 @@
             <!-- Item 04: E-Commerce App Redesign -->
             <article class="case-study-row rv" data-study="04" data-title="APPAREL REDESIGN"
               data-tag="MOBILE / E-COMMERCE" data-sub="APP REDESIGN" data-color="#F59E0B" data-orb-class="orb-ecom-app"
-              data-link="https://github.com/AMANKUMAR7562" data-spec-label="[CASE // 04]">
+              data-link="https://github.com/AMANKUMAR7562">
               <div class="csr-meta-top">
                 <span class="csr-idx">04</span>
                 <span class="csr-date">OCT 2025 — DEC 2025</span>
@@ -475,7 +468,7 @@
             <!-- Item 05: E-Commerce Website -->
             <article class="case-study-row rv" data-study="05" data-title="STOREFRONT UI" data-tag="WEB / FRONTEND"
               data-sub="UI + DEVELOPMENT" data-color="#00E5FF" data-orb-class="orb-ecom-web"
-              data-link="https://github.com/AMANKUMAR7562" data-spec-label="[CASE // 05]">
+              data-link="https://github.com/AMANKUMAR7562">
               <div class="csr-meta-top">
                 <span class="csr-idx">05</span>
                 <span class="csr-date">MAY 2025 — JUL 2025</span>
@@ -526,7 +519,7 @@
     </section>
 
     <!-- Capabilities / Multidisciplinary Toolkit -->
-    <section class="sec" id="skills" data-spec-label="[SECTION // CAPABILITIES]">
+    <section class="sec" id="skills">
       <div class="wrap">
         <div class="slabel rv">04 — Capabilities</div>
         <h2 class="stitle rv" style="--d:80ms">The multidisciplinary <em>toolkit</em>.</h2>
@@ -534,7 +527,7 @@
         <div class="toolkit-bento">
 
           <!-- 01. UI/UX & Product Design -->
-          <div class="toolkit-card rv" style="--d:100ms" data-spec-label="[BENTO // 01]">
+          <div class="toolkit-card rv" style="--d:100ms">
             <div>
               <div class="tk-top">
                 <span class="tk-idx">01</span>
@@ -556,7 +549,7 @@
           </div>
 
           <!-- 02. Visual & Brand Systems (with Interactive Token Swatches) -->
-          <div class="toolkit-card rv" style="--d:150ms" data-spec-label="[BENTO // 02]">
+          <div class="toolkit-card rv" style="--d:150ms">
             <div>
               <div class="tk-top">
                 <span class="tk-idx">02</span>
@@ -598,7 +591,7 @@
           </div>
 
           <!-- 03. Design Tools & Studio -->
-          <div class="toolkit-card rv" style="--d:200ms" data-spec-label="[BENTO // 03]">
+          <div class="toolkit-card rv" style="--d:200ms">
             <div>
               <div class="tk-top">
                 <span class="tk-idx">03</span>
@@ -619,7 +612,7 @@
           </div>
 
           <!-- 04. Product Strategy & Research -->
-          <div class="toolkit-card rv" style="--d:250ms" data-spec-label="[BENTO // 04]">
+          <div class="toolkit-card rv" style="--d:250ms">
             <div>
               <div class="tk-top">
                 <span class="tk-idx">04</span>
@@ -644,13 +637,13 @@
     </section>
 
     <!-- Experience & Education -->
-    <section class="sec" id="experience" data-spec-label="[SECTION // JOURNEY]">
+    <section class="sec" id="experience">
       <div class="wrap">
         <div class="slabel rv">05 — Experience &amp; Journey</div>
         <h2 class="stitle rv" style="--d:80ms">Where I've <em>levelled up</em>.</h2>
 
         <div style="margin-top:30px">
-          <div class="xp-row rv" data-spec-label="[ROLE // CPB]">
+          <div class="xp-row rv">
             <span class="xp-when">June 2026 — Present</span>
             <div>
               <div class="xp-role">Brand Designer</div>
@@ -670,7 +663,7 @@
             <span class="xp-place">Gurgaon, IN</span>
           </div>
 
-          <div class="xp-row rv" style="--d:70ms" data-spec-label="[ROLE // ZEPTO]">
+          <div class="xp-row rv" style="--d:70ms">
             <span class="xp-when">Jul 2025 — Oct 2025</span>
             <div>
               <div class="xp-role">Delivery Hub Operations</div>
@@ -685,7 +678,7 @@
             <span class="xp-place">Delhi NCR</span>
           </div>
 
-          <div class="xp-row rv" style="--d:140ms" data-spec-label="[ROLE // FREELANCE]">
+          <div class="xp-row rv" style="--d:140ms">
             <span class="xp-when">Mar 2020 — Jul 2024</span>
             <div>
               <div class="xp-role">Freelance Graphic Designer</div>
@@ -708,7 +701,7 @@
 
         <div class="xsub rv">Formal Education</div>
         <div>
-          <div class="xp-row rv" data-spec-label="[EDU // LPU]">
+          <div class="xp-row rv">
             <span class="xp-when">2022 — 2026</span>
             <div>
               <div class="xp-role">B.Tech in Computer Science &amp; Engineering</div>
@@ -737,7 +730,7 @@
         </div>
 
         <!-- Verified Professional Certifications -->
-        <div class="cert-section rv" style="--d:150ms" data-spec-label="[CREDENTIALS]">
+        <div class="cert-section rv" style="--d:150ms">
           <div class="cert-header">
             <div class="slabel">Credentials &amp; Continuous Learning</div>
             <h3>Verified Professional <em>Certifications</em></h3>
@@ -797,7 +790,7 @@
     </section>
 
     <!-- Interactive Contact Section -->
-    <section class="sec contact" id="contact" data-spec-label="[SECTION // CONTACT]">
+    <section class="sec contact" id="contact">
       <div class="wrap contact-wrap">
         <div class="slabel rv">06 — Contact &amp; Inquiry</div>
         <h2 class="c-title rv" style="--d:100ms">

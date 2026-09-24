@@ -102,26 +102,6 @@
     });
   }
 
-  /* ============ SPEC MODE (FIGMA INSPECTION) ============ */
-  function initSpecMode() {
-    const specBtns = $$('.spec-toggle-btn');
-    specBtns.forEach((btn) => {
-      btn.addEventListener('click', function () {
-        document.body.classList.toggle('spec-mode-active');
-        const isActive = document.body.classList.contains('spec-mode-active');
-
-        const toastEl = $('#toast');
-        const toastMsg = $('#toastMsg');
-        if (toastEl && toastMsg) {
-          toastMsg.textContent = isActive ? '✦ FIGMA SPEC MODE: ACTIVE' : '✦ SPEC MODE: OFF';
-          toastEl.classList.add('on');
-          setTimeout(() => toastEl.classList.remove('on'), 2500);
-        }
-      });
-    });
-  }
-  initSpecMode();
-
   /* ============ COLOR SWATCHES CLICK TO COPY ============ */
   function initColorSwatches() {
     $$('.tk-swatch').forEach((swatch) => {

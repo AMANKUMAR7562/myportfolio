@@ -228,27 +228,6 @@ nav.hide {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Spec Mode Button */
-.spec-toggle-btn {
-  font: 600 0.65rem var(--mono);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--mut);
-  border: 1px dashed var(--line-strong);
-  border-radius: 999px;
-  padding: 6px 12px;
-  transition: all 0.25s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.spec-toggle-btn:hover,
-body.spec-mode-active .spec-toggle-btn {
-  border-color: var(--spec-color);
-  color: var(--spec-color);
-  background: var(--spec-bg);
-}
 
 .n-time {
   font: 600 0.70rem var(--mono);
@@ -474,8 +453,7 @@ footer {
 @media (max-width: 768px) {
   .n-time,
   .hud,
-  .hud-cluster,
-  .spec-toggle-btn {
+  .hud-cluster {
     display: none;
   }
   .f-bar {
