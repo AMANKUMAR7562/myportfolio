@@ -10,13 +10,12 @@
   const root = document.documentElement;
   const toastEl = document.getElementById('toast');
   const toastMsg = document.getElementById('toastMsg');
-
   let currentTheme = 'cream';
   let rainbowFlag = 0;
   let themeHue = 16; // International Orange default ~16deg
   let rafId = null;
 
-  // Read saved theme from localStorage
+  // Read saved theme & frozen spectrum hue from localStorage
   try {
     const saved = localStorage.getItem('aman-portfolio-theme');
     if (saved && ['cream', 'obsidian'].includes(saved)) {
@@ -24,6 +23,11 @@
     } else if (saved === 'acid') {
       currentTheme = 'cream';
       localStorage.setItem('aman-portfolio-theme', 'cream');
+    }
+
+    const savedHue = localStorage.getItem('aman-spectrum-hue');
+    if (savedHue !== null && !isNaN(parseFloat(savedHue))) {
+      themeHue = parseFloat(savedHue);
     }
   } catch (e) {}
 
@@ -36,17 +40,25 @@
       } catch (e) {}
     }
 
+    const hasFrozenHue = Boolean(localStorage.getItem('aman-spectrum-hue'));
+
     if (theme === 'cream') {
       root.removeAttribute('data-theme');
-      themeHue = 16;
+      if (!rainbowFlag && !hasFrozenHue) {
+        themeHue = 16;
+      }
     } else if (theme === 'obsidian') {
       root.setAttribute('data-theme', 'obsidian');
-      themeHue = 16;
+      if (!rainbowFlag && !hasFrozenHue) {
+        themeHue = 16;
+      }
     }
 
-    // Reset any inline style overrides from past rainbow mode
-    if (!rainbowFlag) {
+    // Reset inline style overrides only if not running spectrum and no frozen hue is active
+    if (!rainbowFlag && !hasFrozenHue) {
       clearDynamicStyles();
+    } else if (!rainbowFlag && hasFrozenHue) {
+      applyHue(themeHue);
     }
 
     // Update active state in UI buttons
@@ -67,6 +79,7 @@
   // Clear dynamic CSS variables to let stylesheet defaults take over
   function clearDynamicStyles() {
     root.style.removeProperty('--acc');
+    root.style.removeProperty('--acc-hover');
     root.style.removeProperty('--acc-glow');
     root.style.removeProperty('--acc-rgb');
     root.style.removeProperty('--bg');
@@ -75,6 +88,7 @@
     root.style.removeProperty('--bg-card-hover');
     root.style.removeProperty('--ink');
     root.style.removeProperty('--line');
+    root.style.removeProperty('--nav-bg');
   }
 
   // Helper: HSL to RGB String
@@ -90,7 +104,7 @@
     else if (h < 240) { r = 0; g = x; b = c; }
     else if (h < 300) { r = x; g = 0; b = c; }
     else { r = c; g = 0; b = x; }
-    return `${Math.round((r + m) * 255)}, ${Math.round((g + m) * 255)}, ${Math.round((b + m) * 255)}`;
+    return `${Math.round((r + m) * 255)}, ${Math.round((g + m) * 255)}, ${Math.round((g + m) * 255)}`;
   }
 
   // Dynamic Spectrum Mode: cycles ALL colors in harmony
@@ -99,6 +113,7 @@
 
     // Accent colors
     root.style.setProperty('--acc', `hsl(${hInt}, 98%, 52%)`);
+    root.style.setProperty('--acc-hover', `hsl(${hInt}, 98%, 46%)`);
     root.style.setProperty('--acc-glow', `hsla(${hInt}, 98%, 52%, 0.28)`);
     root.style.setProperty('--acc-rgb', hslToRgbString(hInt, 98, 52));
 
@@ -110,6 +125,7 @@
       root.style.setProperty('--bg-card-hover', `hsl(${hInt}, 35%, 100%)`);
       root.style.setProperty('--ink', `hsl(${hInt}, 25%, 10%)`);
       root.style.setProperty('--line', `hsla(${hInt}, 30%, 20%, 0.10)`);
+      root.style.setProperty('--nav-bg', `hsla(${hInt}, 26%, 96%, 0.88)`);
     } else {
       // Rich dark tint palette
       root.style.setProperty('--bg', `hsl(${hInt}, 22%, 5%)`);
@@ -118,6 +134,7 @@
       root.style.setProperty('--bg-card-hover', `hsla(${hInt}, 30%, 14%, 0.90)`);
       root.style.setProperty('--ink', `hsl(${hInt}, 15%, 96%)`);
       root.style.setProperty('--line', `hsla(${hInt}, 50%, 80%, 0.12)`);
+      root.style.setProperty('--nav-bg', `hsla(${hInt}, 22%, 5%, 0.88)`);
     }
   }
 
@@ -131,21 +148,28 @@
   function toggleRainbow() {
     rainbowFlag = rainbowFlag ? 0 : 1;
 
-    const spectrumBtn = document.querySelector('[data-theme-set="spectrum"]');
+    const spectrumBtns = document.querySelectorAll('[data-theme-set="spectrum"]');
 
-    if (toastMsg && toastEl) {
-      if (rainbowFlag) {
-        toastMsg.textContent = '✦ SPECTRUM MODE — ON';
-        if (spectrumBtn) spectrumBtn.classList.add('active');
-        rainbowLoop();
-      } else {
-        if (rafId) cancelAnimationFrame(rafId);
-        if (spectrumBtn) spectrumBtn.classList.remove('active');
-        clearDynamicStyles();
-        toastMsg.textContent = '✦ THEME RESTORED';
+    if (rainbowFlag) {
+      // Start continuous cycling
+      spectrumBtns.forEach((btn) => btn.classList.add('active'));
+      rainbowLoop();
+      showToast('✦ SPECTRUM MODE — ON');
+    } else {
+      // Stop continuous cycling: freeze at current exact color & keep as active theme
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
       }
-      toastEl.classList.add('on');
-      setTimeout(() => toastEl.classList.remove('on'), 2500);
+      spectrumBtns.forEach((btn) => btn.classList.remove('active'));
+
+      // Lock current color
+      applyHue(themeHue);
+      try {
+        localStorage.setItem('aman-spectrum-hue', themeHue.toFixed(1));
+      } catch (e) {}
+
+      showToast('✦ COLOR LOCKED');
     }
   }
 
@@ -157,7 +181,7 @@
     }
   }
 
-  // Keyboard Easter Egg: type "aman" anywhere
+  // Keyboard Easter Egg: type "aman" anywhere to toggle Spectrum mode
   let typedKeys = '';
   window.addEventListener('keydown', function (e) {
     if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
@@ -177,10 +201,22 @@
         if (target === 'spectrum') {
           toggleRainbow();
         } else {
+          // If rainbow mode was running, stop it
           if (rainbowFlag) {
             rainbowFlag = 0;
-            if (rafId) cancelAnimationFrame(rafId);
+            if (rafId) {
+              cancelAnimationFrame(rafId);
+              rafId = null;
+            }
+            document.querySelectorAll('[data-theme-set="spectrum"]').forEach((b) => b.classList.remove('active'));
           }
+
+          // User manually selected a preset theme: clear frozen hue & restore stylesheet defaults
+          try {
+            localStorage.removeItem('aman-spectrum-hue');
+          } catch (e) {}
+          clearDynamicStyles();
+
           setTheme(target);
           showToast(`✦ MOOD: ${target.toUpperCase()}`);
         }
@@ -188,14 +224,18 @@
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      setTheme(currentTheme, false);
-      initThemeButtons();
-    });
-  } else {
+  function init() {
     setTheme(currentTheme, false);
+    if (localStorage.getItem('aman-spectrum-hue')) {
+      applyHue(themeHue);
+    }
     initThemeButtons();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 
   // Global ThemeManager export
