@@ -42,7 +42,22 @@
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=8.0" />
+  <!-- Cache Invalidation -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('aman-portfolio-theme') === 'acid') {
+          localStorage.setItem('aman-portfolio-theme', 'cream');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/style.css?v=9.0" />
 
   <style>
     .hud,
@@ -909,12 +924,12 @@
   </div>
 
   <!-- Modular Scripts Architecture -->
-  <script src="js/theme.js?v=8.0"></script>
-  <script src="js/cursor.js?v=8.0"></script>
-  <script src="js/world.js?v=20.0"></script>
-  <script src="js/gallery.js?v=8.0"></script>
-  <script src="js/contact.js?v=8.0"></script>
-  <script src="js/app.js?v=8.0"></script>
+  <script src="js/theme.js?v=9.0"></script>
+  <script src="js/cursor.js?v=9.0"></script>
+  <script src="js/world.js?v=21.0"></script>
+  <script src="js/gallery.js?v=9.0"></script>
+  <script src="js/contact.js?v=9.0"></script>
+  <script src="js/app.js?v=9.0"></script>
 </body>
 
 </html>
