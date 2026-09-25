@@ -1,6 +1,6 @@
 /**
  * AMAN KUMAR PORTFOLIO — THEME & MULTI-MOOD CONTROLLER
- * Supports: Studio Cream (default), Obsidian Luxury, Cyber Acid, and Dynamic Spectrum.
+ * Supports: Studio Cream (default), Obsidian Luxury Dark, and Dynamic Spectrum.
  * Coding Language: Modern JavaScript (ES6+)
  */
 
@@ -19,8 +19,11 @@
   // Read saved theme from localStorage
   try {
     const saved = localStorage.getItem('aman-portfolio-theme');
-    if (saved && ['cream', 'obsidian', 'acid'].includes(saved)) {
+    if (saved && ['cream', 'obsidian'].includes(saved)) {
       currentTheme = saved;
+    } else if (saved === 'acid') {
+      currentTheme = 'cream';
+      localStorage.setItem('aman-portfolio-theme', 'cream');
     }
   } catch (e) {}
 
@@ -39,9 +42,6 @@
     } else if (theme === 'obsidian') {
       root.setAttribute('data-theme', 'obsidian');
       themeHue = 16;
-    } else if (theme === 'acid') {
-      root.setAttribute('data-theme', 'acid');
-      themeHue = 71; // Acid lime ~71deg
     }
 
     // Reset any inline style overrides from past rainbow mode

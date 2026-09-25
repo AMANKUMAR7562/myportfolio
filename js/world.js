@@ -1,7 +1,7 @@
 /**
  * js/world.js — Dynamic Ambient Fluid Shader
  * Adapts to Studio Cream (warm luminous watercolor), Obsidian (deep ember fluid),
- * Acid (neon ribbons), and Spectrum (chromatic rainbow).
+ * and Spectrum (chromatic rainbow).
  */
 
 (function () {
@@ -96,7 +96,7 @@
         float vig = smoothstep(0.0, 0.6, 1.0 - length(uv - 0.5)*0.8);
         col = mix(paperBase, col, vig);
       } else {
-        // ——— DARK / OBSIDIAN / ACID: Deep Atmospheric Ink ———
+        // ——— DARK / OBSIDIAN: Deep Atmospheric Ink ———
         vec3 deepBg  = hsl2rgb(u_hue, 0.35, 0.04);
         float midHue = mod(u_hue + 210.0, 360.0);
         vec3 midCol  = hsl2rgb(midHue, 0.60, 0.14);
