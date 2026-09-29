@@ -440,10 +440,20 @@ body.case-study-page::before {
    ============================================================ */
 .cs-split-narrative {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   gap: 24px;
-  align-items: center;
+  align-items: stretch;
   margin-bottom: 48px;
+}
+
+.cs-split-narrative:has(> :last-child:nth-child(2)) {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.cs-split-arrow-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cs-panel-box {
@@ -453,6 +463,9 @@ body.case-study-page::before {
   padding: 36px;
   box-shadow: var(--card-shadow);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .cs-panel-box.problem {
@@ -919,11 +932,13 @@ body.case-study-page::before {
   width: 100%;
 }
 
-.cs-swatch-info {
+.cs-swatch-info,
+.cs-swatch-meta {
   padding: 16px;
 }
 
-.cs-swatch-name {
+.cs-swatch-name,
+.cs-swatch-meta h4 {
   font-size: 14px;
   font-weight: 700;
   color: var(--ink);
@@ -937,6 +952,13 @@ body.case-study-page::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.cs-swatch-meta p {
+  font-size: 12.5px;
+  color: var(--mut);
+  line-height: 1.45;
+  margin-top: 8px;
 }
 
 /* ============================================================
@@ -1310,14 +1332,363 @@ body.case-study-page::before {
   image-rendering: crisp-edges;
 }
 
+/* ============================================================
+   CAREER PLAN B CASE STUDY COMPONENTS
+   ============================================================ */
+/* 02 / METRICS & CHALLENGE GRID */
+.cs-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.cs-metric-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+}
+
+.cs-metric-card:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+}
+
+.cs-metric-number {
+  font-family: var(--disp);
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--acc);
+  line-height: 1;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.cs-metric-title {
+  font-family: var(--disp);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.cs-metric-desc {
+  font-size: 14px;
+  color: var(--mut);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 03 / PERSONAS & USER JOURNEY FLOW */
+.cs-persona-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.cs-persona-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+}
+
+.cs-persona-card:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+}
+
+.cs-persona-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cs-persona-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-family: var(--disp);
+  font-weight: 800;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cs-persona-header h3 {
+  font-family: var(--disp);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 4px 0;
+}
+
+.cs-persona-header span {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--mut);
+  display: block;
+}
+
+.cs-persona-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cs-pblock strong {
+  display: block;
+  font-size: 12px;
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--acc);
+  margin-bottom: 6px;
+}
+
+.cs-pblock p {
+  font-size: 14px;
+  color: var(--mut);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* User Flow Diagram */
+.cs-flow-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  overflow-x: auto;
+}
+
+.cs-flow-node {
+  flex: 1;
+  min-width: 170px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.cs-flow-node:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+}
+
+.cs-flow-node.highlight {
+  background: var(--badge-bg);
+  border-color: var(--acc);
+}
+
+.cs-flow-step {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--acc);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.cs-flow-node h4 {
+  font-family: var(--disp);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.cs-flow-node p {
+  font-size: 12.5px;
+  color: var(--mut);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.cs-flow-arrow {
+  color: var(--mut-light);
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* 04 / TRANSFORMATION MATRIX */
+.cs-matrix-box {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--card-shadow);
+}
+
+.cs-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.cs-matrix-col {
+  background: var(--bg-subtle);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.cs-matrix-col.before {
+  border-top: 3px solid #EF4444;
+}
+
+.cs-matrix-col.after {
+  border-top: 3px solid #2E7D32;
+}
+
+.cs-matrix-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+}
+
+.cs-matrix-col.before .cs-matrix-badge {
+  background: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.cs-matrix-col.after .cs-matrix-badge {
+  background: rgba(46, 125, 50, 0.1);
+  color: #2E7D32;
+  border: 1px solid rgba(46, 125, 50, 0.25);
+}
+
+.cs-matrix-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cs-matrix-col li {
+  font-size: 13.5px;
+  color: var(--mut);
+  line-height: 1.55;
+  position: relative;
+  padding-left: 18px;
+}
+
+.cs-matrix-col li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--acc);
+  font-weight: 700;
+}
+
+.cs-matrix-col li strong {
+  color: var(--ink);
+}
+
+/* 08 / PROCESS STEPS LIST */
+.cs-process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.cs-step-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-fast);
+}
+
+.cs-step-row:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+}
+
+.cs-step-num {
+  font-family: var(--disp);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--acc);
+  line-height: 1;
+  padding: 8px 12px;
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.cs-step-body h3 {
+  font-family: var(--disp);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 6px 0;
+}
+
+.cs-step-body p {
+  font-size: 14px;
+  color: var(--mut);
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
   .cs-split-narrative {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+  }
+  .cs-split-arrow-wrap {
+    transform: rotate(90deg);
+    margin: 12px auto;
   }
   .cs-flow-arrow-circle {
     transform: rotate(90deg);
     margin: 12px auto;
+  }
+  .cs-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  .cs-persona-grid {
+    grid-template-columns: 1fr;
+  }
+  .cs-matrix-grid {
+    grid-template-columns: 1fr;
   }
   .cs-suite-grid-dual {
     grid-template-columns: 1fr;
