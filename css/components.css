@@ -2223,6 +2223,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s var(--ease);
+  cursor: zoom-out;
 }
 
 .lightbox.active {
@@ -2234,6 +2235,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  cursor: default;
 }
 
 .lb-title-wrap h3 {
@@ -2260,6 +2262,7 @@
   justify-content: center;
   transition: all 0.25s ease;
   background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
 }
 
 .lb-close:hover {
@@ -2276,6 +2279,7 @@
   flex: 1;
   margin: 16px 0;
   overflow: hidden;
+  cursor: zoom-out;
 }
 
 .lb-img-wrap {
@@ -2285,6 +2289,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: zoom-out;
 }
 
 .lb-img-wrap img {
@@ -2293,6 +2298,7 @@
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  cursor: default;
 }
 
 .lb-nav-btn {
@@ -2308,6 +2314,7 @@
   justify-content: center;
   transition: all 0.25s ease;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 .lb-nav-btn:hover {

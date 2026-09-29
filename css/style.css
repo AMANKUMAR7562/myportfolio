@@ -5,7 +5,7 @@
  */
 
 @import url('variables.css?v=6.0');
-@import url('base.css?v=6.0');
+@import url('base.css?v=10.0');
 @import url('animations.css?v=6.0');
 @import url('layout.css?v=6.0');
-@import url('components.css?v=6.0');
+@import url('components.css?v=10.0');

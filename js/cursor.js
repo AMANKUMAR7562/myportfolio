@@ -50,19 +50,29 @@
   }
   updateCursor();
 
-  // Attach hover effect listeners
+  // Attach hover effect listeners safely
   function attachCursorHover() {
-    const hoverTargets = document.querySelectorAll('a, button, input, textarea, select, .stat-box, .g-tab, .tk-swatch');
+    const hoverTargets = document.querySelectorAll('a, button, input, textarea, select, .stat-box, .g-tab, .tk-swatch, .lb-close, .lb-nav-btn, .reel-modal-close, .reel-nav-btn');
     hoverTargets.forEach((el) => {
+      if (el.dataset.curHoverAttached) return;
+      el.dataset.curHoverAttached = '1';
       el.addEventListener('mouseenter', () => curRing.classList.add('hover'));
       el.addEventListener('mouseleave', () => curRing.classList.remove('hover'));
     });
 
     const viewTargets = document.querySelectorAll('.gallery-item, .profile-card, .toolkit-card, .cert-card');
     viewTargets.forEach((el) => {
+      if (el.dataset.curViewAttached) return;
+      el.dataset.curViewAttached = '1';
       el.addEventListener('mouseenter', () => curRing.classList.add('view'));
       el.addEventListener('mouseleave', () => curRing.classList.remove('view'));
     });
+  }
+
+  function resetCursorState() {
+    if (curRing) {
+      curRing.classList.remove('view', 'hover');
+    }
   }
 
   if (document.readyState === 'loading') {
@@ -73,6 +83,7 @@
 
   window.Cursor = {
     attach: attachCursorHover,
+    resetState: resetCursorState,
     get mouseX() { return mouseX; },
     get mouseY() { return mouseY; }
   };

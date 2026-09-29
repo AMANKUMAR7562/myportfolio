@@ -209,25 +209,51 @@
     updateLightboxContent();
     lightbox.classList.add('active');
     document.body.classList.add('lock');
+
+    if (window.Cursor) {
+      if (typeof window.Cursor.resetState === 'function') {
+        window.Cursor.resetState();
+      }
+      if (typeof window.Cursor.attach === 'function') {
+        window.Cursor.attach();
+      }
+    }
   }
 
   function closeLightbox() {
     if (!lightbox) return;
     lightbox.classList.remove('active');
     document.body.classList.remove('lock');
+
+    if (window.Cursor && typeof window.Cursor.resetState === 'function') {
+      window.Cursor.resetState();
+    }
   }
 
   if (lbClose) lbClose.addEventListener('click', closeLightbox);
 
+  // Click outside the image to close the lightbox and return to portfolio
+  if (lightbox) {
+    lightbox.addEventListener('click', function (e) {
+      // Do not close if clicking directly on the image itself or navigation buttons
+      if (e.target.closest('#lbImg') || e.target.closest('.lb-nav-btn')) {
+        return;
+      }
+      closeLightbox();
+    });
+  }
+
   if (lbPrev) {
-    lbPrev.addEventListener('click', function () {
+    lbPrev.addEventListener('click', function (e) {
+      e.stopPropagation();
       activeLightboxIdx = (activeLightboxIdx - 1 + galleryItems.length) % galleryItems.length;
       updateLightboxContent();
     });
   }
 
   if (lbNext) {
-    lbNext.addEventListener('click', function () {
+    lbNext.addEventListener('click', function (e) {
+      e.stopPropagation();
       activeLightboxIdx = (activeLightboxIdx + 1) % galleryItems.length;
       updateLightboxContent();
     });

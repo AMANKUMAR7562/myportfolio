@@ -106,8 +106,13 @@
     reelModal.classList.add('active');
     document.body.classList.add('lock');
 
-    if (window.Cursor && typeof window.Cursor.attach === 'function') {
-      window.Cursor.attach();
+    if (window.Cursor) {
+      if (typeof window.Cursor.resetState === 'function') {
+        window.Cursor.resetState();
+      }
+      if (typeof window.Cursor.attach === 'function') {
+        window.Cursor.attach();
+      }
     }
   }
 
@@ -115,6 +120,10 @@
     if (!reelModal) return;
     reelModal.classList.remove('active');
     document.body.classList.remove('lock');
+
+    if (window.Cursor && typeof window.Cursor.resetState === 'function') {
+      window.Cursor.resetState();
+    }
 
     // Clean up iframe to stop audio immediately
     setTimeout(() => {
@@ -153,7 +162,7 @@
     // Modal Background click to close
     if (reelModal) {
       reelModal.addEventListener('click', function (e) {
-        if (e.target === reelModal) {
+        if (!e.target.closest('.reel-modal-container')) {
           closeReelModal();
         }
       });

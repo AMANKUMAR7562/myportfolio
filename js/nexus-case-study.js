@@ -162,20 +162,32 @@
     if (lbTitle) lbTitle.textContent = title || 'Nexus High-Resolution Interface';
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    if (window.Cursor) {
+      if (typeof window.Cursor.resetState === 'function') {
+        window.Cursor.resetState();
+      }
+      if (typeof window.Cursor.attach === 'function') {
+        window.Cursor.attach();
+      }
+    }
   }
 
   function closeLightbox() {
     if (!lightbox) return;
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
+
+    if (window.Cursor && typeof window.Cursor.resetState === 'function') {
+      window.Cursor.resetState();
+    }
   }
 
   if (lbClose) lbClose.addEventListener('click', closeLightbox);
   if (lightbox) {
     lightbox.addEventListener('click', function (e) {
-      if (e.target === lightbox || e.target.classList.contains('cs-lb-body')) {
-        closeLightbox();
-      }
+      if (e.target.closest('#csLbImg')) return;
+      closeLightbox();
     });
   }
 
