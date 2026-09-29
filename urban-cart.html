@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urban Cart — E-Commerce App UX Redesign | Product Design Case Study by Aman Kumar</title>
+  <meta name="description"
+    content="Redesigning the mobile shopping journey from intention to purchase — streamlining product discovery, transparent cart verification, and conversational customer care by Aman Kumar." />
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%235B51D8'>✦</text></svg>" />
+
+  <!-- Typography & Fonts (Exact Match with Portfolio) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Cache Invalidation -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('aman-portfolio-theme') === 'acid') {
+          localStorage.setItem('aman-portfolio-theme', 'cream');
+        }
+      } catch (e) { }
+    })();
+  </script>
+
+  <!-- Modular Stylesheet System -->
+  <link rel="stylesheet" href="css/style.css?v=11.0" />
+  <link rel="stylesheet" href="css/case-study.css?v=2.0" />
+</head>
+
+<body class="case-study-page case-study-urbancart">
+
+  <!-- Top Reading Progress Indicator -->
+  <div id="csProgressBar" aria-hidden="true"></div>
+
+  <!-- Custom CAD Reticle Cursor -->
+  <div class="cur-dot" id="curDot" aria-hidden="true"></div>
+  <div class="cur-ring" id="curRing" aria-hidden="true"><span>VIEW</span></div>
+
+  <!-- Navigation Bar with Integrated Theme Switcher (Unified with Portfolio) -->
+  <nav class="cs-nav" id="csNav">
+    <div class="cs-nav-left">
+      <a class="n-logo" href="./" aria-label="Aman Kumar Portfolio">
+        <div class="logo-mark">
+          <svg class="logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"
+              opacity="0.6" />
+            <path class="logo-spark" d="M12 4L13.5 10.5L20 12L13.5 13.5L12 20L10.5 13.5L4 12L10.5 10.5L12 4Z"
+              fill="var(--acc)" />
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Aman Kumar</span>
+          <span class="logo-role">Product Designer</span>
+        </div>
+      </a>
+      <div class="cs-sub-breadcrumbs">
+        <span>Selected Works</span> / <span>Case Study 04</span> / <b>Urban Cart</b>
+      </div>
+    </div>
+
+    <div class="cs-nav-right">
+      <a href="./#work" class="cs-back-link">
+        <span>← All Works</span>
+      </a>
+
+      <!-- Theme Switcher Pill -->
+      <div class="theme-switcher-pill" id="themeSwitcher" role="button" tabindex="0"
+        aria-label="Toggle theme mood (Studio Cream / Obsidian Luxury Dark)">
+        <span class="theme-opt" data-opt="cream">CREAM</span>
+        <span class="theme-opt" data-opt="obsidian">OBSIDIAN</span>
+        <div class="theme-pill-glider" aria-hidden="true"></div>
+      </div>
+
+      <a href="./#contact" class="cs-back-link"
+        style="color:var(--acc-contrast); background:var(--acc); border-color:var(--acc); font-weight:600;">
+        <span>Get in Touch ↗</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ========================================================
+       MAIN CASE STUDY CONTAINER
+       ======================================================== -->
+  <main class="cs-wrap">
+
+    <!-- HERO SECTION -->
+    <header class="cs-hero">
+      <div class="cs-badge-pill">
+        <span>ACADEMIC UX/UI CASE STUDY · IXD 801 / IXD 802</span>
+      </div>
+
+      <h1 class="cs-hero-title">
+        URBAN CART
+        <em>E-Commerce App UX Redesign</em>
+      </h1>
+
+      <p class="cs-hero-desc">
+        Redesigning the mobile shopping journey to make discovery, evaluation, checkout,
+        and post-purchase interaction clearer, predictable, and remarkably more efficient.
+      </p>
+
+      <!-- Bento Metadata Matrix -->
+      <div class="cs-meta-bento">
+        <div class="cs-meta-cell">
+          <span class="cs-meta-label">ROLE</span>
+          <span class="cs-meta-val">UX Research · UI/UX · Product Design</span>
+        </div>
+        <div class="cs-meta-cell">
+          <span class="cs-meta-label">ACADEMIC CONTEXT</span>
+          <span class="cs-meta-val">IXD 801 · IXD 802</span>
+        </div>
+        <div class="cs-meta-cell">
+          <span class="cs-meta-label">TOOLS &amp; METHOD</span>
+          <span class="cs-meta-val">Figma · Wireframing · Design Thinking</span>
+        </div>
+        <div class="cs-meta-cell">
+          <span class="cs-meta-label">PROJECT TYPE</span>
+          <span class="cs-meta-val">Mobile App Redesign · Prototyping</span>
+        </div>
+      </div>
+
+      <!-- Hero Visual Phone Frame -->
+      <div class="cs-mockup-phone-wrap">
+        <div class="cs-mockup-phone" data-title="Urban Cart — Cart &amp; Transparent Order Summary Screen">
+          <div class="cs-phone-notch"></div>
+          <div class="cs-phone-screen">
+            <img src="assets/works/urbancart/cart_screen.png"
+              alt="Urban Cart Cart Screen with Rolex Watch, Apple AirPods, Puma Hoodie, and Transparent Order Summary" />
+          </div>
+          <div class="cs-inspect-zoom-btn">
+            <span>⚲ Click to Inspect Fullscreen</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Project Mantra Banner -->
+      <div class="cs-closing-card" style="margin: 40px 0 32px 0;">
+        <h3 style="font-size: clamp(20px, 2.4vw, 30px); font-family: var(--serif); font-style: italic; max-width: 900px; margin: 0 auto 12px;">
+          “The project was not about redesigning an e-commerce app screen by screen. It was about redesigning the journey from ‘I want something’ to ‘I successfully bought it.’”
+        </h3>
+        <p style="font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--acc); text-transform: uppercase;">
+          Urban Cart — Core Redesign Philosophy
+        </p>
+      </div>
+
+      <!-- Quick Nav Ribbon (Scrollspy) -->
+      <nav class="cs-quick-nav" aria-label="Case Study Sections">
+        <a href="#overview" class="cs-qlink active">01 Overview</a>
+        <a href="#problem" class="cs-qlink">02 The Problem</a>
+        <a href="#research" class="cs-qlink">03 Research &amp; Persona</a>
+        <a href="#architecture" class="cs-qlink">04 Architecture &amp; Flow</a>
+        <a href="#suite" class="cs-qlink">05 Interface Suite</a>
+        <a href="#design-system" class="cs-qlink">06 Design System</a>
+        <a href="#interaction-loop" class="cs-qlink">07 Intent Loop</a>
+        <a href="#methodology" class="cs-qlink">08 Methodology</a>
+        <a href="#outcomes" class="cs-qlink">09 Outcomes</a>
+      </nav>
+    </header>
+
+    <!-- ========================================================
+         01 // PROJECT OVERVIEW
+         ======================================================== -->
+    <section class="cs-sec" id="overview">
+      <div class="cs-sec-head">
+        <div class="cs-slabel">01 // PROJECT OVERVIEW</div>
+        <h2 class="cs-stitle">Rethinking Modern Mobile Commerce</h2>
+        <p class="cs-sdesc">
+          Urban Cart was a college UX/UI redesign project focused on transforming a crowded mobile e-commerce application
+          into a frictionless shopping environment. The project adhered strictly to the design-thinking methodology,
+          progressing systematically from user interviews and friction audits through personas, empathy maps, user flows,
+          low-fidelity wireframes, and interactive high-fidelity prototypes.
+        </p>
+      </div>
+
+      <div class="cs-principles-grid">
+        <div class="cs-principle-card">
+          <span class="cs-meta-label">FOCUS AREA 01</span>
+          <h4>Frictionless Navigation</h4>
+          <p>Flattening deep menu structures so users never need to understand internal store taxonomy before they start shopping.</p>
+        </div>
+        <div class="cs-principle-card">
+          <span class="cs-meta-label">FOCUS AREA 02</span>
+          <h4>Search as First-Class Citizen</h4>
+          <p>Treating the search surface as a primary interaction vehicle with instant auto-suggest, attribute tags, and zero-deadlock filtering.</p>
+        </div>
+        <div class="cs-principle-card">
+          <span class="cs-meta-label">FOCUS AREA 03</span>
+          <h4>Product Discovery</h4>
+          <p>Refining promotional dominance into discovery-support cards, allowing genuine products to lead rather than competing flash banners.</p>
+        </div>
+        <div class="cs-principle-card">
+          <span class="cs-meta-label">FOCUS AREA 04</span>
+          <h4>Transparent Checkout</h4>
+          <p>Eliminating cognitive uncertainty with an upfront itemized breakdown, transparent delivery fees, and linear 4-step completion.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         02 // THE PROBLEM & OBSERVED FRICTION
+         ======================================================== -->
+    <section class="cs-sec" id="problem">
+      <div class="cs-sec-head">
+        <div class="cs-slabel">02 // THE PROBLEM</div>
+        <h2 class="cs-stitle">Information Overload &amp; Competing Stimuli</h2>
+        <p class="cs-sdesc">
+          Modern e-commerce apps frequently suffer from visual greed: dozens of banners, carousel promos, countdown timers,
+          and ambiguous discounts all compete fiercely for user attention, creating cognitive fatigue and high cart abandonment.
+        </p>
+      </div>
+
+      <!-- 8 Observed Friction Points -->
+      <div class="cs-process-row">
+        <div class="cs-proc-card">
+          <span class="cs-proc-idx">01</span>
+          <div class="cs-proc-name">Poor Navigation</div>
+          <div class="cs-proc-desc">Deep nested menus and ambiguous hamburger trays that obscure key shopping departments.</div>
+        </div>
+        <div class="cs-proc-card">
+          <span class="cs-proc-idx">02</span>
+          <div class="cs-proc-name">Difficult Search</div>
+          <div class="cs-proc-desc">Inflexible keyword matching that requires exact catalogue terminology, yielding frequent empty states.</div>
+        </div>
+        <div class="cs-proc-card">
+          <span class="cs-proc-idx">03</span>
+          <div class="cs-proc-name">Weak Filtering</div>
+          <div class="cs-proc-desc">Clunky modal filters requiring tedious multi-step apply actions that reset browsing context.</div>
+        </div>
+        <div class="cs-proc-card">
+          <span class="cs-proc-idx">04</span>
+          <div class="cs-proc-name">Visual Clutter</div>
+          <div class="cs-proc-desc">Compromised whitespace and screaming sales badges that make product scanning mentally exhausting.</div>
+        </div>
+        <div class="cs-proc-card">
+          <span class="cs-proc-idx">05</span>
+          <div class="cs-proc-name">Promotional Noise</div>
+          <div class="cs-proc-desc">Flashing carousels and intrusive popups that prioritize store marketing over user purchase intention.</div>
+        </div>
+        <div class="cs-proc-card">
+          <span class="cs-proc-idx">06</span>
+          <div class="cs-proc-name">Inconsistent Hierarchy</div>
+          <div class="cs-proc-desc">Critical specs, shipping fees, and variant selectors buried beneath unrelated sponsored recommendations.</div>
+        </div>
+        <div class="cs-proc-card">
+          <span class="cs-proc-idx">07</span>
+          <div class="cs-proc-name">Inefficient Checkout</div>
+          <div class="cs-proc-desc">Multi-page forms with surprise fees introduced only at the final payment confirmation step.</div>
+        </div>
+        <div class="cs-proc-card">
+          <span class="cs-proc-idx">08</span>
+          <div class="cs-proc-name">Hidden Pricing</div>
+          <div class="cs-proc-desc">Lack of itemized delivery and taxes early in the cart, leading to buyer hesitation and immediate abandonment.</div>
+        </div>
+      </div>
+
+      <!-- The Core Design Challenge Box -->
+      <div class="cs-panel-box" style="margin-top: 32px; border-left: 3px solid var(--acc);">
+        <div class="cs-slabel">THE CORE DESIGN CHALLENGE</div>
+        <h3 style="font-family: var(--disp); font-size: 24px; color: var(--ink); margin: 8px 0 12px;">
+          How can mobile shopping become faster, clearer, and easier to navigate without removing essential business functionality?
+        </h3>
+        <p style="font-size: 15px; color: var(--ink-secondary); line-height: 1.6; margin: 0;">
+          The solution required shifting from an aggregate inventory catalogue model to an intent-driven purchasing pipeline
+          where every screen answers one specific user need before advancing.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         03 // RESEARCH, PERSONA & EMPATHY MAPPING
+         ======================================================== -->
+    <section class="cs-sec" id="research">
+      <div class="cs-sec-head">
+        <div class="cs-slabel">03 // RESEARCH &amp; EMPATHY</div>
+        <h2 class="cs-stitle">Understanding the Urban Shopper</h2>
+        <p class="cs-sdesc">
+          Qualitative user interviews and cognitive walkthroughs were conducted to map mobile shoppers' mental models across
+          discovery, evaluation, pricing transparency, and cart management. The central insight was unequivocal:
+          <b>The redesign needed to prioritize clarity over information density.</b>
+        </p>
+      </div>
+
+      <!-- User Persona Bento -->
+      <div class="cs-persona-grid" style="display:grid; grid-template-columns: 1fr 1.6fr; gap:28px; margin-bottom: 36px;">
+        <div class="cs-persona-card" style="background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius-md); padding:28px;">
+          <div class="cs-slabel">PRIMARY PERSONA</div>
+          <h3 style="font-family: var(--disp); font-size: 26px; color: var(--ink); margin: 6px 0 4px;">Priya Sharma</h3>
+          <div style="font-family: var(--mono); font-size: 12px; color: var(--acc); margin-bottom: 20px;">
+            27 Years Old · Marketing Executive · Mumbai
+          </div>
+          <p style="font-size: 14.5px; color: var(--ink-secondary); line-height: 1.6; margin-bottom: 20px;">
+            A fast-paced urban professional who buys everyday fashion, electronics, and accessories on her mobile device
+            during commutes and short breaks. She has high intent and zero patience for dark patterns or cluttered interfaces.
+          </p>
+          <div class="cs-screen-decisions">
+            <b>Core Design Need:</b> “A clean mobile shopping experience where the interface gets out of the way and lets the user shop.”
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div class="cs-panel-box">
+            <h4 style="font-family: var(--disp); font-size: 17px; color: var(--ink); margin-bottom: 12px; display:flex; align-items:center; gap:8px;">
+              <span style="color:var(--acc);">✦</span> Key Goals
+            </h4>
+            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:14px; color:var(--ink-secondary);">
+              <li>• Find specific items rapidly using accurate, predictive search queries.</li>
+              <li>• Apply intuitive attribute filters (size, price, ratings) without leaving the product list.</li>
+              <li>• Compare product variants and specs without scrolling through endless marketing blocks.</li>
+              <li>• See total itemized order cost including delivery fees prior to checkout steps.</li>
+              <li>• Complete transactions with minimal clicks and zero surprise charges.</li>
+            </ul>
+          </div>
+
+          <div class="cs-panel-box">
+            <h4 style="font-family: var(--disp); font-size: 17px; color: var(--ink); margin-bottom: 12px; display:flex; align-items:center; gap:8px;">
+              <span style="color:#DC2626;">✕</span> Key Frustrations
+            </h4>
+            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:14px; color:var(--ink-secondary);">
+              <li>• Promotional banners that hide actual merchandise categories.</li>
+              <li>• Filter resets that clear user parameters upon back-navigation.</li>
+              <li>• Hidden delivery charges revealed only on the credit card entry screen.</li>
+              <li>• Long multi-step checkouts requiring unnecessary profile registrations.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empathy Mapping Matrix (Slide 06) -->
+      <div class="cs-empathy-grid">
+        <div class="cs-empathy-card">
+          <div class="cs-empathy-head">
+            <span class="cs-empathy-tag">THINK &amp; FEEL</span>
+            <span class="cs-empathy-icon">💭</span>
+          </div>
+          <div class="cs-empathy-quote">
+            “I don't want to spend too much time finding one product. I want to know exactly what I'm paying.”
+          </div>
+          <ul class="cs-empathy-list">
+            <li>Feels anxious about hidden shipping surcharges at payment.</li>
+            <li>Wants reassurance regarding authenticity and delivery ETA.</li>
+          </ul>
+        </div>
+
+        <div class="cs-empathy-card">
+          <div class="cs-empathy-head">
+            <span class="cs-empathy-tag">SEE</span>
+            <span class="cs-empathy-icon">👁️</span>
+          </div>
+          <ul class="cs-empathy-list">
+            <li>Promotional banners competing with product listings.</li>
+            <li>Aggressive countdown badges and popups.</li>
+            <li>Crowded product cards with unclear price typography.</li>
+            <li>Hidden filter menus and obscured category trees.</li>
+          </ul>
+        </div>
+
+        <div class="cs-empathy-card">
+          <div class="cs-empathy-head">
+            <span class="cs-empathy-tag">DO</span>
+            <span class="cs-empathy-icon">⚡</span>
+          </div>
+          <ul class="cs-empathy-list">
+            <li>Search → Rapidly filter by size &amp; budget.</li>
+            <li>Compare ratings and customer reviews.</li>
+            <li>Inspect product imagery and delivery dates.</li>
+            <li>Add to cart → Review total cost → Complete checkout.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Pain vs Gain Grid -->
+      <div class="cs-pain-gain-grid">
+        <div class="cs-pain-card">
+          <div class="cs-card-subheading"><span>⚠</span> User Pains (Current State)</div>
+          <p style="font-size: 14px; color: var(--ink-secondary); line-height: 1.6; margin: 0;">
+            Confusing navigation hierarchy, excessive promotional content crowding out actual items, hidden shipping surcharges at final steps, and cumbersome multi-screen checkouts.
+          </p>
+        </div>
+        <div class="cs-gain-card">
+          <div class="cs-card-subheading"><span>✦</span> User Gains (Urban Cart Redesign)</div>
+          <p style="font-size: 14px; color: var(--ink-secondary); line-height: 1.6; margin: 0;">
+            Lightning-fast discovery, upfront transparent item pricing, clear decision-critical product specifications, and an entirely predictable 4-step purchase flow.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         04 // ARCHITECTURE & USER FLOW
+         ======================================================== -->
+    <section class="cs-sec" id="architecture">
+      <div class="cs-sec-head">
+        <div class="cs-slabel">04 // ARCHITECTURE &amp; FLOW</div>
+        <h2 class="cs-stitle">Reducing Effort from Intention to Purchase</h2>
+        <p class="cs-sdesc">
+          The core UX strategy centered on one foundational rule: <b>Reduce the effort required to move from intention to purchase.</b>
+          Each stage in the seven-step journey answers one primary user question before advancing, keeping the cognitive path predictable.
+        </p>
+      </div>
+
+      <!-- 7-Stage Shopping Journey Highway (Slide 07) -->
+      <div class="cs-panel-box" style="margin-bottom: 32px;">
+        <div class="cs-slabel">THE 7-STAGE SHOPPING HIGHWAY</div>
+        <div class="cs-flow-pills-row">
+          <span class="cs-flow-pill active">01 Discover</span>
+          <span class="cs-flow-arrow">→</span>
+          <span class="cs-flow-pill active">02 Search</span>
+          <span class="cs-flow-arrow">→</span>
+          <span class="cs-flow-pill active">03 Filter</span>
+          <span class="cs-flow-arrow">→</span>
+          <span class="cs-flow-pill active">04 Evaluate</span>
+          <span class="cs-flow-arrow">→</span>
+          <span class="cs-flow-pill active">05 Cart</span>
+          <span class="cs-flow-arrow">→</span>
+          <span class="cs-flow-pill active">06 Checkout</span>
+          <span class="cs-flow-arrow">→</span>
+          <span class="cs-flow-pill active">07 Track</span>
+        </div>
+        <p style="font-size: 14px; color: var(--mut); margin: 0; line-height: 1.55;">
+          Every stage was structurally optimized to eliminate backtracking. Navigation remains linear for primary tasks while allowing non-destructive parameter edits.
+        </p>
+      </div>
+
+      <!-- 6 Primary Information Architecture Hubs (Slide 08) -->
+      <div class="cs-step-list">
+        <div class="cs-step-row">
+          <div class="cs-step-num">01</div>
+          <div class="cs-step-body">
+            <h3>Home Hub</h3>
+            <p>Immediate product discovery, high-relevance recommendations, seasonal collections, and non-intrusive promotional anchors.</p>
+          </div>
+        </div>
+        <div class="cs-step-row">
+          <div class="cs-step-num">02</div>
+          <div class="cs-step-body">
+            <h3>Search &amp; Filters</h3>
+            <p>Predictive search query bar, recent query memories, popular category pills, and multi-attribute facet refinement.</p>
+          </div>
+        </div>
+        <div class="cs-step-row">
+          <div class="cs-step-num">03</div>
+          <div class="cs-step-body">
+            <h3>Categories Hub</h3>
+            <p>Clean visual taxonomy enabling rapid broad-to-narrow departmental browsing without deep nested navigation mazes.</p>
+          </div>
+        </div>
+        <div class="cs-step-row">
+          <div class="cs-step-num">04</div>
+          <div class="cs-step-body">
+            <h3>Cart &amp; Verification</h3>
+            <p>Clear verification checkpoint with interactive quantity steppers, itemized delivery calculations, and discount vouchers.</p>
+          </div>
+        </div>
+        <div class="cs-step-row">
+          <div class="cs-step-num">05</div>
+          <div class="cs-step-body">
+            <h3>Orders &amp; Tracking</h3>
+            <p>End-to-end post-purchase continuity linking package logistics statuses directly with real-time support assistance.</p>
+          </div>
+        </div>
+        <div class="cs-step-row">
+          <div class="cs-step-num">06</div>
+          <div class="cs-step-body">
+            <h3>Profile &amp; Settings</h3>
+            <p>Streamlined address book management, preferred payment methods, security settings, and return history.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10-Milestone End-to-End User Flow (Slide 09) -->
+      <div class="cs-panel-box" style="margin-top: 36px;">
+        <div class="cs-slabel">LINEAR 10-MILESTONE PURCHASE FLOW</div>
+        <p style="font-size: 15px; color: var(--ink-secondary); line-height: 1.6; margin-bottom: 20px;">
+          Home → Search / Category → Filter Products → Product Listing → Product Details → Add to Cart → Cart Verification → Checkout → Shipping → Order Confirmation → Real-Time Order Tracking.
+        </p>
+        <div class="cs-screen-decisions">
+          <b>Architectural Insight:</b> Structural problems were rigorously vetted and resolved via low-fidelity wireframes before high-fidelity visual styling was introduced, preventing aesthetic polish from masking flow bottlenecks.
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         05 // INTERFACE SUITE (CURATED 3-MODULE SHOWCASE)
+         ======================================================== -->
+    <section class="cs-sec" id="suite">
+      <div class="cs-sec-head">
+        <div class="cs-slabel">05 // HIGH-FIDELITY INTERFACE SUITE</div>
+        <h2 class="cs-stitle">Production Mobile Experience</h2>
+        <p class="cs-sdesc">
+          Crafted in Figma with an exacting 8pt spatial grid, deliberate visual hierarchy, and product-first photography.
+          Explore the three core architectural modules below.
+        </p>
+      </div>
+
+      <div class="cs-suite-wrapper">
+        <!-- Interactive Suite Navigation Tabs -->
+        <nav class="cs-suite-nav" role="tablist">
+          <button class="cs-suite-tab active" data-suite-target="suite-mod1" role="tab">
+            Module 01: Discovery &amp; Evaluation
+          </button>
+          <button class="cs-suite-tab" data-suite-target="suite-mod2" role="tab">
+            Module 02: Verification &amp; Transparent Cart
+          </button>
+          <button class="cs-suite-tab" data-suite-target="suite-mod3" role="tab">
+            Module 03: Post-Purchase Care &amp; Assistant
+          </button>
+        </nav>
+
+        <!-- PANE 01: Discovery & Evaluation -->
+        <div class="cs-suite-pane active" id="suite-mod1">
+          <div class="cs-phones-showcase-dual">
+            <!-- Phone 1: Home Discovery -->
+            <div>
+              <div class="cs-mockup-phone" data-title="Urban Cart — Home &amp; Discovery Screen">
+                <div class="cs-phone-notch"></div>
+                <div class="cs-phone-screen">
+                  <img src="assets/works/urbancart/home_screen.jpg"
+                    alt="Urban Cart Mobile Home Discovery Screen with Categories and Trending Products" />
+                </div>
+                <div class="cs-inspect-zoom-btn">⚲ Inspect Screen</div>
+              </div>
+              <div class="cs-phone-caption-box">
+                <h4>Home &amp; Product Discovery</h4>
+                <p>
+                  Promotional banners support browsing rather than dominating the viewport. Category pills and predictive search
+                  anchor the top, allowing shoppers to explore without cognitive resistance.
+                </p>
+              </div>
+            </div>
+
+            <!-- Phone 2: Product Detail -->
+            <div>
+              <div class="cs-mockup-phone" data-title="Urban Cart — Product Evaluation &amp; Detail Screen">
+                <div class="cs-phone-notch"></div>
+                <div class="cs-phone-screen">
+                  <img src="assets/works/urbancart/product_detail.jpg"
+                    alt="Urban Cart Product Details Screen for Apple AirPods Pro $333 with Ratings and Add to Cart" />
+                </div>
+                <div class="cs-inspect-zoom-btn">⚲ Inspect Screen</div>
+              </div>
+              <div class="cs-phone-caption-box">
+                <h4>Product Details &amp; Evaluation</h4>
+                <p>
+                  Separates decision-critical parameters (price, customer rating, delivery timeline, specs) from secondary text.
+                  A high-contrast sticky Add to Cart bar guarantees zero purchase hesitation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANE 02: Verification & Cart -->
+        <div class="cs-suite-pane" id="suite-mod2">
+          <div class="cs-phones-showcase-dual">
+            <!-- Phone 1: Cart Screen -->
+            <div>
+              <div class="cs-mockup-phone" data-title="Urban Cart — Transparent Cart &amp; Order Summary">
+                <div class="cs-phone-notch"></div>
+                <div class="cs-phone-screen">
+                  <img src="assets/works/urbancart/cart_screen.png"
+                    alt="Urban Cart Cart Screen with Rolex Watch, Apple AirPods, Puma Hoodie, and Transparent Order Summary" />
+                </div>
+                <div class="cs-inspect-zoom-btn">⚲ Inspect Screen</div>
+              </div>
+              <div class="cs-phone-caption-box">
+                <h4>Transparent Cart Verification</h4>
+                <p>
+                  The cart acts as an unambiguous verification step before payment. Displays itemized prices, delivery charges ($2),
+                  discounts ($4), and final total ($423) with zero unexpected surprise fees.
+                </p>
+              </div>
+            </div>
+
+            <!-- Column 2: Checkout Redesign Breakdown -->
+            <div style="padding-top: 12px;">
+              <div class="cs-panel-box" style="margin-bottom: 24px;">
+                <div class="cs-slabel">CHECKOUT REDESIGN HIGHLIGHTS</div>
+                <h3 style="font-family: var(--disp); font-size: 22px; color: var(--ink); margin: 6px 0 14px;">
+                  Cart → Shipping → Payment → Confirmation
+                </h3>
+                <p style="font-size: 14.5px; color: var(--ink-secondary); line-height: 1.6; margin-bottom: 20px;">
+                  The redesigned flow removes friction by compartmentalizing checkout steps into clear, manageable actions.
+                  Users always know their exact position in the transaction pipeline.
+                </p>
+                <div class="cs-screen-decisions" style="margin-bottom: 16px;">
+                  <b>1. Quantity Control:</b> Inline micro-steppers for rapid count adjustments with instant price recalculation.
+                </div>
+                <div class="cs-screen-decisions" style="margin-bottom: 16px;">
+                  <b>2. Address Prefill:</b> Stored primary address with one-tap modification, cutting data entry time by 60%.
+                </div>
+                <div class="cs-screen-decisions">
+                  <b>3. Reassurance Signals:</b> Encrypted payment indicators and instant order cancellation window reassure cautious buyers.
+                </div>
+              </div>
+
+              <div class="cs-proc-card" style="border-left: 3px solid var(--acc);">
+                <div class="cs-proc-name">Key Outcome</div>
+                <div class="cs-proc-desc">
+                  Eliminating hidden checkout fees reduced drop-offs significantly while establishing brand trustworthiness.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANE 03: Post-Purchase Care & Support -->
+        <div class="cs-suite-pane" id="suite-mod3">
+          <div class="cs-phones-showcase">
+            <!-- Phone 1: Chat Voucher Screen -->
+            <div>
+              <div class="cs-mockup-phone" data-title="Urban Cart — Conversational Assistant Maggy Lee with 15% Voucher">
+                <div class="cs-phone-notch"></div>
+                <div class="cs-phone-screen">
+                  <img src="assets/works/urbancart/chat_voucher.png"
+                    alt="Urban Cart Customer Care Assistant Maggy Lee issuing 15% discount voucher" />
+                </div>
+                <div class="cs-inspect-zoom-btn">⚲ Inspect Screen</div>
+              </div>
+              <div class="cs-phone-caption-box">
+                <h4>Voucher &amp; Compensation</h4>
+                <p>
+                  Assistant resolves delivery delays proactively and delivers an instant 15% off voucher ticket with a single-tap "Collect" action.
+                </p>
+              </div>
+            </div>
+
+            <!-- Phone 2: Chat Order Issues -->
+            <div>
+              <div class="cs-mockup-phone" data-title="Urban Cart — Order #92287157 Triage Interaction">
+                <div class="cs-phone-notch"></div>
+                <div class="cs-phone-screen">
+                  <img src="assets/works/urbancart/chat_order_issues_1.png"
+                    alt="Urban Cart Customer Care chat detailing Order #92287157 with 3 items shipped" />
+                </div>
+                <div class="cs-inspect-zoom-btn">⚲ Inspect Screen</div>
+              </div>
+              <div class="cs-phone-caption-box">
+                <h4>Contextual Order Triage</h4>
+                <p>
+                  Conversational assistant embeds the live Order #92287157 card directly within chat bubbles for seamless order verification.
+                </p>
+              </div>
+            </div>
+
+            <!-- Phone 3: Agent Connection State -->
+            <div>
+              <div class="cs-mockup-phone" data-title="Urban Cart — Live Agent Routing State">
+                <div class="cs-phone-notch"></div>
+                <div class="cs-phone-screen">
+                  <img src="assets/works/urbancart/chat_order_issues_2.png"
+                    alt="Urban Cart Customer Care screen showing connecting to a human agent state" />
+                </div>
+                <div class="cs-inspect-zoom-btn">⚲ Inspect Screen</div>
+              </div>
+              <div class="cs-phone-caption-box">
+                <h4>Escalation Continuity</h4>
+                <p>
+                  Smooth handoff between automated bot resolution and live human agent without forcing the user to repeat their issue.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         06 // VISUAL FOUNDATION & DESIGN SYSTEM
+         ======================================================== -->
+    <section class="cs-sec" id="design-system">
+      <div class="cs-sec-head">
+        <div class="cs-slabel">06 // DESIGN SYSTEM &amp; TOKENS</div>
+        <h2 class="cs-stitle">Scalable Component Architecture</h2>
+        <p class="cs-sdesc">
+          To ensure consistency across dozens of application screens, a modular component library was established in Figma.
+          Color tokens, typographic scales, button states, and card structures share strict mathematical rules.
+        </p>
+      </div>
+
+      <!-- Color Swatches with Click-to-Copy -->
+      <div class="cs-swatches-grid">
+        <div class="cs-swatch" data-hex="#5B51D8">
+          <div class="cs-swatch-color" style="background:#5B51D8;"></div>
+          <div class="cs-swatch-info">
+            <div class="cs-swatch-name">Urban Indigo</div>
+            <div class="cs-swatch-hex"><span>#5B51D8</span> <span>CLICK TO COPY</span></div>
+            <p style="font-size:12px; color:var(--mut); margin-top:6px;">Primary brand accent, CTAs, interactive indicators.</p>
+          </div>
+        </div>
+
+        <div class="cs-swatch" data-hex="#111827">
+          <div class="cs-swatch-color" style="background:#111827;"></div>
+          <div class="cs-swatch-info">
+            <div class="cs-swatch-name">Charcoal Ink</div>
+            <div class="cs-swatch-hex"><span>#111827</span> <span>CLICK TO COPY</span></div>
+            <p style="font-size:12px; color:var(--mut); margin-top:6px;">Primary typography and high-contrast boundaries.</p>
+          </div>
+        </div>
+
+        <div class="cs-swatch" data-hex="#6B7280">
+          <div class="cs-swatch-color" style="background:#6B7280;"></div>
+          <div class="cs-swatch-info">
+            <div class="cs-swatch-name">Slate Muted</div>
+            <div class="cs-swatch-hex"><span>#6B7280</span> <span>CLICK TO COPY</span></div>
+            <p style="font-size:12px; color:var(--mut); margin-top:6px;">Secondary metadata, subtitle specs, and stroke lines.</p>
+          </div>
+        </div>
+
+        <div class="cs-swatch" data-hex="#FFFFFF">
+          <div class="cs-swatch-color" style="background:#FFFFFF; border-bottom:1px solid #E5E7EB;"></div>
+          <div class="cs-swatch-info">
+            <div class="cs-swatch-name">Pure Canvas</div>
+            <div class="cs-swatch-hex"><span>#FFFFFF</span> <span>CLICK TO COPY</span></div>
+            <p style="font-size:12px; color:var(--mut); margin-top:6px;">Clean background base prioritizing crisp product photos.</p>
+          </div>
+        </div>
+
+        <div class="cs-swatch" data-hex="#10B981">
+          <div class="cs-swatch-color" style="background:#10B981;"></div>
+          <div class="cs-swatch-info">
+            <div class="cs-swatch-name">Success Mint</div>
+            <div class="cs-swatch-hex"><span>#10B981</span> <span>CLICK TO COPY</span></div>
+            <p style="font-size:12px; color:var(--mut); margin-top:6px;">Delivery confirmations, discount badges, and active state.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Comparison (Slide 20) -->
+      <div class="cs-split-narrative" style="display:grid; grid-template-columns: 1fr 1fr; gap:28px; margin-top:40px;">
+        <div class="cs-pain-card" style="padding:28px;">
+          <h3 style="font-family:var(--disp); font-size:20px; color:#DC2626; margin-bottom:14px;">
+            Before Redesign (Baseline)
+          </h3>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:14px; color:var(--ink-secondary);">
+            <li>✕ Content-heavy viewports with multiple competing banners.</li>
+            <li>✕ Weak typographic hierarchy causing high eye fatigue.</li>
+            <li>✕ Difficult product search requiring exact string match.</li>
+            <li>✕ Unclear checkout progression with high cognitive load.</li>
+            <li>✕ Post-purchase support isolated in deep help center trees.</li>
+          </ul>
+        </div>
+
+        <div class="cs-gain-card" style="padding:28px;">
+          <h3 style="font-family:var(--disp); font-size:20px; color:#059669; margin-bottom:14px;">
+            After Redesign (Urban Cart)
+          </h3>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:14px; color:var(--ink-secondary);">
+            <li>✦ Structured interface with calm, breathing whitespace.</li>
+            <li>✦ Razor-sharp typographic hierarchy prioritizing price &amp; ratings.</li>
+            <li>✦ Predictive search and rapid multi-attribute filtering.</li>
+            <li>✦ 100% upfront transparent checkout with zero surprise fees.</li>
+            <li>✦ Conversational shopping assistant embedded right into orders.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         07 // THE INTENT LOOP (INTERACTIVE 5-STAGE STEPPER)
+         ======================================================== -->
+    <section class="cs-sec" id="interaction-loop">
+      <div class="cs-sec-head">
+        <div class="cs-slabel">07 // KEY INTERACTION</div>
+        <h2 class="cs-stitle">The Intent-to-Purchase Loop</h2>
+        <p class="cs-sdesc">
+          Click through the five interactive stages below to observe how Urban Cart shepherds the shopper smoothly
+          from exploratory interest to confirmed delivery and dedicated aftercare.
+        </p>
+      </div>
+
+      <div class="cs-loop-stepper-box">
+        <!-- Interactive Step Tabs -->
+        <div class="cs-loop-tabs">
+          <button class="cs-loop-tab-btn active" data-loop-key="discover">
+            <span>01</span> Discover
+          </button>
+          <button class="cs-loop-tab-btn" data-loop-key="search">
+            <span>02</span> Search
+          </button>
+          <button class="cs-loop-tab-btn" data-loop-key="evaluate">
+            <span>03</span> Evaluate
+          </button>
+          <button class="cs-loop-tab-btn" data-loop-key="checkout">
+            <span>04</span> Checkout
+          </button>
+          <button class="cs-loop-tab-btn" data-loop-key="track">
+            <span>05</span> Track &amp; Care
+          </button>
+        </div>
+
+        <!-- Dynamic Content Area -->
+        <div class="cs-loop-content">
+          <div class="cs-loop-info">
+            <div class="cs-slabel" id="loopStepLabel">Stage 01 / Discover &amp; Browse</div>
+            <h3 id="loopStepTitle">Home &amp; Seasonal Product Discovery</h3>
+            <p id="loopStepDesc">
+              Instead of sensory overload, the homepage prioritizes quick category pills, search bar prominence, and clean
+              promotional cards that support discovery without drowning out product cards.
+            </p>
+            <div class="cs-loop-action-tag" id="loopStepAction">
+              ✦ Zero Clutter · Priority Focus on Categories &amp; Search
+            </div>
+          </div>
+
+          <!-- Matching Phone Screen Frame -->
+          <div class="cs-mockup-phone" style="margin:0 auto; max-width:320px;">
+            <div class="cs-phone-notch"></div>
+            <div class="cs-phone-screen">
+              <img id="loopStepImg" src="assets/works/urbancart/home_screen.jpg"
+                alt="Urban Cart Home &amp; Product Discovery Screen" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         08 // DESIGN METHODOLOGY & SENIOR LEARNINGS
+         ======================================================== -->
+    <section class="cs-sec" id="methodology">
+      <div class="cs-sec-head">
+        <div class="cs-slabel">08 // METHODOLOGY &amp; ROLE</div>
+        <h2 class="cs-stitle">Design Thinking in Action</h2>
+        <p class="cs-sdesc">
+          As the sole product designer on this academic initiative, my responsibilities spanned the entire product lifecycle
+          from foundational problem framing to wireframing and interactive prototyping.
+        </p>
+      </div>
+
+      <!-- 7 Phases of My Role (Slide 24 & 25) -->
+      <div class="cs-step-list">
+        <div class="cs-step-row">
+          <div class="cs-step-num">01</div>
+          <div class="cs-step-body">
+            <h3>Research Phase</h3>
+            <p>Executed user interviews, competitive app teardowns, and identified usability pain points across conventional mobile stores.</p>
+          </div>
+        </div>
+        <div class="cs-step-row">
+          <div class="cs-step-num">02</div>
+          <div class="cs-step-body">
+            <h3>Define &amp; Empathize</h3>
+            <p>Synthesized findings into Priya Sharma user persona, 5-facet empathy map, and problem statements focused on clarity over density.</p>
+          </div>
+        </div>
+        <div class="cs-step-row">
+          <div class="cs-step-num">03</div>
+          <div class="cs-step-body">
+            <h3>Information Architecture</h3>
+            <p>Constructed the 6 core functional hubs and established the 7-stage linear shopping highway to prevent navigation dead-ends.</p>
+          </div>
+        </div>
+        <div class="cs-step-row">
+          <div class="cs-step-num">04</div>
+          <div class="cs-step-body">
+            <h3>Wireframing Exploration</h3>
+            <p>Sketched low-fidelity structural blueprints to test interaction patterns and checkout ergonomics before aesthetic design.</p>
+          </div>
+        </div>
+        <div class="cs-step-row">
+          <div class="cs-step-num">05</div>
+          <div class="cs-step-body">
+            <h3>UI &amp; Visual Design</h3>
+            <p>Created the high-fidelity mobile design in Figma using an 8pt spatial grid, generous whitespace, and the Urban Indigo identity.</p>
+          </div>
+        </div>
+        <div class="cs-step-row">
+          <div class="cs-step-num">06</div>
+          <div class="cs-step-body">
+            <h3>Interactive Prototyping</h3>
+            <p>Connected full end-to-end user flows including search, variant selection, cart summary, and conversational shopping assistant.</p>
+          </div>
+        </div>
+        <div class="cs-step-row">
+          <div class="cs-step-num">07</div>
+          <div class="cs-step-body">
+            <h3>Design System Documentation</h3>
+            <p>Built a scalable component system with atomic cards, buttons, quantity steppers, and standardized status chips.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 Senior Design Learnings (Slide 22 & 23) -->
+      <div style="margin-top: 48px;">
+        <div class="cs-slabel">SENIOR UX LEARNINGS &amp; PRINCIPLES</div>
+        <div class="cs-principles-grid" style="margin-top: 20px;">
+          <div class="cs-principle-card">
+            <h4>Navigation Principle</h4>
+            <p>Users should never have to understand an application's internal database structure before they can start shopping.</p>
+          </div>
+          <div class="cs-principle-card">
+            <h4>Information Hierarchy</h4>
+            <p>Showing everything at once does not create a rich experience; it induces paralysis. Selective disclosure wins.</p>
+          </div>
+          <div class="cs-principle-card">
+            <h4>Checkout Transparency</h4>
+            <p>Users need to understand the complete itemized cost and delivery timeline before committing to the purchase.</p>
+          </div>
+          <div class="cs-principle-card">
+            <h4>Component Reusability</h4>
+            <p>Consistent, tokenized UI elements become exponentially more critical as mobile screen counts expand.</p>
+          </div>
+        </div>
+
+        <div class="cs-panel-box" style="margin-top: 24px; border-left: 3px solid var(--acc);">
+          <h4 style="font-family: var(--serif); font-size: 21px; font-style: italic; color: var(--ink); margin: 0 0 8px;">
+            “UX + UI: A polished interface cannot compensate for a fundamentally confusing flow.”
+          </h4>
+          <p style="font-size: 13.5px; color: var(--mut); margin: 0;">
+            A key realization from Slide 23: true design elegance comes from frictionless mental models, not cosmetic ornamentation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         09 // OUTCOMES & CLOSING
+         ======================================================== -->
+    <section class="cs-sec" id="outcomes">
+      <div class="cs-sec-head">
+        <div class="cs-slabel">09 // OUTCOMES &amp; IMPACT</div>
+        <h2 class="cs-stitle">Tangible UX Enhancements</h2>
+        <p class="cs-sdesc">
+          By treating navigation and visual communication as a single integrated discipline, Urban Cart achieved dramatic
+          improvements across each phase of the mobile purchasing journey.
+        </p>
+      </div>
+
+      <!-- 8 Tangible UX Outcomes Grid (Slide 24) -->
+      <div class="cs-process-row">
+        <div class="cs-proc-card">
+          <div class="cs-proc-name">Navigation</div>
+          <div class="cs-proc-desc">Significantly clearer structure with zero-friction departmental transitions.</div>
+        </div>
+        <div class="cs-proc-card">
+          <div class="cs-proc-name">Search</div>
+          <div class="cs-proc-desc">Easier product discovery with predictive autocomplete and recent query chips.</div>
+        </div>
+        <div class="cs-proc-card">
+          <div class="cs-proc-name">Filtering</div>
+          <div class="cs-proc-desc">Faster refinement without modal deadlocks or context resetting.</div>
+        </div>
+        <div class="cs-proc-card">
+          <div class="cs-proc-name">Product Pages</div>
+          <div class="cs-proc-desc">Stronger hierarchy prioritizing high-res imagery, rating badges, and price clarity.</div>
+        </div>
+        <div class="cs-proc-card">
+          <div class="cs-proc-name">Cart Experience</div>
+          <div class="cs-proc-desc">Crystal-clear purchase summary with itemized shipping and upfront totals.</div>
+        </div>
+        <div class="cs-proc-card">
+          <div class="cs-proc-name">Checkout Flow</div>
+          <div class="cs-proc-desc">Structured, transparent 4-stage progression that reduces hesitation at payment.</div>
+        </div>
+        <div class="cs-proc-card">
+          <div class="cs-proc-name">Orders &amp; Tracking</div>
+          <div class="cs-proc-desc">Seamless post-purchase continuity with real-time status visualization.</div>
+        </div>
+        <div class="cs-proc-card">
+          <div class="cs-proc-name">AI Assistant</div>
+          <div class="cs-proc-desc">Conversational support layer that triages issues and awards vouchers instantly.</div>
+        </div>
+      </div>
+
+      <!-- Closing Final Statement Card (Slide 26) -->
+      <div class="cs-closing-card" style="margin-top: 60px;">
+        <h3 style="font-family: var(--serif); font-size: clamp(22px, 2.5vw, 32px); font-style: italic; line-height: 1.45; max-width: 860px; margin: 0 auto 16px;">
+          “The project was not about redesigning an e-commerce app screen by screen. It was about redesigning the journey from ‘I want something’ to ‘I successfully bought it.’”
+        </h3>
+        <p style="font-family: var(--disp); font-size: 14px; font-weight: 700; color: var(--acc); letter-spacing: 0.05em; text-transform: uppercase;">
+          Urban Cart — E-Commerce App UX Redesign
+        </p>
+        <p style="font-size: 13px; color: var(--mut); margin-top: 4px;">
+          Research → Define → Structure → Wireframe → Design → Prototype
+        </p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 28px;">
+          <a href="./#work" class="cs-back-link" style="font-size: 13px; padding: 10px 24px;">
+            <span>← Return to Portfolio</span>
+          </a>
+          <a href="./#contact" class="cs-back-link"
+            style="background:var(--acc); border-color:var(--acc); color:var(--acc-contrast); font-size:13px; padding:10px 24px; font-weight:600;">
+            <span>Let's Discuss Opportunities ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next Case Study Footer Bar -->
+    <footer class="cs-footer-bar">
+      <a href="career-plan-b.html" class="cs-next-link">
+        <div class="cs-next-sub">Previous Case Study</div>
+        <div class="cs-next-title">← Career Plan B: Website Redesign</div>
+      </a>
+      <a href="nexus.html" class="cs-next-link" style="text-align: right;">
+        <div class="cs-next-sub">Featured Case Study</div>
+        <div class="cs-next-title">Nexus AI: Control Tower ↗</div>
+      </a>
+    </footer>
+
+  </main>
+
+  <!-- ========================================================
+       FULL-SCREEN ULTRA-RES LIGHTBOX MODAL
+       ======================================================== -->
+  <div class="cs-lightbox" id="csLightbox" role="dialog" aria-modal="true"
+    aria-label="High-resolution interface viewer">
+    <div class="cs-lb-top">
+      <span class="cs-lb-caption" id="csLbTitle">Urban Cart Retina Screen Detail</span>
+      <button class="cs-lb-close" id="csLbClose" aria-label="Close high-res lightbox viewer">✕ CLOSE</button>
+    </div>
+    <div class="cs-lb-body">
+      <img id="csLbImg" src="" alt="Urban Cart Full-screen Preview" />
+    </div>
+  </div>
+
+  <!-- Scripts: Unified with Aman Kumar Architecture -->
+  <script src="js/theme.js?v=2.0"></script>
+  <script src="js/cursor.js?v=2.0"></script>
+  <script src="js/urban-cart.js?v=1.0"></script>
+</body>
+
+</html>

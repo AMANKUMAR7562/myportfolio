@@ -1715,3 +1715,308 @@ body.case-study-page::before {
     padding: 24px;
   }
 }
+
+/* ============================================================
+   URBAN CART THEME INTEGRATION
+   Signature Royal Indigo Palette (#5B51D8) & Mobile Hardware Shells
+   ============================================================ */
+body.case-study-urbancart {
+  --acc: #5B51D8;
+  --acc-hover: #483EC8;
+  --acc-glow: rgba(91, 81, 216, 0.28);
+  --acc-rgb: 91, 81, 216;
+  --acc-contrast: #FFFFFF;
+}
+
+[data-theme="obsidian"] body.case-study-urbancart {
+  --acc: #7C73FF;
+  --acc-hover: #938CFF;
+  --acc-glow: rgba(124, 115, 255, 0.35);
+  --acc-rgb: 124, 115, 255;
+  --acc-contrast: #FFFFFF;
+}
+
+/* Mobile Hardware Frame for Urban Cart */
+.cs-mockup-phone-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.cs-mockup-phone {
+  width: 100%;
+  max-width: 360px;
+  background: #111215;
+  border: 4px solid #2B2C33;
+  border-radius: 46px;
+  padding: 12px;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.35), 0 0 50px -10px var(--acc-glow);
+  position: relative;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  cursor: pointer;
+}
+
+.cs-mockup-phone:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.45), 0 0 70px -5px var(--acc-glow);
+}
+
+.cs-phone-notch {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 22px;
+  background: #000000;
+  border-radius: 20px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs-phone-notch::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1a1a24;
+  margin-left: auto;
+  margin-right: 12px;
+}
+
+.cs-phone-screen {
+  border-radius: 36px;
+  overflow: hidden;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.cs-phone-screen img {
+  width: 100%;
+  height: auto;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* 3-Phone Showcase Grid */
+.cs-phones-showcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+  margin: 32px 0;
+}
+
+/* 2-Phone Showcase Grid */
+.cs-phones-showcase-dual {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  align-items: start;
+  margin: 32px 0;
+}
+
+.cs-phone-caption-box {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-top: 16px;
+  box-shadow: var(--card-shadow);
+}
+
+.cs-phone-caption-box h4 {
+  font-family: var(--disp);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.cs-phone-caption-box p {
+  font-size: 13.5px;
+  color: var(--mut);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Empathy Mapping Grid */
+.cs-empathy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 32px 0;
+}
+
+.cs-empathy-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cs-empathy-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+}
+
+.cs-empathy-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--acc);
+  font-weight: 700;
+}
+
+.cs-empathy-icon {
+  font-size: 16px;
+  color: var(--mut);
+}
+
+.cs-empathy-quote {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.45;
+  color: var(--ink);
+  font-style: italic;
+}
+
+.cs-empathy-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cs-empathy-list li {
+  font-size: 14px;
+  color: var(--ink-secondary);
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.cs-empathy-list li::before {
+  content: '✦';
+  color: var(--acc);
+  font-size: 11px;
+  line-height: 1.8;
+  flex-shrink: 0;
+}
+
+.cs-pain-gain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.cs-pain-card {
+  background: rgba(239, 68, 68, 0.05);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--radius-md);
+  padding: 22px 26px;
+}
+
+.cs-gain-card {
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-md);
+  padding: 22px 26px;
+}
+
+.cs-card-subheading {
+  font-family: var(--disp);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cs-pain-card .cs-card-subheading {
+  color: #DC2626;
+}
+
+.cs-gain-card .cs-card-subheading {
+  color: #059669;
+}
+
+/* User Flow Roadmap Pills */
+.cs-flow-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 24px 0;
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.cs-flow-pill {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 8px 16px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.cs-flow-pill.active {
+  background: var(--acc);
+  color: var(--acc-contrast);
+  border-color: var(--acc);
+  box-shadow: 0 2px 10px var(--acc-glow);
+}
+
+.cs-flow-arrow {
+  color: var(--mut-light);
+  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .cs-phones-showcase {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cs-phones-showcase-dual {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .cs-empathy-grid {
+    grid-template-columns: 1fr;
+  }
+  .cs-pain-gain-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .cs-phones-showcase {
+    grid-template-columns: 1fr;
+  }
+}

@@ -723,6 +723,10 @@
   background: radial-gradient(circle, #FBBF24 0%, #D97706 40%, transparent 70%);
 }
 
+.wp-orb.orb-urbancart {
+  background: radial-gradient(circle, #7C73FF 0%, #5B51D8 45%, transparent 70%);
+}
+
 .wp-orb.orb-ecom-web {
   background: radial-gradient(circle, #22D3EE 0%, #0284C7 40%, transparent 70%);
 }
