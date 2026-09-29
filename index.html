@@ -512,28 +512,64 @@
         <div class="works-subhead rv" id="gallery" style="margin-top:64px;">
           <div>
             <h3>Graphic Design Archive</h3>
-            <p class="g-sub" style="margin:6px 0 0 0;">Curated visual identities, YouTube architecture &amp; high-CTR
-              assets.</p>
+            <p class="g-sub" style="margin:6px 0 0 0;">Curated visual identities, YouTube architecture, esports assets &amp; photo manipulation.</p>
           </div>
-          <span>Curated Vault (12)</span>
+          <span>Curated Vault (16)</span>
         </div>
 
         <!-- Gallery Filter Tabs -->
         <div class="gallery-filter rv" style="--d:120ms">
-          <button class="g-tab active" data-filter="all">All Designs (12)</button>
+          <button class="g-tab active" data-filter="all">All Designs (16)</button>
           <button class="g-tab" data-filter="banners">Banners</button>
           <button class="g-tab" data-filter="thumbnails">Thumbnails</button>
           <button class="g-tab" data-filter="headers">Headers</button>
+          <button class="g-tab" data-filter="manipulation">Photo Manipulation <span class="g-tab-badge">1-of-1</span></button>
         </div>
 
         <!-- Gallery Grid (Rendered dynamically via js/gallery.js) -->
         <div class="gallery-grid" id="galleryGrid"></div>
 
+        <!-- 1-of-1 Photo Manipulation Spotlight (Standalone Exclusive Feature) -->
+        <div class="manipulation-spotlight-wrap rv" style="--d:150ms">
+          <div class="manipulation-spotlight">
+            <div class="spotlight-left">
+              <div class="spotlight-badge">
+                <span class="spotlight-spark">✦</span>
+                <span>1-OF-1 SPECIAL EDIT · PHOTO MANIPULATION</span>
+              </div>
+              <h4 class="spotlight-title">Travis Scott — UTOPIA</h4>
+              <p class="spotlight-desc">
+                A conceptual surreal photo manipulation combining metallic stone bust texturing, a luminous 3D typography orbital halo, and dark atmospheric grading. Handcrafted as a standalone 1-of-1 album art composition.
+              </p>
+              <div class="spotlight-tags">
+                <span class="sp-tag">Digital Compositing</span>
+                <span class="sp-tag">Texture Mapping</span>
+                <span class="sp-tag">3D Typography Halo</span>
+                <span class="sp-tag">Photoshop</span>
+              </div>
+              <button class="spotlight-view-btn" id="openTravisModal" aria-label="View Travis Scott Utopia full-resolution artwork">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M10 14L21 3M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/></svg>
+                <span>View Full-Res Artwork</span>
+              </button>
+            </div>
+            <div class="spotlight-right">
+              <div class="spotlight-artwork-frame" id="travisArtworkTrigger" role="button" aria-label="Enlarge Travis Scott Utopia artwork">
+                <img src="assets/works/travisscottutopia.jpg" alt="Travis Scott Utopia Photo Manipulation 1-of-1 Artwork" loading="lazy" />
+                <div class="spotlight-overlay">
+                  <span>✦ 1-OF-1 EDIT</span>
+                  <span>CLICK TO ENLARGE ↗</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Lower Part 2: Video Editing & Motion Showcase -->
         <div class="works-subhead rv" id="video-editing" style="margin-top:72px;">
           <div>
             <h3>Video Editing &amp; Motion</h3>
-            <p class="g-sub" style="margin:6px 0 0 0;">Short-form reels, high-retention pacing, kinetic captions &amp; sound design for Career Plan B.</p>
+            <p class="g-sub" style="margin:6px 0 0 0;">Short-form reels, high-retention pacing, kinetic captions &amp;
+              sound design for Career Plan B.</p>
           </div>
           <span>Social Reels (05)</span>
         </div>
@@ -554,10 +590,13 @@
             </div>
 
             <div class="video-thumb-wrap" data-reel-idx="0">
-              <img src="assets/works/video/reel-1.jpg" alt="NEET UG Round 3 Seat Matrix reel thumbnail" loading="lazy" />
+              <img src="assets/works/video/reel-1.jpg" alt="NEET UG Round 3 Seat Matrix reel thumbnail"
+                loading="lazy" />
               <div class="video-overlay">
                 <button class="video-play-btn" aria-label="Play NEET UG Round 3 reel preview">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                 </button>
                 <span class="video-duration">PREVIEW REEL</span>
               </div>
@@ -566,21 +605,25 @@
             <div class="video-card-body">
               <h4 class="video-card-title">NEET UG Round 3 Seat Matrix</h4>
               <p class="video-card-specs">Edited by me. Cuts, captions, sound. DaVinci Resolve. 2026</p>
-              <p class="video-card-desc">Breaking news edit covering MCC's 183 new MBBS &amp; BDS seats addition with fast-paced cuts, sound fx, and kinetic typography.</p>
+              <p class="video-card-desc">Breaking news edit covering MCC's 183 new MBBS &amp; BDS seats addition with
+                fast-paced cuts, sound fx, and kinetic typography.</p>
               <div class="video-tags">
                 <span class="v-tag">Cuts &amp; Pacing</span>
                 <span class="v-tag">Kinetic Captions</span>
                 <span class="v-tag">Sound Design</span>
               </div>
               <div class="video-card-actions">
-                <a href="https://www.instagram.com/p/DdtKAa7pdlT/" target="_blank" rel="noopener noreferrer" class="video-link-btn" title="Open on Instagram">
+                <a href="https://www.instagram.com/p/DdtKAa7pdlT/" target="_blank" rel="noopener noreferrer"
+                  class="video-link-btn" title="Open on Instagram">
                   <span>Watch on Instagram</span>
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <path d="M7 17L17 7M17 7H7M17 7V17" />
                   </svg>
                 </a>
                 <button class="video-preview-btn" data-reel-idx="0" aria-label="Watch reel on page">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                   <span>Watch on Page</span>
                 </button>
               </div>
@@ -601,10 +644,13 @@
             </div>
 
             <div class="video-thumb-wrap" data-reel-idx="1">
-              <img src="assets/works/video/reel-2.jpg" alt="NATS Apprenticeship Portal Guide reel thumbnail" loading="lazy" />
+              <img src="assets/works/video/reel-2.jpg" alt="NATS Apprenticeship Portal Guide reel thumbnail"
+                loading="lazy" />
               <div class="video-overlay">
                 <button class="video-play-btn" aria-label="Play NATS Apprenticeship reel preview">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                 </button>
                 <span class="video-duration">PREVIEW REEL</span>
               </div>
@@ -613,21 +659,25 @@
             <div class="video-card-body">
               <h4 class="video-card-title">NATS Apprenticeship Portal Guide</h4>
               <p class="video-card-specs">Edited by me. Screen motion, text tracking, audio. DaVinci Resolve. 2026</p>
-              <p class="video-card-desc">Step-by-step application walkthrough for freshers and students. Clean visual pointers, zoom transitions &amp; synced voiceover.</p>
+              <p class="video-card-desc">Step-by-step application walkthrough for freshers and students. Clean visual
+                pointers, zoom transitions &amp; synced voiceover.</p>
               <div class="video-tags">
                 <span class="v-tag">Motion Graphics</span>
                 <span class="v-tag">UI Walkthrough</span>
                 <span class="v-tag">Sound Design</span>
               </div>
               <div class="video-card-actions">
-                <a href="https://www.instagram.com/p/DdoSikrvorj/" target="_blank" rel="noopener noreferrer" class="video-link-btn" title="Open on Instagram">
+                <a href="https://www.instagram.com/p/DdoSikrvorj/" target="_blank" rel="noopener noreferrer"
+                  class="video-link-btn" title="Open on Instagram">
                   <span>Watch on Instagram</span>
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <path d="M7 17L17 7M17 7H7M17 7V17" />
                   </svg>
                 </a>
                 <button class="video-preview-btn" data-reel-idx="1" aria-label="Watch reel on page">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                   <span>Watch on Page</span>
                 </button>
               </div>
@@ -651,7 +701,9 @@
               <img src="assets/works/video/reel-3.jpg" alt="NTA Exam Calendar 2026-27 reel thumbnail" loading="lazy" />
               <div class="video-overlay">
                 <button class="video-play-btn" aria-label="Play NTA Exam Calendar reel preview">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                 </button>
                 <span class="video-duration">PREVIEW REEL</span>
               </div>
@@ -660,21 +712,25 @@
             <div class="video-card-body">
               <h4 class="video-card-title">NTA Exam Calendar 2026–27</h4>
               <p class="video-card-specs">Edited by me. Pacing, kinetic typography, SFX. DaVinci Resolve. 2026</p>
-              <p class="video-card-desc">Fast-moving schedule alert for JEE Main, UGC-NET, CMAT &amp; CUET PG. High-energy countdowns and animated date cards.</p>
+              <p class="video-card-desc">Fast-moving schedule alert for JEE Main, UGC-NET, CMAT &amp; CUET PG.
+                High-energy countdowns and animated date cards.</p>
               <div class="video-tags">
                 <span class="v-tag">Hook &amp; Pacing</span>
                 <span class="v-tag">Kinetic Typography</span>
                 <span class="v-tag">Sound Design</span>
               </div>
               <div class="video-card-actions">
-                <a href="https://www.instagram.com/p/DdlEk6EOLUa/" target="_blank" rel="noopener noreferrer" class="video-link-btn" title="Open on Instagram">
+                <a href="https://www.instagram.com/p/DdlEk6EOLUa/" target="_blank" rel="noopener noreferrer"
+                  class="video-link-btn" title="Open on Instagram">
                   <span>Watch on Instagram</span>
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <path d="M7 17L17 7M17 7H7M17 7V17" />
                   </svg>
                 </a>
                 <button class="video-preview-btn" data-reel-idx="2" aria-label="Watch reel on page">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                   <span>Watch on Page</span>
                 </button>
               </div>
@@ -695,10 +751,13 @@
             </div>
 
             <div class="video-thumb-wrap" data-reel-idx="3">
-              <img src="assets/works/video/reel-4.jpg" alt="UP NEET UG Round 1 Result Alert reel thumbnail" loading="lazy" />
+              <img src="assets/works/video/reel-4.jpg" alt="UP NEET UG Round 1 Result Alert reel thumbnail"
+                loading="lazy" />
               <div class="video-overlay">
                 <button class="video-play-btn" aria-label="Play UP NEET UG Round 1 reel preview">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                 </button>
                 <span class="video-duration">PREVIEW REEL</span>
               </div>
@@ -706,22 +765,27 @@
 
             <div class="video-card-body">
               <h4 class="video-card-title">UP NEET UG Round 1 Result Alert</h4>
-              <p class="video-card-specs">Edited by me. Broadcast lower-thirds, subtitles, sound. DaVinci Resolve. 2026</p>
-              <p class="video-card-desc">Official seat allotment and reporting deadline breakdown. Broadcast lower-thirds, checklist animation &amp; urgent sound design.</p>
+              <p class="video-card-specs">Edited by me. Broadcast lower-thirds, subtitles, sound. DaVinci Resolve. 2026
+              </p>
+              <p class="video-card-desc">Official seat allotment and reporting deadline breakdown. Broadcast
+                lower-thirds, checklist animation &amp; urgent sound design.</p>
               <div class="video-tags">
                 <span class="v-tag">Broadcast Graphics</span>
                 <span class="v-tag">Kinetic Captions</span>
                 <span class="v-tag">Audio Sync</span>
               </div>
               <div class="video-card-actions">
-                <a href="https://www.instagram.com/p/DdENgJlTY_d/" target="_blank" rel="noopener noreferrer" class="video-link-btn" title="Open on Instagram">
+                <a href="https://www.instagram.com/p/DdENgJlTY_d/" target="_blank" rel="noopener noreferrer"
+                  class="video-link-btn" title="Open on Instagram">
                   <span>Watch on Instagram</span>
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <path d="M7 17L17 7M17 7H7M17 7V17" />
                   </svg>
                 </a>
                 <button class="video-preview-btn" data-reel-idx="3" aria-label="Watch reel on page">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                   <span>Watch on Page</span>
                 </button>
               </div>
@@ -742,10 +806,13 @@
             </div>
 
             <div class="video-thumb-wrap" data-reel-idx="4">
-              <img src="assets/works/video/reel-5.jpg" alt="LinkedIn Career Guide for Students reel thumbnail" loading="lazy" />
+              <img src="assets/works/video/reel-5.jpg" alt="LinkedIn Career Guide for Students reel thumbnail"
+                loading="lazy" />
               <div class="video-overlay">
                 <button class="video-play-btn" aria-label="Play LinkedIn Career Guide reel preview">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                 </button>
                 <span class="video-duration">PREVIEW REEL</span>
               </div>
@@ -754,21 +821,25 @@
             <div class="video-card-body">
               <h4 class="video-card-title">LinkedIn Career Guide for Students</h4>
               <p class="video-card-specs">Edited by me. Explainer animation, sound design. DaVinci Resolve. 2026</p>
-              <p class="video-card-desc">Value-driven career explainer on proof of work for teenagers and students. Slick infographic animations, typography &amp; pacing.</p>
+              <p class="video-card-desc">Value-driven career explainer on proof of work for teenagers and students.
+                Slick infographic animations, typography &amp; pacing.</p>
               <div class="video-tags">
                 <span class="v-tag">Explainer Cuts</span>
                 <span class="v-tag">Infographics</span>
                 <span class="v-tag">Sound Design</span>
               </div>
               <div class="video-card-actions">
-                <a href="https://www.instagram.com/p/DdUAgKUvNGm/" target="_blank" rel="noopener noreferrer" class="video-link-btn" title="Open on Instagram">
+                <a href="https://www.instagram.com/p/DdUAgKUvNGm/" target="_blank" rel="noopener noreferrer"
+                  class="video-link-btn" title="Open on Instagram">
                   <span>Watch on Instagram</span>
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <path d="M7 17L17 7M17 7H7M17 7V17" />
                   </svg>
                 </a>
                 <button class="video-preview-btn" data-reel-idx="4" aria-label="Watch reel on page">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                   <span>Watch on Page</span>
                 </button>
               </div>
@@ -783,7 +854,9 @@
             <span>CURATED SELECTION</span>
           </div>
           <p class="vd-text">
-            <strong>Note:</strong> The projects highlighted above represent a curated selection of short-form motion graphics, narrative cuts, and retention edits produced for Career Plan B. Additional commercial reels, campaign edits, and private client archives are available upon request.
+            <strong>Note:</strong> The projects highlighted above represent a curated selection of short-form motion
+            graphics, narrative cuts, and retention edits produced for Career Plan B. Additional commercial reels,
+            campaign edits, and private client archives are not shown due to client confidentiality.
           </p>
         </div>
       </div>
@@ -1157,7 +1230,7 @@
     </div>
 
     <div class="lb-bottom">
-      <span class="lb-counter"><span id="lbCurrent">01</span> / <span id="lbTotal">12</span> · <b>Graphic Design
+      <span class="lb-counter"><span id="lbCurrent">01</span> / <span id="lbTotal">16</span> · <b>Graphic Design
           Archive</b></span>
       <span>Use Arrow Keys (← / →) or Esc to navigate</span>
     </div>

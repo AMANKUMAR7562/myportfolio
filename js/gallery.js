@@ -96,6 +96,35 @@
       title: 'Tutorial Banner',
       desc: 'Clean monochrome anime channel header with pop-culture illustration and sharp vector details.',
       file: 'assets/works/OZOANIMEBANNER.png'
+    },
+    {
+      id: '13',
+      category: 'banners',
+      title: 'Weathering Banner',
+      desc: 'Dynamic anime channel architecture featuring custom typography, atmospheric sky lighting, and vibrant cyan styling.',
+      file: 'assets/works/theeditedguybanner.png'
+    },
+    {
+      id: '14',
+      category: 'banners',
+      title: 'Neon Reality Banner',
+      desc: 'Cyberpunk broadcast identity with toxic acid green aerosol composition, Japanese typography, and dark atmosphere.',
+      file: 'assets/works/zendrorealitybanner.png'
+    },
+    {
+      id: '15',
+      category: 'headers',
+      title: 'Giyu Water Breathing Header',
+      desc: 'High-energy Demon Slayer anime header composition featuring Giyu Tomioka with fluid water effects and 3D lettering.',
+      file: 'assets/works/zendrogiyuheader.png'
+    },
+    {
+      id: '16',
+      category: 'manipulation',
+      title: 'Travis Scott — UTOPIA',
+      desc: '1-of-1 surreal photo manipulation featuring metallic stone sculpture bust texturing, glowing 3D typography orbital halo, and dark grunge atmosphere.',
+      file: 'assets/works/travisscottutopia.jpg',
+      isSpecial: true
     }
   ];
 
@@ -113,14 +142,16 @@
 
     filtered.forEach((item) => {
       const globalIdx = galleryItems.indexOf(item);
+      const isSpecial = item.category === 'manipulation' || item.isSpecial;
       const card = document.createElement('div');
-      card.className = 'gallery-item rv in';
+      card.className = `gallery-item rv in ${isSpecial ? 'special-manipulation' : ''}`;
       card.setAttribute('data-idx', globalIdx);
       card.innerHTML = `
+        ${isSpecial ? '<span class="special-halo-badge">✦ 1-OF-1 EDIT</span>' : ''}
         <img src="${item.file}" alt="${item.title}" loading="lazy" />
         <div class="gallery-item-overlay">
           <h4 class="gallery-item-title">${item.title}</h4>
-          <span class="gallery-item-tag">${item.category.toUpperCase()} ✦ CLICK TO VIEW</span>
+          <span class="gallery-item-tag">${isSpecial ? 'PHOTO MANIPULATION ✦ 1-OF-1' : item.category.toUpperCase() + ' ✦ CLICK TO VIEW'}</span>
         </div>
       `;
 
@@ -218,6 +249,18 @@
     if (e.key === 'ArrowLeft' && lbPrev) lbPrev.click();
     if (e.key === 'ArrowRight' && lbNext) lbNext.click();
   });
+
+  // 1-of-1 Photo Manipulation Spotlight Triggers
+  const openTravisModal = document.getElementById('openTravisModal');
+  const travisArtworkTrigger = document.getElementById('travisArtworkTrigger');
+  const travisIdx = galleryItems.findIndex((it) => it.id === '16');
+
+  if (openTravisModal && travisIdx !== -1) {
+    openTravisModal.addEventListener('click', () => openLightbox(travisIdx));
+  }
+  if (travisArtworkTrigger && travisIdx !== -1) {
+    travisArtworkTrigger.addEventListener('click', () => openLightbox(travisIdx));
+  }
 
   // Initialize Gallery on Load
   renderGallery('all');
