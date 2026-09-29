@@ -37,6 +37,21 @@
       const yStr = String(Math.round(mouseY)).padStart(3, '0');
       hudCoords.textContent = `X: ${xStr}  Y: ${yStr}`;
     }
+
+    // Adaptive contrast: automatically turn circle bright white over dark backdrops, modals & sections
+    if (e.target && curRing) {
+      const isOverDark = e.target.closest(
+        '#lightbox, .lightbox, #reelModal, .reel-modal, #csLightbox, .cs-lightbox, [data-theme="obsidian"], footer'
+      );
+      const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'obsidian' || document.body.getAttribute('data-theme') === 'obsidian';
+      const isModalLocked = document.body.classList.contains('lock');
+
+      if (isOverDark || isDarkTheme || isModalLocked) {
+        curRing.classList.add('cur-light');
+      } else {
+        curRing.classList.remove('cur-light');
+      }
+    }
   }, { passive: true });
 
   let curFrameSkip = 0;
@@ -72,6 +87,13 @@
   function resetCursorState() {
     if (curRing) {
       curRing.classList.remove('view', 'hover');
+      const isModalLocked = document.body.classList.contains('lock');
+      const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'obsidian' || document.body.getAttribute('data-theme') === 'obsidian';
+      if (isModalLocked || isDarkTheme) {
+        curRing.classList.add('cur-light');
+      } else {
+        curRing.classList.remove('cur-light');
+      }
     }
   }
 

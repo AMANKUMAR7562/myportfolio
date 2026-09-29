@@ -238,17 +238,28 @@ main {
   width: 6px;
   height: 6px;
   background: var(--acc);
+  box-shadow: 0 0 8px var(--acc);
   transition: background-color 0.3s ease, transform 0.15s ease;
 }
 
 .cur-ring {
   width: 36px;
   height: 36px;
-  border: 1px solid var(--line-strong);
+  border: 1.5px solid var(--line-crisp);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: width 0.35s var(--ease), height 0.35s var(--ease), background 0.3s, border-color 0.3s, transform 0.1s ease;
+  transition: width 0.35s var(--ease), height 0.35s var(--ease), background 0.3s, border-color 0.25s, box-shadow 0.25s, transform 0.1s ease;
+}
+
+/* High-contrast bright ring on dark backgrounds, modals & lightbox */
+.cur-ring.cur-light,
+body.lock .cur-ring,
+body:has(.lightbox.active) .cur-ring,
+body:has(.reel-modal.active) .cur-ring,
+body[data-theme="obsidian"] .cur-ring {
+  border-color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.45), 0 0 0 1px rgba(0, 0, 0, 0.45);
 }
 
 .cur-ring span {
@@ -262,16 +273,17 @@ main {
 .cur-ring.hover {
   width: 58px;
   height: 58px;
-  border-color: var(--acc);
-  background: var(--acc-glow);
+  border-color: var(--acc) !important;
+  background: var(--acc-glow) !important;
+  box-shadow: 0 0 20px var(--acc-glow) !important;
 }
 
 .cur-ring.view {
   width: 84px;
   height: 84px;
-  background: var(--acc);
-  border-color: var(--acc);
-  box-shadow: 0 0 30px var(--acc-glow);
+  background: var(--acc) !important;
+  border-color: var(--acc) !important;
+  box-shadow: 0 0 30px var(--acc-glow) !important;
 }
 
 .cur-ring.view span {
