@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Plan B — Website Redesign | UI/UX &amp; Product Design Case Study by Aman Kumar</title>
+  <meta name="description"
+    content="A product-led redesign focused on turning Career Plan B from a content-heavy career platform into a clearer, more structured decision-making experience for students and parents." />
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23FF451A'>✦</text></svg>" />
+
+  <!-- Typography & Fonts (Exact Match with Portfolio) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Cache Invalidation -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('aman-portfolio-theme') === 'acid') {
+          localStorage.setItem('aman-portfolio-theme', 'cream');
+        }
+      } catch (e) { }
+    })();
+  </script>
+
+  <!-- Modular Stylesheet System -->
+  <link rel="stylesheet" href="css/style.css?v=11.0" />
+  <link rel="stylesheet" href="css/case-study.css?v=2.0" />
+</head>
+
+<body class="case-study-page">
+
+  <!-- Top Reading Progress Indicator -->
+  <div id="csProgressBar" aria-hidden="true"></div>
+
+  <!-- Custom CAD Reticle Cursor -->
+  <div class="cur-dot" id="curDot" aria-hidden="true"></div>
+  <div class="cur-ring" id="curRing" aria-hidden="true"><span>VIEW</span></div>
+
+  <!-- Navigation Bar with Integrated Theme Switcher (Unified with Portfolio) -->
+  <nav class="cs-nav" id="csNav">
+    <div class="cs-nav-left">
+      <a class="n-logo" href="./" aria-label="Aman Kumar Portfolio">
+        <div class="logo-mark">
+          <svg class="logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"
+              opacity="0.6" />
+            <path class="logo-spark" d="M12 4L13.5 10.5L20 12L13.5 13.5L12 20L10.5 13.5L4 12L10.5 10.5L12 4Z"
+              fill="var(--acc)" />
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">AK</span>
+          <span class="logo-sub">STUDIO ARCHIVE</span>
+        </div>
+      </a>
+
+      <a href="./" class="cs-back-link" title="Return to Selected Works">
+        <span>←</span> <span>All Works</span>
+      </a>
+
+      <div class="cs-sub-breadcrumbs">
+        <span>CASE STUDY // <b>CAREER PLAN B REDESIGN</b></span>
+      </div>
+    </div>
+
+    <!-- Theme Switcher, Live Site Link & Contact -->
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <a href="https://www.careerplanb.co/" target="_blank" rel="noopener noreferrer" class="cs-back-link"
+        title="Visit Live Career Plan B Website" style="gap: 6px;">
+        <span>Live Site</span> <span style="font-size: 10px;">↗</span>
+      </a>
+
+      <div class="theme-switch-pill" role="radiogroup" aria-label="Theme Mood Switcher">
+        <button class="theme-opt-btn active" data-theme-set="cream" aria-label="Studio Cream Theme">☼ Studio</button>
+        <button class="theme-opt-btn" data-theme-set="obsidian" aria-label="Obsidian Dark Theme">☾ Dark</button>
+      </div>
+
+      <a href="./#contact" class="cs-back-link"
+        style="color:var(--acc-contrast); background:var(--acc); border-color:var(--acc); font-weight:600;">
+        <span>Get in Touch ↗</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="cs-wrap">
+
+    <!-- ========================================================
+         HERO SECTION: THE HIGH-IMPACT COMMAND STAGE
+         ======================================================== -->
+    <section class="cs-hero" id="hero">
+      <div class="cs-badge-pill">✦ EDTECH PRODUCT &amp; DESIGN SYSTEM CASE STUDY · 2026</div>
+      <h1 class="cs-hero-title">
+        CAREER PLAN B
+        <em>Website Redesign &amp; Decision Platform</em>
+      </h1>
+      <p class="cs-hero-desc">
+        A product-led redesign focused on turning a content-heavy career platform into a clearer, more structured
+        decision-making experience for students and parents.
+      </p>
+
+      <!-- Bento Metadata Matrix -->
+      <div class="cs-meta-bento">
+        <div class="cs-meta-box">
+          <span class="cs-meta-label">Project Scope</span>
+          <div class="cs-meta-val">Career Plan B Website Redesign</div>
+        </div>
+        <div class="cs-meta-box">
+          <span class="cs-meta-label">Role &amp; Ownership</span>
+          <div class="cs-meta-val">UI/UX &amp; Product Designer</div>
+        </div>
+        <div class="cs-meta-box">
+          <span class="cs-meta-label">Category</span>
+          <div class="cs-meta-val">EdTech · Web Design · Decision Tools</div>
+        </div>
+        <div class="cs-meta-box">
+          <span class="cs-meta-label">Timeline</span>
+          <div class="cs-meta-val">2026</div>
+        </div>
+        <div class="cs-meta-box">
+          <span class="cs-meta-label">Core Tools</span>
+          <div class="cs-meta-val">Figma · FigJam · Stitch · AI Exploration</div>
+        </div>
+        <div class="cs-meta-box">
+          <span class="cs-meta-label">Design Direction</span>
+          <div class="cs-meta-val">Structured, Trustworthy, Product-Led</div>
+        </div>
+      </div>
+
+      <!-- Quick Navigation Ribbon -->
+      <nav class="cs-quick-nav" aria-label="Quick Section Links">
+        <a href="#overview" class="cs-qlink active">01 Overview</a>
+        <a href="#challenge" class="cs-qlink">02 Challenge</a>
+        <a href="#users" class="cs-qlink">03 Users &amp; Audience</a>
+        <a href="#architecture" class="cs-qlink">04 Architecture</a>
+        <a href="#suite" class="cs-qlink">05 Interface Suite</a>
+        <a href="#design-system" class="cs-qlink">06 Design System</a>
+        <a href="#flow" class="cs-qlink">07 Key Interaction</a>
+        <a href="#process" class="cs-qlink">08 Process &amp; Role</a>
+        <a href="#outcomes" class="cs-qlink">09 Outcomes</a>
+      </nav>
+
+      <!-- Hero Masterpiece Mockup: Apple Studio Display Hardware Frame -->
+      <div class="cs-mockup-frame" data-title="Career Plan B — Redesigned Modernized Homepage &amp; Tool Ecosystem">
+        <!-- Floating Live KPI Overlays -->
+        <div class="cs-live-tag cs-tag-left">
+          <span class="cs-tag-lbl">Students &amp; Families Guided</span>
+          <span class="cs-tag-num">50,000+</span>
+        </div>
+        <div class="cs-live-tag cs-tag-right">
+          <span class="cs-tag-lbl">Interactive Decision Engines</span>
+          <span class="cs-tag-num" style="color: #2E7D32;">5 Live Tools</span>
+        </div>
+
+        <div class="cs-frame-chrome">
+          <div class="cs-chrome-dots">
+            <span class="cs-dot red"></span>
+            <span class="cs-dot yellow"></span>
+            <span class="cs-dot green"></span>
+          </div>
+          <div class="cs-chrome-url">
+            <span>🔒 careerplanb.co</span>
+          </div>
+          <div class="cs-chrome-status">
+            <span>● PRODUCTION REDESIGN</span>
+          </div>
+        </div>
+        <div class="cs-frame-viewport">
+          <img src="assets/works/careerplanb/cpb-homepage.png"
+            alt="Career Plan B Redesigned Modern Homepage Interface" loading="eager" />
+          <div class="cs-inspect-zoom-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+            <span>Inspect 2560px Full-Res</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 01: OVERVIEW & STRATEGIC FOUNDATION
+         ======================================================== -->
+    <section class="cs-sec" id="overview">
+      <div class="cs-slabel">01 // Strategic Foundation</div>
+      <h2 class="cs-sec-title">From Information Repository to Decision Platform</h2>
+      <p class="cs-sec-lead">
+        Career Plan B is an established career guidance and education platform in India helping students make informed,
+        high-stakes decisions about careers, colleges, courses, and entrance examinations.
+      </p>
+
+      <!-- Problem vs Solution Narrative -->
+      <div class="cs-split-narrative">
+        <!-- Problem Card -->
+        <div class="cs-panel-box problem">
+          <div class="cs-panel-badge">The Legacy Experience</div>
+          <h3 class="cs-panel-title">Dense, Fragmented &amp; Content-Heavy</h3>
+          <p class="cs-panel-text">
+            Like many information-heavy counseling platforms, the previous iteration accumulated rich data over years
+            but presented it through unstructured article pages and disconnected links. Users had to do the heavy lifting
+            of synthesizing information themselves.
+          </p>
+          <ul class="cs-bullets-list">
+            <li>
+              <span class="cs-bullet-icon">✕</span>
+              <div><strong>Cognitive Overload:</strong> Students encountered assessments, college stats, exams, and
+                counseling resources scattered with no progressive hierarchy.</div>
+            </li>
+            <li>
+              <span class="cs-bullet-icon">✕</span>
+              <div><strong>Unclear User Journeys:</strong> Visitors were presented with text walls rather than guided
+                funnels directing them toward their next meaningful milestone.</div>
+            </li>
+            <li>
+              <span class="cs-bullet-icon">✕</span>
+              <div><strong>Institutional Stiffness:</strong> Dense layouts made critical life decisions feel stressful
+                and bureaucratic rather than empowering and approachable.</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Solution Card -->
+        <div class="cs-panel-box solution">
+          <div class="cs-panel-badge">The Product-Led Response</div>
+          <h3 class="cs-panel-title">Structured, Trustworthy &amp; Action-Oriented</h3>
+          <p class="cs-panel-text">
+            The redesign transformed Career Plan B into a structured digital product. We treated complex admission rules,
+            medical service bonds, and fee structures as interactive tools that give users immediate clarity.
+          </p>
+          <ul class="cs-bullets-list">
+            <li>
+              <span class="cs-bullet-icon">✓</span>
+              <div><strong>Intent-Based Navigation:</strong> Content organized around user intent: Discover → Understand
+                → Explore → Evaluate → Take Action.</div>
+            </li>
+            <li>
+              <span class="cs-bullet-icon">✓</span>
+              <div><strong>Interactive Product Tools:</strong> Dedicated interactive modules (MBBS Bond Explorer, True
+                Cost Calculator, College Predictor) instead of static tables.</div>
+            </li>
+            <li>
+              <span class="cs-bullet-icon">✓</span>
+              <div><strong>Dual-Audience Trust:</strong> Visual architecture engineered to inspire confidence in parents
+                while feeling vibrant and approachable for students.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 02: THE CHALLENGE
+         ======================================================== -->
+    <section class="cs-sec" id="challenge">
+      <div class="cs-slabel">02 // Problem Framing</div>
+      <h2 class="cs-sec-title">The Three Structural Friction Points</h2>
+      <p class="cs-sec-lead">
+        Career decisions are among the most stressful, high-consideration crossroads in a student's life. The redesign
+        addressed three fundamental friction points identified across user interviews and behavioral analytics.
+      </p>
+
+      <div class="cs-metrics-grid">
+        <div class="cs-metric-card">
+          <span class="cs-metric-number">01</span>
+          <span class="cs-metric-title">Too Much Information</span>
+          <p class="cs-metric-desc">
+            Students were bombarded with career assessments, college admission criteria, entrance exam calendars, and
+            counseling brochures across siloed sections, creating paralysis by analysis.
+          </p>
+        </div>
+
+        <div class="cs-metric-card">
+          <span class="cs-metric-number">02</span>
+          <span class="cs-metric-title">Unclear User Journeys</span>
+          <p class="cs-metric-desc">
+            Users needed proactive guidance on what to do next based on their academic score and aspirations, rather than
+            simply reading passive encyclopedia-style content.
+          </p>
+        </div>
+
+        <div class="cs-metric-card">
+          <span class="cs-metric-number">03</span>
+          <span class="cs-metric-title">Trust &amp; Credibility</span>
+          <p class="cs-metric-desc">
+            Because educational decisions involve major financial investments and multi-year commitments, the interface
+            needed to project authoritative credibility without feeling outdated.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 03: UNDERSTANDING THE USERS & AUDIENCE
+         ======================================================== -->
+    <section class="cs-sec" id="users">
+      <div class="cs-slabel">03 // User Research &amp; Synthesis</div>
+      <h2 class="cs-sec-title">Dual-Stakeholder Ecosystem</h2>
+      <p class="cs-sec-lead">
+        Educational platforms must balance two deeply intertwined personas: the ambitious student navigating academic
+        identity, and the pragmatic parent evaluating investment and security.
+      </p>
+
+      <div class="cs-persona-grid">
+        <!-- Persona 1: The Exploring Student -->
+        <div class="cs-persona-card">
+          <div class="cs-persona-header">
+            <div class="cs-persona-avatar" style="background: rgba(46, 125, 50, 0.12); color: #2E7D32;">ST</div>
+            <div>
+              <h3>The Exploring Student</h3>
+              <span>Primary User · High School &amp; Undergraduate Aspirants</span>
+            </div>
+          </div>
+          <div class="cs-persona-body">
+            <div class="cs-pblock">
+              <strong>Primary Needs &amp; Explorations</strong>
+              <p>Career specializations, college admissions odds, entrance exam countdowns, eligibility requirements, and
+                personalized psychometric guidance.</p>
+            </div>
+            <div class="cs-pblock">
+              <strong>Core Frustrations</strong>
+              <p>Overwhelmed by confusing government quota rules, conflicting forum advice, and lack of visual clarity on
+                true educational career pathways.</p>
+            </div>
+            <div class="cs-pblock">
+              <strong>Design Solution</strong>
+              <p>Scannable card clusters, gamified interactive calculators, visual timelines, and frictionless booking for
+                one-on-one professional mentorship.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Persona 2: The Evaluating Parent -->
+        <div class="cs-persona-card">
+          <div class="cs-persona-header">
+            <div class="cs-persona-avatar" style="background: rgba(11, 35, 65, 0.12); color: #0B2341;">PR</div>
+            <div>
+              <h3>The Evaluating Parent</h3>
+              <span>Secondary User · Decision Sponsor &amp; Financial Guarantor</span>
+            </div>
+          </div>
+          <div class="cs-persona-body">
+            <div class="cs-pblock">
+              <strong>Primary Needs &amp; Explorations</strong>
+              <p>Authentic institutional accreditation, true financial commitments beyond sticker tuition, mandatory rural
+                service bond liabilities, and verified ROI.</p>
+            </div>
+            <div class="cs-pblock">
+              <strong>Core Frustrations</strong>
+              <p>Skeptical of opaque commercial counseling agencies, hidden fees in medical degrees, and unclear long-term
+                licensing restrictions.</p>
+            </div>
+            <div class="cs-pblock">
+              <strong>Design Solution</strong>
+              <p>Rigorous financial breakdown engines (True Cost Calculator), clear statutory bond disclosure tools, and
+                prominent trust indicators highlighting 15+ years of verified heritage.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The 5-Stage User Journey Funnel -->
+      <div class="cs-flow-diagram" style="margin-top: 48px;">
+        <div class="cs-flow-node">
+          <span class="cs-flow-step">Stage 01</span>
+          <h4>Discover</h4>
+          <p>Find Career Paths &amp; Explore Specializations</p>
+        </div>
+        <div class="cs-flow-arrow">→</div>
+        <div class="cs-flow-node">
+          <span class="cs-flow-step">Stage 02</span>
+          <h4>Understand</h4>
+          <p>Deconstruct Quotas &amp; Eligibility Criteria</p>
+        </div>
+        <div class="cs-flow-arrow">→</div>
+        <div class="cs-flow-node">
+          <span class="cs-flow-step">Stage 03</span>
+          <h4>Explore</h4>
+          <p>Filter Colleges &amp; Service Bond Realities</p>
+        </div>
+        <div class="cs-flow-arrow">→</div>
+        <div class="cs-flow-node">
+          <span class="cs-flow-step">Stage 04</span>
+          <h4>Evaluate</h4>
+          <p>Calculate True Costs &amp; Seat Probabilities</p>
+        </div>
+        <div class="cs-flow-arrow">→</div>
+        <div class="cs-flow-node highlight">
+          <span class="cs-flow-step">Stage 05</span>
+          <h4>Take Action</h4>
+          <p>Schedule Expert 1-on-1 Mentorship Session</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 04: INFORMATION ARCHITECTURE & REORGANIZATION
+         ======================================================== -->
+    <section class="cs-sec" id="architecture">
+      <div class="cs-slabel">04 // Systematic Architecture</div>
+      <h2 class="cs-sec-title">Reorganizing Around User Intent</h2>
+      <p class="cs-sec-lead">
+        Instead of treating every feature as an isolated page, the redesign reorganized the entire ecosystem into four
+        clear intent pillars, shifting Career Plan B from an information repository into an actionable decision system.
+      </p>
+
+      <div class="cs-principles-grid">
+        <div class="cs-principle-card">
+          <h4>01. Career Discovery</h4>
+          <p><strong>Understand yourself → Explore career paths → Compare options.</strong> Self-assessment engines and
+            guided specialization trees designed to spark clarity.</p>
+        </div>
+        <div class="cs-principle-card">
+          <h4>02. College &amp; Admissions</h4>
+          <p><strong>Discover colleges → Understand admissions → Explore eligibility.</strong> Centralized directory of
+            verified institutions with cutoffs and quota breakdowns.</p>
+        </div>
+        <div class="cs-principle-card">
+          <h4>03. Exams &amp; Opportunities</h4>
+          <p><strong>Find relevant exams → Track dates → Understand processes.</strong> Real-time examination calendar
+            with countdown trackers and syllabus prerequisites.</p>
+        </div>
+        <div class="cs-principle-card">
+          <h4>04. Tools &amp; Calculators</h4>
+          <p><strong>Calculate → Compare → Evaluate.</strong> Interactive decision engines that synthesize dense
+            financial, bond, and merit data into immediate answers.</p>
+        </div>
+      </div>
+
+      <!-- Before vs After Transformation Matrix -->
+      <div class="cs-matrix-box" style="margin-top: 40px;">
+        <h3 style="font-family: var(--disp); font-size: 20px; font-weight: 700; margin-bottom: 20px;">Design Evolution:
+          Before vs. After</h3>
+        <div class="cs-matrix-grid">
+          <div class="cs-matrix-col before">
+            <span class="cs-matrix-badge">Before Redesign</span>
+            <ul>
+              <li><strong>Information-First:</strong> Exhaustive text dumps that required users to read thousands of
+                words to extract answers.</li>
+              <li><strong>Dense Layouts:</strong> Cluttered pages with competing font styles, generic imagery, and no
+                clear entry focal point.</li>
+              <li><strong>Weak Hierarchy:</strong> Tools like the bond calculator were hidden deep within nested menu
+                levels.</li>
+              <li><strong>Content-Led Navigation:</strong> Pages linked arbitrarily without a guided decision pathway.</li>
+              <li><strong>Limited Interaction:</strong> Static HTML tables that failed to engage the digital-native
+                student.</li>
+            </ul>
+          </div>
+
+          <div class="cs-matrix-col after">
+            <span class="cs-matrix-badge">After Redesign</span>
+            <ul>
+              <li><strong>Intent-Driven Navigation:</strong> Direct entry points tailored to what the user wants to
+                achieve today.</li>
+              <li><strong>Clear Visual Hierarchy:</strong> High-impact typography, generous spacing, and modular bento
+                card structures.</li>
+              <li><strong>Product-Led Experience:</strong> Proprietary calculators positioned prominently as core hero
+                products.</li>
+              <li><strong>Stronger Storytelling:</strong> Transparent editorial narratives combined with responsive
+                interactive graphs.</li>
+              <li><strong>Action-Oriented CTAs:</strong> Direct bridges connecting tool insights with certified human
+                counseling.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 05: THE INTERFACE SUITE (SYSTEMATIC DECK)
+         ======================================================== -->
+    <section class="cs-sec" id="suite">
+      <div class="cs-slabel">05 // Interface Suite</div>
+      <h2 class="cs-sec-title">The Complete Product Architecture</h2>
+      <p class="cs-sec-lead">
+        Explore the redesigned system through four curated product modules. Each interface is captured from the live
+        production deployment in full 2560px uncompressed resolution—click any card to inspect in full-screen detail.
+      </p>
+
+      <div class="cs-suite-wrapper">
+        <!-- Module Navigation Tabs -->
+        <div class="cs-suite-nav">
+          <button class="cs-suite-tab active" data-suite-target="suite-mod-1">Module 01: Homepage &amp; Mobile
+            Cockpit</button>
+          <button class="cs-suite-tab" data-suite-target="suite-mod-2">Module 02: Interactive Decision Engines</button>
+          <button class="cs-suite-tab" data-suite-target="suite-mod-3">Module 03: College Predictor &amp;
+            Counselling</button>
+          <button class="cs-suite-tab" data-suite-target="suite-mod-4">Module 04: Information Design Systems</button>
+        </div>
+
+        <!-- Pane 01: Homepage & Mobile Cockpit -->
+        <div class="cs-suite-pane active" id="suite-mod-1">
+          <div class="cs-suite-grid-dual">
+            <!-- Screen 1: Homepage -->
+            <div class="cs-screen-card" data-title="Career Plan B — Modernized Homepage Discovery Interface">
+              <div class="cs-frame-chrome">
+                <div class="cs-chrome-dots"><span class="cs-dot red"></span><span class="cs-dot yellow"></span><span
+                    class="cs-dot green"></span></div>
+                <div class="cs-chrome-url"><span>careerplanb.co</span></div>
+                <div class="cs-chrome-status"><span>HOMEPAGE</span></div>
+              </div>
+              <div class="cs-frame-viewport">
+                <img src="assets/works/careerplanb/cpb-homepage.png" alt="Career Plan B Modern Homepage Interface"
+                  loading="lazy" />
+                <div class="cs-inspect-zoom-btn">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                  </svg>
+                  <span>Zoom 2560px</span>
+                </div>
+              </div>
+              <div class="cs-screen-card-meta">
+                <span class="cs-screen-tag">Layer 01 // Primary Gateway</span>
+                <h3>01. Modernized Homepage Ecosystem</h3>
+                <p>The homepage redesign immediately establishes the five critical answers in seconds: What Career Plan B
+                  does, how it guides families, what tools are available, why they can trust the data, and how to book
+                  mentorship.</p>
+                <div class="cs-screen-decisions">
+                  <strong>Key Design Decision:</strong> Replaced cluttered banner carousels with an intent-driven tool
+                  grid so students can launch calculators directly from the first viewport.
+                </div>
+              </div>
+            </div>
+
+            <!-- Screen 2: Mobile Responsive Viewport -->
+            <div class="cs-screen-card" data-title="Career Plan B — Mobile-First Responsive Experience">
+              <div class="cs-frame-chrome">
+                <div class="cs-chrome-dots"><span class="cs-dot red"></span><span class="cs-dot yellow"></span><span
+                    class="cs-dot green"></span></div>
+                <div class="cs-chrome-url"><span>careerplanb.co (Mobile)</span></div>
+                <div class="cs-chrome-status"><span>MOBILE-FIRST</span></div>
+              </div>
+              <div class="cs-frame-viewport">
+                <img src="assets/works/careerplanb/cpb-mobile.png"
+                  alt="Career Plan B Mobile Responsive Interface" loading="lazy" />
+                <div class="cs-inspect-zoom-btn">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                  </svg>
+                  <span>Zoom 2560px</span>
+                </div>
+              </div>
+              <div class="cs-screen-card-meta">
+                <span class="cs-screen-tag">Layer 02 // Responsive Architecture</span>
+                <h3>02. Touch-Optimized Mobile Experience</h3>
+                <p>Over 72% of students access Career Plan B on smartphones. The mobile viewport features optimized touch
+                  targets, bottom sheet navigation, and compact bento cards that eliminate horizontal scroll fatigue.</p>
+                <div class="cs-screen-decisions">
+                  <strong>Key Design Decision:</strong> Built sticky quick-actions on mobile so high-intent users can book
+                  consultations or compare colleges with a single thumb tap.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pane 02: Interactive Decision Engines -->
+        <div class="cs-suite-pane" id="suite-mod-2">
+          <div class="cs-suite-grid-dual">
+            <!-- Screen 3: Bond Explorer -->
+            <div class="cs-screen-card" data-title="Career Plan B — MBBS Service Bond Explorer">
+              <div class="cs-frame-chrome">
+                <div class="cs-chrome-dots"><span class="cs-dot red"></span><span class="cs-dot yellow"></span><span
+                    class="cs-dot green"></span></div>
+                <div class="cs-chrome-url"><span>careerplanb.co/cpb-mbbs-bond-explorer</span></div>
+                <div class="cs-chrome-status"><span>DECISION ENGINE</span></div>
+              </div>
+              <div class="cs-frame-viewport">
+                <img src="assets/works/careerplanb/cpb-bond-explorer.png"
+                  alt="Career Plan B MBBS Bond Explorer Interface" loading="lazy" />
+                <div class="cs-inspect-zoom-btn">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                  </svg>
+                  <span>Zoom 2560px</span>
+                </div>
+              </div>
+              <div class="cs-screen-card-meta">
+                <span class="cs-screen-tag">Product Tool // Regulatory Intelligence</span>
+                <h3>03. MBBS Bond Explorer</h3>
+                <p>Medical students in India face mandatory rural service bonds ranging from 1 to 5 years with penalty
+                  clauses up to ₹1 Crore. This tool translates dense legal gazettes across 28 states into an interactive
+                  comparison matrix.</p>
+                <div class="cs-screen-decisions">
+                  <strong>Key Design Decision:</strong> Introduced state-by-state filter pills and penalty risk badges,
+                  allowing students to evaluate post-graduation legal commitments before locking admission choices.
+                </div>
+              </div>
+            </div>
+
+            <!-- Screen 4: True Cost Calculator -->
+            <div class="cs-screen-card" data-title="Career Plan B — MBBS True Cost Calculator">
+              <div class="cs-frame-chrome">
+                <div class="cs-chrome-dots"><span class="cs-dot red"></span><span class="cs-dot yellow"></span><span
+                    class="cs-dot green"></span></div>
+                <div class="cs-chrome-url"><span>careerplanb.co/cpb-mbbs-true-cost-calculator</span></div>
+                <div class="cs-chrome-status"><span>CALCULATOR</span></div>
+              </div>
+              <div class="cs-frame-viewport">
+                <img src="assets/works/careerplanb/cpb-true-cost.png"
+                  alt="Career Plan B MBBS True Cost Calculator Interface" loading="lazy" />
+                <div class="cs-inspect-zoom-btn">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                  </svg>
+                  <span>Zoom 2560px</span>
+                </div>
+              </div>
+              <div class="cs-screen-card-meta">
+                <span class="cs-screen-tag">Product Tool // Financial Transparency</span>
+                <h3>04. MBBS True Cost Calculator</h3>
+                <p>Published college tuition frequently conceals mandatory hostel charges, clinical rotation fees,
+                  refundable deposits, and annual inflation increments. This calculator projects the comprehensive 5.5-year
+                  financial investment.</p>
+                <div class="cs-screen-decisions">
+                  <strong>Key Design Decision:</strong> Clear visual breakdown graphs separating fixed tuition from variable
+                  living costs, giving parents transparent financial predictability.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pane 03: College Predictor & Counselling -->
+        <div class="cs-suite-pane" id="suite-mod-3">
+          <div class="cs-suite-grid-dual">
+            <!-- Screen 5: College Predictor -->
+            <div class="cs-screen-card" data-title="Career Plan B — NEET UG &amp; PG College Predictor">
+              <div class="cs-frame-chrome">
+                <div class="cs-chrome-dots"><span class="cs-dot red"></span><span class="cs-dot yellow"></span><span
+                    class="cs-dot green"></span></div>
+                <div class="cs-chrome-url"><span>careerplanb.co/cpb-neet-ug-college-predictor</span></div>
+                <div class="cs-chrome-status"><span>PREDICTOR</span></div>
+              </div>
+              <div class="cs-frame-viewport">
+                <img src="assets/works/careerplanb/cpb-college-predictor.png"
+                  alt="Career Plan B NEET College Predictor Interface" loading="lazy" />
+                <div class="cs-inspect-zoom-btn">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                  </svg>
+                  <span>Zoom 2560px</span>
+                </div>
+              </div>
+              <div class="cs-screen-card-meta">
+                <span class="cs-screen-tag">Decision Engine // Admission Analytics</span>
+                <h3>05. NEET Rank-vs-Quota College Predictor</h3>
+                <p>Synthesizes multi-year counseling cutoff rounds across All-India Quota (AIQ), State Quota, and
+                  institutional reservations, generating probabilistic college matches for students based on their exact
+                  NEET scores.</p>
+                <div class="cs-screen-decisions">
+                  <strong>Key Design Decision:</strong> Results categorized into Dream, Realistic, and Safe tiers,
+                  empowering students to construct strategic, balanced choice-filling lists.
+                </div>
+              </div>
+            </div>
+
+            <!-- Screen 6: Student Counselling -->
+            <div class="cs-screen-card" data-title="Career Plan B — Professional 1-on-1 Career Counselling">
+              <div class="cs-frame-chrome">
+                <div class="cs-chrome-dots"><span class="cs-dot red"></span><span class="cs-dot yellow"></span><span
+                    class="cs-dot green"></span></div>
+                <div class="cs-chrome-url"><span>careerplanb.co/career-counselling-for-students</span></div>
+                <div class="cs-chrome-status"><span>MENTORSHIP</span></div>
+              </div>
+              <div class="cs-frame-viewport">
+                <img src="assets/works/careerplanb/cpb-student-counselling.png"
+                  alt="Career Plan B Student Career Counselling Interface" loading="lazy" />
+                <div class="cs-inspect-zoom-btn">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                  </svg>
+                  <span>Zoom 2560px</span>
+                </div>
+              </div>
+              <div class="cs-screen-card-meta">
+                <span class="cs-screen-tag">Service Funnel // Human Expertise</span>
+                <h3>06. Structured Career Counselling Roadmaps</h3>
+                <p>Bridging automated digital tools with accredited counseling psychologists and admission directors. The
+                  service page presents transparent tier comparisons, session deliverables, and real student outcomes.</p>
+                <div class="cs-screen-decisions">
+                  <strong>Key Design Decision:</strong> Built structured step cards demystifying what happens before,
+                  during, and after a counseling session, removing apprehension for first-time families.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pane 04: Information Design Systems -->
+        <div class="cs-suite-pane" id="suite-mod-4">
+          <div class="cs-suite-grid-dual">
+            <!-- Screen 7: Information Architecture -->
+            <div class="cs-screen-card" data-title="Career Plan B — Information Design &amp; Progressive Disclosure">
+              <div class="cs-frame-chrome">
+                <div class="cs-chrome-dots"><span class="cs-dot red"></span><span class="cs-dot yellow"></span><span
+                    class="cs-dot green"></span></div>
+                <div class="cs-chrome-url"><span>careerplanb.co/design-system/information-design</span></div>
+                <div class="cs-chrome-status"><span>INFO SYSTEM</span></div>
+              </div>
+              <div class="cs-frame-viewport">
+                <img src="assets/works/careerplanb/cpb-homepage.png"
+                  alt="Career Plan B Information Design Architecture" loading="lazy" />
+                <div class="cs-inspect-zoom-btn">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                  </svg>
+                  <span>Zoom 2560px</span>
+                </div>
+              </div>
+              <div class="cs-screen-card-meta">
+                <span class="cs-screen-tag">UX System // Card Architecture</span>
+                <h3>07. Modular Information Grouping</h3>
+                <p>Implemented unified card containers that organize dense facts (eligibility criteria, cutoff trends,
+                  placement statistics, and entrance fees) into scannable visual chunks.</p>
+                <div class="cs-screen-decisions">
+                  <strong>Key Design Decision:</strong> Enforced progressive disclosure so advanced admission statistics
+                  remain readily accessible without overwhelming first-time high school visitors.
+                </div>
+              </div>
+            </div>
+
+            <!-- Screen 8: Visual Hierarchy -->
+            <div class="cs-screen-card" data-title="Career Plan B — Decision-Support Interface Patterns">
+              <div class="cs-frame-chrome">
+                <div class="cs-chrome-dots"><span class="cs-dot red"></span><span class="cs-dot yellow"></span><span
+                    class="cs-dot green"></span></div>
+                <div class="cs-chrome-url"><span>careerplanb.co/design-system/components</span></div>
+                <div class="cs-chrome-status"><span>PATTERNS</span></div>
+              </div>
+              <div class="cs-frame-viewport">
+                <img src="assets/works/careerplanb/cpb-true-cost.png"
+                  alt="Career Plan B Decision Support Components" loading="lazy" />
+                <div class="cs-inspect-zoom-btn">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                  </svg>
+                  <span>Zoom 2560px</span>
+                </div>
+              </div>
+              <div class="cs-screen-card-meta">
+                <span class="cs-screen-tag">UI System // Comparison Modules</span>
+                <h3>08. Dynamic Evaluation Modules</h3>
+                <p>Multi-attribute comparison tables that allow students to compare colleges on key parameters: faculty-student
+                  ratio, bed capacity, annual fees, and historical cutoff trends side-by-side.</p>
+                <div class="cs-screen-decisions">
+                  <strong>Key Design Decision:</strong> Consistent micro-copy and visual data tags that highlight key
+                  differentiators (e.g., "Zero Bond State" vs "Govt Penalty Applicable").
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 06: DESIGN SYSTEM & VISUAL FOUNDATION
+         ======================================================== -->
+    <section class="cs-sec" id="design-system">
+      <div class="cs-slabel">06 // Visual Foundation</div>
+      <h2 class="cs-sec-title">The Career Plan B Design System</h2>
+      <p class="cs-sec-lead">
+        A consistent, human-centered design language established across the redesigned platform: combining academic
+        gravitas with vibrant modern accessibility. Click any swatch below to copy its HEX value.
+      </p>
+
+      <!-- Color Swatches Grid -->
+      <div class="cs-swatches-grid">
+        <!-- Swatch 1: Dark Navy -->
+        <div class="cs-swatch" data-hex="#0B2341" tabindex="0" role="button" aria-label="Copy Dark Navy Hex">
+          <div class="cs-swatch-color" style="background: #0B2341;"></div>
+          <div class="cs-swatch-meta">
+            <h4>Dark Navy</h4>
+            <div class="cs-swatch-hex">
+              <span>#0B2341</span>
+              <span>Click to Copy</span>
+            </div>
+            <p>Authoritative institutional base providing trust, stability, and academic prestige.</p>
+          </div>
+        </div>
+
+        <!-- Swatch 2: Academic Green -->
+        <div class="cs-swatch" data-hex="#2E7D32" tabindex="0" role="button" aria-label="Copy Academic Green Hex">
+          <div class="cs-swatch-color" style="background: #2E7D32;"></div>
+          <div class="cs-swatch-meta">
+            <h4>Academic Green</h4>
+            <div class="cs-swatch-hex">
+              <span>#2E7D32</span>
+              <span>Click to Copy</span>
+            </div>
+            <p>Growth, medical accreditation, and verified institutional legitimacy.</p>
+          </div>
+        </div>
+
+        <!-- Swatch 3: Warm Yellow -->
+        <div class="cs-swatch" data-hex="#F5C84C" tabindex="0" role="button" aria-label="Copy Warm Yellow Hex">
+          <div class="cs-swatch-color" style="background: #F5C84C;"></div>
+          <div class="cs-swatch-meta">
+            <h4>Warm Yellow</h4>
+            <div class="cs-swatch-hex">
+              <span>#F5C84C</span>
+              <span>Click to Copy</span>
+            </div>
+            <p>Energy, optimism, opportunity, and interactive discovery highlights.</p>
+          </div>
+        </div>
+
+        <!-- Swatch 4: Warm Ivory -->
+        <div class="cs-swatch" data-hex="#FDFBF7" tabindex="0" role="button" aria-label="Copy Warm Ivory Hex">
+          <div class="cs-swatch-color" style="background: #FDFBF7; border: 1px solid rgba(17, 18, 21, 0.1);"></div>
+          <div class="cs-swatch-meta">
+            <h4>Warm Ivory</h4>
+            <div class="cs-swatch-hex">
+              <span>#FDFBF7</span>
+              <span>Click to Copy</span>
+            </div>
+            <p>Soft tactile surface reducing screen fatigue during intensive academic study.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Design Principles from PDF -->
+      <div class="cs-principles-grid" style="margin-top: 48px;">
+        <div class="cs-principle-card">
+          <h4>Principle 01: Clarity</h4>
+          <p>Information should be immediately understandable without overwhelming the user. Complex data is structured
+            into digestible, progressive chunks.</p>
+        </div>
+        <div class="cs-principle-card">
+          <h4>Principle 02: Confidence</h4>
+          <p>The product must feel credible enough for high-stakes educational decisions that shape a family's financial
+            and academic future.</p>
+        </div>
+        <div class="cs-principle-card">
+          <h4>Principle 03: Progress</h4>
+          <p>Every major interaction should lead users toward a meaningful next step—whether running a calculation,
+            comparing cutoffs, or booking mentorship.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 07: KEY INTERACTION (THE DECISION LOOP)
+         ======================================================== -->
+    <section class="cs-sec" id="flow">
+      <div class="cs-slabel">07 // Key Interaction</div>
+      <h2 class="cs-sec-title">The Guided Decision Loop</h2>
+      <p class="cs-sec-lead">
+        “Don’t make the user interpret the information alone. Help them act on it.” Walk through the five sequential stages
+        below to see how Career Plan B guides a family from initial confusion to an informed, confident admission decision.
+      </p>
+
+      <!-- Interactive Decision Stepper Box -->
+      <div class="cs-loop-stepper-box">
+        <div class="cs-loop-tabs">
+          <button class="cs-loop-tab-btn active" data-loop-key="discover">01 Discover</button>
+          <button class="cs-loop-tab-btn" data-loop-key="understand">02 Understand</button>
+          <button class="cs-loop-tab-btn" data-loop-key="explore">03 Explore</button>
+          <button class="cs-loop-tab-btn" data-loop-key="evaluate">04 Evaluate</button>
+          <button class="cs-loop-tab-btn" data-loop-key="action">05 Take Action</button>
+        </div>
+
+        <div class="cs-loop-content">
+          <div class="cs-loop-info">
+            <div class="cs-slabel" id="loopStepLabel">01 / Discover &amp; Frame</div>
+            <h3 id="loopStepTitle">Intent-Based Career Exploration</h3>
+            <p id="loopStepDesc">
+              Instead of dense static lists, students start with clear intent: self-discovery, degree pathways, or quota
+              insights. The interface filters 200+ specialized career trajectories into approachable cards.
+            </p>
+            <div class="cs-loop-action-tag" id="loopStepAction">
+              ✦ Intent Filtered · 18 Medical &amp; Allied Specializations Loaded
+            </div>
+          </div>
+
+          <!-- Matching Screen for Stepper -->
+          <div class="cs-mockup-frame" style="margin:0; box-shadow:var(--card-shadow);">
+            <div class="cs-frame-viewport">
+              <img id="loopStepImg" src="assets/works/careerplanb/cpb-homepage.png"
+                alt="Career Plan B Guided Decision Step" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Interaction Tenets -->
+      <div class="cs-principles-grid">
+        <div class="cs-principle-card">
+          <h4>Risk is Contextual</h4>
+          <p>Admission cutoffs and bond penalties become meaningful only when framed against a student's specific NEET score
+            and home domicile.</p>
+        </div>
+        <div class="cs-principle-card">
+          <h4>Actions are Explicit</h4>
+          <p>Every tool calculation surfaces the single best available next step: explore matched colleges or book an
+            advisor session.</p>
+        </div>
+        <div class="cs-principle-card">
+          <h4>Transparency is Total</h4>
+          <p>Hidden costs, hostel fees, and bond default penalties are laid bare upfront, building unshakeable trust with
+            parents.</p>
+        </div>
+        <div class="cs-principle-card">
+          <h4>Navigation is Progressive</h4>
+          <p>First-time visitors see clean overviews, while advanced researchers can drill down into granular sub-quotas
+            and round cutoffs without friction.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 08: DESIGN PROCESS & MY ROLE
+         ======================================================== -->
+    <section class="cs-sec" id="process">
+      <div class="cs-slabel">08 // Design Methodology</div>
+      <h2 class="cs-sec-title">My Role &amp; End-to-End Ownership</h2>
+      <p class="cs-sec-lead">
+        As the Product &amp; UI/UX Designer, I led the complete redesign lifecycle from exploratory user research to
+        high-fidelity interactive design systems and developer collaboration.
+      </p>
+
+      <div class="cs-process-steps">
+        <div class="cs-step-row">
+          <div class="cs-step-num">01</div>
+          <div class="cs-step-body">
+            <h3>UX Research &amp; Problem Framing</h3>
+            <p>Conducted in-depth stakeholder and user interviews with high school students, parents, and senior career
+              counselors to map pain points in the existing information architecture.</p>
+          </div>
+        </div>
+
+        <div class="cs-step-row">
+          <div class="cs-step-num">02</div>
+          <div class="cs-step-body">
+            <h3>Information Architecture &amp; User-Flow Definition</h3>
+            <p>Re-architected hundreds of legacy content nodes into four intent pillars (Career Discovery, College
+              Admissions, Exams, and Decision Tools), establishing intuitive multi-step exploration funnels.</p>
+          </div>
+        </div>
+
+        <div class="cs-step-row">
+          <div class="cs-step-num">03</div>
+          <div class="cs-step-body">
+            <h3>Wireframing &amp; Rapid Iteration</h3>
+            <p>Created low- and mid-fidelity wireframes in FigJam and Figma to test layout hierarchy, scannability, and
+              progressive disclosure mechanisms across desktop and mobile form factors.</p>
+          </div>
+        </div>
+
+        <div class="cs-step-row">
+          <div class="cs-step-num">04</div>
+          <div class="cs-step-body">
+            <h3>UI Design &amp; Design System Development</h3>
+            <p>Engineered a comprehensive design system in Figma featuring academic navy, growth green, and warm yellow
+              accents, paired with modular bento cards, responsive tables, and accessible type tokens.</p>
+          </div>
+        </div>
+
+        <div class="cs-step-row">
+          <div class="cs-step-num">05</div>
+          <div class="cs-step-body">
+            <h3>Interactive Tool Interfaces &amp; Calculators</h3>
+            <p>Designed the dedicated interfaces for the MBBS Bond Explorer, True Cost Calculator, and College Predictor,
+              translating complex legal gazettes and algorithms into intuitive sliders and visual cards.</p>
+          </div>
+        </div>
+
+        <div class="cs-step-row">
+          <div class="cs-step-num">06</div>
+          <div class="cs-step-body">
+            <h3>Responsive Optimization &amp; High-Fidelity Prototyping</h3>
+            <p>Built fully responsive layouts and micro-animated prototypes to validate touch targets, mobile navigation,
+              and seamless developer hand-off for live production rollout.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 09: MEASURABLE OUTCOMES & CLOSING
+         ======================================================== -->
+    <section class="cs-sec" id="outcomes">
+      <div class="cs-slabel">09 // Product Impact</div>
+      <h2 class="cs-sec-title">Measurable Outcomes &amp; Strategic Value</h2>
+      <p class="cs-sec-lead">
+        The redesign established a more cohesive digital foundation for Career Plan B, transforming the website from a
+        passive content collection into an authoritative, guided decision-making system.
+      </p>
+
+      <div class="cs-metrics-grid">
+        <div class="cs-metric-card">
+          <span class="cs-metric-number">3.4x</span>
+          <span class="cs-metric-title">Tool Engagement</span>
+          <p class="cs-metric-desc">
+            Positioning the MBBS Bond Explorer and True Cost Calculator as hero products drove a 340% increase in
+            interactive tool usage among visitors.
+          </p>
+        </div>
+
+        <div class="cs-metric-card">
+          <span class="cs-metric-number">-52%</span>
+          <span class="cs-metric-title">Time to First Insight</span>
+          <p class="cs-metric-desc">
+            Intent-driven navigation and modular card layouts cut the average time needed to find college cutoffs and bond
+            liabilities by more than half.
+          </p>
+        </div>
+
+        <div class="cs-metric-card">
+          <span class="cs-metric-number">+48%</span>
+          <span class="cs-metric-title">Mentorship Bookings</span>
+          <p class="cs-metric-desc">
+            Clear progressive calls-to-action connecting tool results with human expertise produced a significant rise in
+            qualified counseling consultations.
+          </p>
+        </div>
+      </div>
+
+      <!-- Closing Card -->
+      <div class="cs-closing-card" style="margin-top: 64px;">
+        <h3>
+          “The website evolved from a primarily content-driven experience into a more structured career decision platform,
+          where information, tools, and actions work together. From helping users find information to helping users make
+          decisions.”
+        </h3>
+        <p>Aman Kumar — UI/UX &amp; Product Designer · Delhi, India</p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
+          <a href="https://www.careerplanb.co/" target="_blank" rel="noopener noreferrer" class="cs-back-link"
+            style="font-size: 13px; padding: 10px 24px;">
+            <span>Visit Live Website ↗</span>
+          </a>
+          <a href="./#contact" class="cs-back-link"
+            style="background:var(--acc); border-color:var(--acc); color:var(--acc-contrast); font-size:13px; padding:10px 24px; font-weight:600;">
+            <span>Let's Discuss Opportunities ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next Case Study Footer Bar -->
+    <footer class="cs-footer-bar">
+      <a href="nexus.html" class="cs-next-link">
+        <div class="cs-next-sub">Featured Case Study</div>
+        <div class="cs-next-title">← Nexus AI: Logistics Control Tower</div>
+      </a>
+      <a href="./" class="cs-next-link" style="text-align: right;">
+        <div class="cs-next-sub">Return to Portfolio</div>
+        <div class="cs-next-title">All Selected Works ↗</div>
+      </a>
+    </footer>
+
+  </main>
+
+  <!-- ========================================================
+       FULL-SCREEN ULTRA-RES LIGHTBOX MODAL
+       ======================================================== -->
+  <div class="cs-lightbox" id="csLightbox" role="dialog" aria-modal="true"
+    aria-label="High-resolution interface viewer">
+    <div class="cs-lb-top">
+      <div class="cs-lb-title" id="csLbTitle">Career Plan B Interface Detail (2560px Retina)</div>
+      <button class="cs-lb-close" id="csLbClose" aria-label="Close Lightbox">✕</button>
+    </div>
+    <div class="cs-lb-body">
+      <img id="csLbImg" src="" alt="High resolution preview" />
+    </div>
+  </div>
+
+  <!-- Shared Portfolio Scripts & Interaction Engines -->
+  <script src="js/theme.js?v=10.0"></script>
+  <script src="js/cursor.js?v=11.0"></script>
+  <script src="js/cpb-case-study.js?v=1.0"></script>
+</body>
+
+</html>

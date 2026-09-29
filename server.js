@@ -166,6 +166,13 @@ app.get('/nexus', (req, res) => {
   res.sendFile(path.join(__dirname, 'nexus.html'));
 });
 
+/**
+ * Dedicated Career Plan B Case Study Route
+ */
+app.get(['/career-plan-b', '/cpb'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'career-plan-b.html'));
+});
+
 // Fallback to index.html for SPA-style routing
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
