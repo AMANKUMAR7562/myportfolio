@@ -1,5 +1,5 @@
 /**
- * URBAN CART — E-COMMERCE APP UX REDESIGN CASE STUDY
+ * URBAN CART — E-COMMERCE APP UI REDESIGN CASE STUDY
  * Interaction Engine & Responsive Stepper
  * Unified with the Aman Kumar Portfolio Theme System
  */
