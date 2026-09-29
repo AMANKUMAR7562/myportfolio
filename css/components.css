@@ -1428,6 +1428,71 @@
   transform: translateY(-2px);
 }
 
+/* Video Disclaimer Note */
+.video-disclaimer {
+  margin-top: 32px;
+  padding: 16px 22px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--acc);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: var(--card-shadow);
+  transition: border-color 0.3s var(--ease), background 0.3s;
+}
+
+.video-disclaimer:hover {
+  border-color: var(--line-strong);
+  border-left-color: var(--acc);
+}
+
+.vd-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 600 0.65rem var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--acc);
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.vd-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--acc);
+  box-shadow: 0 0 8px var(--acc-glow);
+}
+
+.vd-text {
+  font: 400 0.85rem var(--body);
+  color: var(--mut);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.vd-text strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+@media (max-width: 768px) {
+  .video-disclaimer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px;
+  }
+}
+
 /* ============================================================
    REEL PREVIEW MODAL / LIGHTBOX (OPTION 2 EMBED)
    ============================================================ */
