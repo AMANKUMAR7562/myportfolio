@@ -260,9 +260,7 @@
     const str = `${h}:${m}:${s} IST`;
 
     const c1 = $('#clock');
-    const c2 = $('#clock2');
     if (c1) c1.textContent = str;
-    if (c2) c2.textContent = `${h}:${m} IST`;
   }
   updateClock();
   setInterval(updateClock, 1000);
