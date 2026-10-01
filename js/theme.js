@@ -42,6 +42,8 @@
 
     const hasFrozenHue = Boolean(localStorage.getItem('aman-spectrum-hue'));
 
+    root.classList.remove('spectrum-cycling');
+
     if (theme === 'cream') {
       root.removeAttribute('data-theme');
       if (!rainbowFlag && !hasFrozenHue) {
@@ -138,10 +140,19 @@
     }
   }
 
-  function rainbowLoop() {
+  let lastDomUpdate = 0;
+  function rainbowLoop(timestamp) {
     if (!rainbowFlag) return;
-    themeHue = (themeHue + 0.5) % 360;
-    applyHue(themeHue);
+    themeHue = (themeHue + 0.4) % 360;
+
+    // Throttle DOM CSS property recalculations to ~35ms (~28-30 FPS)
+    // The WebGL canvas in world.js still renders smoothly on GPU at native 60-144 FPS
+    // But throttling DOM style recalculation prevents main-thread starvation, keeping cursor silky smooth!
+    if (!timestamp || (timestamp - lastDomUpdate) >= 35) {
+      applyHue(themeHue);
+      lastDomUpdate = timestamp || performance.now();
+    }
+
     rafId = requestAnimationFrame(rainbowLoop);
   }
 
@@ -152,11 +163,14 @@
 
     if (rainbowFlag) {
       // Start continuous cycling
+      root.classList.add('spectrum-cycling');
       spectrumBtns.forEach((btn) => btn.classList.add('active'));
-      rainbowLoop();
+      lastDomUpdate = 0;
+      rafId = requestAnimationFrame(rainbowLoop);
       showToast('✦ SPECTRUM MODE — ON');
     } else {
       // Stop continuous cycling: freeze at current exact color & keep as active theme
+      root.classList.remove('spectrum-cycling');
       if (rafId) {
         cancelAnimationFrame(rafId);
         rafId = null;
@@ -204,6 +218,7 @@
           // If rainbow mode was running, stop it
           if (rainbowFlag) {
             rainbowFlag = 0;
+            root.classList.remove('spectrum-cycling');
             if (rafId) {
               cancelAnimationFrame(rafId);
               rafId = null;

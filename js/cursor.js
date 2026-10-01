@@ -25,12 +25,11 @@
   let mouseY = window.innerHeight / 2;
   let ringX = mouseX;
   let ringY = mouseY;
+  let lastTarget = null;
 
   window.addEventListener('mousemove', function (e) {
     mouseX = e.clientX;
     mouseY = e.clientY;
-
-    curDot.style.transform = `translate(${mouseX - 3}px, ${mouseY - 3}px)`;
 
     if (hudCoords) {
       const xStr = String(Math.round(mouseX)).padStart(3, '0');
@@ -38,11 +37,12 @@
       hudCoords.textContent = `X: ${xStr}  Y: ${yStr}`;
     }
 
-    // Adaptive contrast: automatically turn circle bright white over dark backdrops, modals & sections
-    if (e.target && curRing) {
-      const isOverDark = e.target.closest(
+    // Adaptive contrast: run closest() ONLY when entering a new element (prevents layout/DOM thrashing on every pixel)
+    if (e.target && e.target !== lastTarget) {
+      lastTarget = e.target;
+      const isOverDark = Boolean(lastTarget.closest(
         '#lightbox, .lightbox, #reelModal, .reel-modal, #csLightbox, .cs-lightbox, [data-theme="obsidian"], footer'
-      );
+      ));
       const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'obsidian' || document.body.getAttribute('data-theme') === 'obsidian';
       const isModalLocked = document.body.classList.contains('lock');
 
@@ -54,16 +54,18 @@
     }
   }, { passive: true });
 
-  let curFrameSkip = 0;
   function updateCursor() {
-    if (++curFrameSkip % 2 === 0) {
-      ringX = lerp(ringX, mouseX, 0.20);
-      ringY = lerp(ringY, mouseY, 0.20);
-      curRing.style.transform = `translate(${ringX - curRing.offsetWidth / 2}px, ${ringY - curRing.offsetHeight / 2}px)`;
-    }
+    // Smooth 60-144 FPS fluid interpolation on every native animation frame without artificial throttling
+    ringX = lerp(ringX, mouseX, 0.22);
+    ringY = lerp(ringY, mouseY, 0.22);
+
+    // Use GPU-accelerated translate3d with translate(-50%, -50%) for perfect centering with 0 offsetWidth layout thrashing
+    curDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+    curRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+
     requestAnimationFrame(updateCursor);
   }
-  updateCursor();
+  requestAnimationFrame(updateCursor);
 
   // Attach hover effect listeners safely
   function attachCursorHover() {
