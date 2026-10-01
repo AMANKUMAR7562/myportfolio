@@ -109,15 +109,21 @@
     return `${Math.round((r + m) * 255)}, ${Math.round((g + m) * 255)}, ${Math.round((g + m) * 255)}`;
   }
 
-  // Dynamic Spectrum Mode: cycles ALL colors in harmony
-  function applyHue(h) {
+  // Dynamic Spectrum Mode: cycles accent colors during motion; applies full harmony palette when locked
+  function applyHue(h, isFullPalette = true) {
     const hInt = Math.round(h) % 360;
 
-    // Accent colors
+    // Fast path: update accent variables (used only by buttons, badges, highlights, cursor)
     root.style.setProperty('--acc', `hsl(${hInt}, 98%, 52%)`);
     root.style.setProperty('--acc-hover', `hsl(${hInt}, 98%, 46%)`);
     root.style.setProperty('--acc-glow', `hsla(${hInt}, 98%, 52%, 0.28)`);
     root.style.setProperty('--acc-rgb', hslToRgbString(hInt, 98, 52));
+
+    // When actively cycling in rainbow mode, DO NOT touch --bg, --ink, --line, or --nav-bg.
+    // The WebGL canvas (#canvas-bg) provides full chromatic fluid background on the GPU.
+    // Leaving text ink and container borders untouched reduces DOM style recalculation by >95%,
+    // keeping mouse tracking identical to standard light/dark modes!
+    if (!isFullPalette) return;
 
     if (currentTheme === 'cream') {
       // Warm tinted light palette
@@ -143,13 +149,13 @@
   let lastDomUpdate = 0;
   function rainbowLoop(timestamp) {
     if (!rainbowFlag) return;
-    themeHue = (themeHue + 0.4) % 360;
+    themeHue = (themeHue + 0.35) % 360;
 
-    // Throttle DOM CSS property recalculations to ~35ms (~28-30 FPS)
+    // Throttle DOM accent CSS property recalculations to ~40ms (~25 FPS)
     // The WebGL canvas in world.js still renders smoothly on GPU at native 60-144 FPS
-    // But throttling DOM style recalculation prevents main-thread starvation, keeping cursor silky smooth!
-    if (!timestamp || (timestamp - lastDomUpdate) >= 35) {
-      applyHue(themeHue);
+    // Using lightweight accent-only updates prevents main-thread starvation completely!
+    if (!timestamp || (timestamp - lastDomUpdate) >= 40) {
+      applyHue(themeHue, false);
       lastDomUpdate = timestamp || performance.now();
     }
 
@@ -169,7 +175,7 @@
       rafId = requestAnimationFrame(rainbowLoop);
       showToast('✦ SPECTRUM MODE — ON');
     } else {
-      // Stop continuous cycling: freeze at current exact color & keep as active theme
+      // Stop continuous cycling: freeze at current exact color & apply full palette to lock
       root.classList.remove('spectrum-cycling');
       if (rafId) {
         cancelAnimationFrame(rafId);
@@ -177,8 +183,8 @@
       }
       spectrumBtns.forEach((btn) => btn.classList.remove('active'));
 
-      // Lock current color
-      applyHue(themeHue);
+      // Apply full harmonious palette for the locked color once
+      applyHue(themeHue, true);
       try {
         localStorage.setItem('aman-spectrum-hue', themeHue.toFixed(1));
       } catch (e) {}

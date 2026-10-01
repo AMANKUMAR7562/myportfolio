@@ -255,13 +255,15 @@ main {
 }
 
 /* While Spectrum mode is actively cycling, prevent heavy CSS transition queues from clogging the CPU */
-html.spectrum-cycling body,
-html.spectrum-cycling .case-study-row,
-html.spectrum-cycling .gallery-card,
-html.spectrum-cycling nav,
-html.spectrum-cycling footer,
-html.spectrum-cycling .c-info-wrap {
+html.spectrum-cycling *,
+html.spectrum-cycling *::before,
+html.spectrum-cycling *::after {
   transition-property: transform, opacity, width, height !important;
+}
+
+html.spectrum-cycling .cur-dot,
+html.spectrum-cycling .cur-ring {
+  transition: none !important;
 }
 
 /* High-contrast bright ring on dark backgrounds, modals & lightbox */
