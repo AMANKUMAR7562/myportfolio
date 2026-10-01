@@ -42,7 +42,12 @@
 
     const hasFrozenHue = Boolean(localStorage.getItem('aman-spectrum-hue'));
 
-    root.classList.remove('spectrum-cycling');
+    // Preserve spectrum-cycling state if rainbow mode is running
+    if (rainbowFlag) {
+      root.classList.add('spectrum-cycling');
+    } else {
+      root.classList.remove('spectrum-cycling');
+    }
 
     if (theme === 'cream') {
       root.removeAttribute('data-theme');
@@ -60,15 +65,21 @@
     if (!rainbowFlag && !hasFrozenHue) {
       clearDynamicStyles();
     } else if (!rainbowFlag && hasFrozenHue) {
-      applyHue(themeHue);
+      applyHue(themeHue, true);
     }
 
     // Update active state in UI buttons
     document.querySelectorAll('.theme-opt-btn').forEach((btn) => {
       const target = btn.getAttribute('data-theme-set');
-      if (target === theme && !rainbowFlag) {
+      if (target === theme) {
         btn.classList.add('active');
-      } else if (target !== 'spectrum') {
+      } else if (target === 'spectrum') {
+        if (rainbowFlag) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      } else {
         btn.classList.remove('active');
       }
     });
@@ -221,23 +232,15 @@
         if (target === 'spectrum') {
           toggleRainbow();
         } else {
-          // If rainbow mode was running, stop it
-          if (rainbowFlag) {
-            rainbowFlag = 0;
-            root.classList.remove('spectrum-cycling');
-            if (rafId) {
-              cancelAnimationFrame(rafId);
-              rafId = null;
-            }
-            document.querySelectorAll('[data-theme-set="spectrum"]').forEach((b) => b.classList.remove('active'));
+          // If rainbow mode is NOT active, user selected a preset theme: clear frozen hue & restore stylesheet defaults
+          if (!rainbowFlag) {
+            try {
+              localStorage.removeItem('aman-spectrum-hue');
+            } catch (e) {}
+            clearDynamicStyles();
           }
 
-          // User manually selected a preset theme: clear frozen hue & restore stylesheet defaults
-          try {
-            localStorage.removeItem('aman-spectrum-hue');
-          } catch (e) {}
-          clearDynamicStyles();
-
+          // Switch base mood (cream or obsidian); if rainbow mode is running, it continues uninterrupted!
           setTheme(target);
           showToast(`✦ MOOD: ${target.toUpperCase()}`);
         }
