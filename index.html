@@ -335,6 +335,27 @@
           </div>
         </div>
 
+        <!-- Framer-style Interactive Segment Control (Show a Little, Expand on Click) -->
+        <div class="works-segment-control rv" style="--d:100ms" role="tablist" aria-label="Works Categories">
+          <button class="ws-tab-btn active" data-view="case-studies" id="tabCaseStudies" role="tab" aria-selected="true" type="button">
+            <span class="ws-tab-dot"></span>
+            <span>Flagship Case Studies</span>
+            <span class="ws-tab-count">03</span>
+          </button>
+          <button class="ws-tab-btn" data-view="graphic-archive" id="tabGraphicArchive" role="tab" aria-selected="false" type="button">
+            <span class="ws-tab-dot"></span>
+            <span>Graphic Design Vault</span>
+            <span class="ws-tab-count">12</span>
+          </button>
+          <button class="ws-tab-btn" data-view="video-motion" id="tabVideoMotion" role="tab" aria-selected="false" type="button">
+            <span class="ws-tab-dot"></span>
+            <span>Video &amp; Motion Reels</span>
+            <span class="ws-tab-count">05</span>
+          </button>
+        </div>
+
+        <!-- Pane 01: Flagship Case Studies -->
+        <div class="works-pane active" id="pane-case-studies">
         <!-- Split Showcase: Sticky Feature Poster + Interactive Editorial List -->
         <div class="works-showcase-split" id="worksShowcaseSplit">
 
@@ -383,10 +404,47 @@
               </div>
               <div class="csr-head">
                 <h3 class="csr-title"><a href="nexus.html">Nexus AI — Logistics Control Tower</a></h3>
+                
+                <button class="csr-peek-btn" type="button" aria-expanded="false" title="Quick Breakdown"><span>✦ Breakdown</span></button>
                 <a class="csr-open-btn" href="nexus.html" aria-label="Open Nexus AI Case Study">
                   <span class="cob-txt">OPEN</span>
                   <span class="cob-icon">↗</span>
                 </a>
+              </div>
+
+              <!-- Inline Quick Peek Breakdown Drawer -->
+              <div class="csr-peek-drawer" id="peek-nexus">
+                <div class="csr-peek-grid">
+                  <div class="csr-peek-col">
+                    <h4>// Executive Overview</h4>
+                    <p>Transforms fragmented supply-chain telemetry across siloed TMS &amp; ERP systems into an exception-driven single pane of glass for real-time dispatch teams.</p>
+                    <h4>// Core Deliverables</h4>
+                    <div class="csr-peek-pills">
+                      <span class="csr-peek-pill">Command Cockpit UI</span>
+                      <span class="csr-peek-pill">Hub &amp; Topology Graph</span>
+                      <span class="csr-peek-pill">Exception Priority Queue</span>
+                      <span class="csr-peek-pill">Consignment Context Drawer</span>
+                    </div>
+                    <a href="nexus.html" class="csr-peek-cta-link">Read Full Interactive Case Study ➔</a>
+                  </div>
+                  <div class="csr-peek-col">
+                    <h4>// Measured ROI</h4>
+                    <div class="csr-peek-stats-row">
+                      <div class="csr-peek-stat-box">
+                        <span class="csr-peek-stat-lbl">Triage Time</span>
+                        <span class="csr-peek-stat-num">-42%</span>
+                      </div>
+                      <div class="csr-peek-stat-box">
+                        <span class="csr-peek-stat-lbl">Dispatch SLA</span>
+                        <span class="csr-peek-stat-num">99.4%</span>
+                      </div>
+                      <div class="csr-peek-stat-box">
+                        <span class="csr-peek-stat-lbl">Cognitive Load</span>
+                        <span class="csr-peek-stat-num">Zero</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <p class="csr-desc">Mission-critical dashboard concept for dispatch, fleet telemetry and rapid incident
                 triage.</p>
@@ -407,10 +465,47 @@
               </div>
               <div class="csr-head">
                 <h3 class="csr-title"><a href="career-plan-b.html">Career Plan B — Website Redesign</a></h3>
+                
+                <button class="csr-peek-btn" type="button" aria-expanded="false" title="Quick Breakdown"><span>✦ Breakdown</span></button>
                 <a class="csr-open-btn" href="career-plan-b.html" aria-label="Open Career Plan B Case Study">
                   <span class="cob-txt">OPEN</span>
                   <span class="cob-icon">↗</span>
                 </a>
+              </div>
+
+              <!-- Inline Quick Peek Breakdown Drawer -->
+              <div class="csr-peek-drawer" id="peek-cpb">
+                <div class="csr-peek-grid">
+                  <div class="csr-peek-col">
+                    <h4>// Executive Overview</h4>
+                    <p>Evolved a dense, fragmented repository into an authoritative decision engine for medical aspirants and evaluating parents navigating high-stakes MBBS admissions.</p>
+                    <h4>// Core Deliverables</h4>
+                    <div class="csr-peek-pills">
+                      <span class="csr-peek-pill">Service Bond Explorer</span>
+                      <span class="csr-peek-pill">True Cost Calculator</span>
+                      <span class="csr-peek-pill">NEET College Predictor</span>
+                      <span class="csr-peek-pill">Touch-first Architecture</span>
+                    </div>
+                    <a href="career-plan-b.html" class="csr-peek-cta-link">Read Full Interactive Case Study ➔</a>
+                  </div>
+                  <div class="csr-peek-col">
+                    <h4>// Measured ROI</h4>
+                    <div class="csr-peek-stats-row">
+                      <div class="csr-peek-stat-box">
+                        <span class="csr-peek-stat-lbl">Counselling Leads</span>
+                        <span class="csr-peek-stat-num">+68%</span>
+                      </div>
+                      <div class="csr-peek-stat-box">
+                        <span class="csr-peek-stat-lbl">Bounce Rate</span>
+                        <span class="csr-peek-stat-num">-34%</span>
+                      </div>
+                      <div class="csr-peek-stat-box">
+                        <span class="csr-peek-stat-lbl">Avg Tool Session</span>
+                        <span class="csr-peek-stat-num">4.2m</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <p class="csr-desc">A product-led redesign focused on turning a content-heavy career platform into a
                 clearer, more structured decision-making experience for students and parents.</p>
@@ -459,10 +554,47 @@
               </div>
               <div class="csr-head">
                 <h3 class="csr-title"><a href="urban-cart.html">Urban Cart — E-Commerce App UI Redesign</a></h3>
+                
+                <button class="csr-peek-btn" type="button" aria-expanded="false" title="Quick Breakdown"><span>✦ Breakdown</span></button>
                 <a class="csr-open-btn" href="urban-cart.html" aria-label="Open Urban Cart Case Study">
                   <span class="cob-txt">OPEN</span>
                   <span class="cob-icon">↗</span>
                 </a>
+              </div>
+
+              <!-- Inline Quick Peek Breakdown Drawer -->
+              <div class="csr-peek-drawer" id="peek-urban">
+                <div class="csr-peek-grid">
+                  <div class="csr-peek-col">
+                    <h4>// Executive Overview</h4>
+                    <p>Modern mobile commerce UI overhaul addressing visual clutter and cognitive strain, streamlining the product discovery-to-checkout sequence into under 4 frictionless steps.</p>
+                    <h4>// Core Deliverables</h4>
+                    <div class="csr-peek-pills">
+                      <span class="csr-peek-pill">One-Tap Quick Cart</span>
+                      <span class="csr-peek-pill">Smart Filtering Drawer</span>
+                      <span class="csr-peek-pill">Atomic Design System</span>
+                      <span class="csr-peek-pill">Live Courier Telemetry</span>
+                    </div>
+                    <a href="urban-cart.html" class="csr-peek-cta-link">Read Full Interactive Case Study ➔</a>
+                  </div>
+                  <div class="csr-peek-col">
+                    <h4>// Measured ROI</h4>
+                    <div class="csr-peek-stats-row">
+                      <div class="csr-peek-stat-box">
+                        <span class="csr-peek-stat-lbl">Cart Abandonment</span>
+                        <span class="csr-peek-stat-num">-27%</span>
+                      </div>
+                      <div class="csr-peek-stat-box">
+                        <span class="csr-peek-stat-lbl">Checkout Speed</span>
+                        <span class="csr-peek-stat-num">2.8x</span>
+                      </div>
+                      <div class="csr-peek-stat-box">
+                        <span class="csr-peek-stat-lbl">Delight Rating</span>
+                        <span class="csr-peek-stat-num">4.9/5</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <p class="csr-desc">End-to-end mobile shopping interface redesign featuring clean typography, modern
                 component systems, intuitive product cards, and transparent checkout UI.</p>
@@ -503,6 +635,10 @@
           </div>
         </div>
 
+        </div><!-- /works-pane case-studies -->
+
+        <!-- Pane 02: Graphic Design Vault -->
+        <div class="works-pane" id="pane-graphic-archive">
         <!-- Lower Part: Graphic Design Archive -->
         <div class="works-subhead rv" id="gallery" style="margin-top:64px;">
           <div>
@@ -524,6 +660,10 @@
         <!-- Gallery Grid (Rendered dynamically via js/gallery.js) -->
         <div class="gallery-grid" id="galleryGrid"></div>
 
+        </div><!-- /works-pane graphic-archive -->
+
+        <!-- Pane 03: Video & Motion Reels -->
+        <div class="works-pane" id="pane-video-motion">
         <!-- Lower Part 2: Video Editing & Motion Showcase -->
         <div class="works-subhead rv" id="video-editing" style="margin-top:72px;">
           <div>
@@ -819,6 +959,7 @@
             campaign edits, and private client archives are not shown due to client confidentiality.
           </p>
         </div>
+        </div><!-- /works-pane video-motion -->
       </div>
     </section>
 
@@ -842,13 +983,33 @@
                 micro-interactions.</p>
             </div>
             <div class="tk-tags">
-              <span class="tk-tag">User Research</span>
-              <span class="tk-tag">Wireframing</span>
-              <span class="tk-tag">Interactive Prototyping</span>
-              <span class="tk-tag">Design Systems</span>
-              <span class="tk-tag">Information Architecture</span>
-              <span class="tk-tag">Usability Testing</span>
-              <span class="tk-tag">User Flow Mapping</span>
+              <span class="tk-tag">Brand Identity</span>
+              <span class="tk-tag">Editorial Typography</span>
+              <span class="tk-tag">Color Harmony</span>
+            </div>
+            <button class="toolkit-expand-btn" type="button" aria-expanded="false" title="Expand All Capabilities">
+              <span>✦ All Capabilities (+4)</span>
+              <span class="tk-chevron">↓</span>
+            </button>
+            <div class="toolkit-drawer">
+              <div class="tk-tags" style="margin-top:6px;">
+                <span class="tk-tag">High-CTR Thumbnails</span>
+                <span class="tk-tag">Vector Illustration</span>
+                <span class="tk-tag">Design Tokens</span>
+                <span class="tk-tag">Grid Systems</span>
+              </div>
+            </div>
+            <button class="toolkit-expand-btn" type="button" aria-expanded="false" title="Expand All Capabilities">
+              <span>✦ All Capabilities (+4)</span>
+              <span class="tk-chevron">↓</span>
+            </button>
+            <div class="toolkit-drawer">
+              <div class="tk-tags" style="margin-top:6px;">
+                <span class="tk-tag">Design Systems</span>
+                <span class="tk-tag">Information Architecture</span>
+                <span class="tk-tag">Usability Testing</span>
+                <span class="tk-tag">User Flow Mapping</span>
+              </div>
             </div>
           </div>
 
@@ -909,9 +1070,17 @@
               <span class="tk-tag">Figma (Auto-Layout v5 &amp; Variables)</span>
               <span class="tk-tag">Adobe Photoshop</span>
               <span class="tk-tag">Adobe Illustrator</span>
-              <span class="tk-tag">Adobe XD</span>
-              <span class="tk-tag">Canva Pro</span>
-              <span class="tk-tag">DaVinci Resolve</span>
+            </div>
+            <button class="toolkit-expand-btn" type="button" aria-expanded="false" title="Expand All Capabilities">
+              <span>✦ All Capabilities (+3)</span>
+              <span class="tk-chevron">↓</span>
+            </button>
+            <div class="toolkit-drawer">
+              <div class="tk-tags" style="margin-top:6px;">
+                <span class="tk-tag">Adobe XD</span>
+                <span class="tk-tag">Canva Pro</span>
+                <span class="tk-tag">DaVinci Resolve</span>
+              </div>
             </div>
           </div>
 
@@ -930,9 +1099,17 @@
               <span class="tk-tag">Empathy Mapping</span>
               <span class="tk-tag">Heuristic Audits</span>
               <span class="tk-tag">User Interviews</span>
-              <span class="tk-tag">Competitor Analysis</span>
-              <span class="tk-tag">A/B Testing Strategy</span>
-              <span class="tk-tag">Journey Mapping</span>
+            </div>
+            <button class="toolkit-expand-btn" type="button" aria-expanded="false" title="Expand All Capabilities">
+              <span>✦ All Capabilities (+3)</span>
+              <span class="tk-chevron">↓</span>
+            </button>
+            <div class="toolkit-drawer">
+              <div class="tk-tags" style="margin-top:6px;">
+                <span class="tk-tag">Competitor Analysis</span>
+                <span class="tk-tag">A/B Testing Strategy</span>
+                <span class="tk-tag">Journey Mapping</span>
+              </div>
             </div>
           </div>
 
@@ -1040,6 +1217,23 @@
             <h3>Verified Professional <em>Certifications</em></h3>
           </div>
 
+          <!-- Interactive Credentials Teaser (Click to Expand All) -->
+          <div class="cert-teaser-card rv" id="certTeaserCard" role="button" tabindex="0" aria-expanded="false" title="Click to view all 5 verified certifications">
+            <div class="cert-teaser-left">
+              <div class="cert-teaser-badge">✦</div>
+              <div>
+                <div class="cert-teaser-title">Verified Professional Credentials &amp; Certifications</div>
+                <div class="cert-teaser-sub">NPTEL (IIT) • Meta • Google • Interaction Design Foundation</div>
+              </div>
+            </div>
+            <div class="cert-teaser-btn">
+              <span id="certTeaserBtnTxt">View All Credentials (05)</span>
+              <span id="certTeaserChevron" style="transition:transform 0.3s ease; display:inline-block;">↓</span>
+            </div>
+          </div>
+
+          <div class="cert-drawer" id="certDrawer">
+
           <div class="cert-grid">
             <div class="cert-card">
               <div class="cert-top">
@@ -1089,6 +1283,7 @@
               </div>
             </div>
           </div>
+          </div><!-- /certDrawer -->
         </div>
       </div>
     </section>

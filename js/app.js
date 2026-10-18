@@ -330,7 +330,7 @@
       row.addEventListener('mouseenter', () => activateRow(row));
       row.addEventListener('focus', () => activateRow(row));
       row.addEventListener('click', (e) => {
-        if (!e.target.closest('a')) {
+        if (!e.target.closest('a') && !e.target.closest('.csr-peek-btn') && !e.target.closest('.csr-peek-drawer')) {
           const link = row.getAttribute('data-link');
           if (link) {
             if (link.startsWith('http')) {
@@ -351,4 +351,139 @@
   initWorksShowcase();
 
   console.log('✦ Aman Kumar Portfolio — Studio Atelier Architecture Initialized.');
+
+  /* ============================================================
+     INTERACTIVE SECTION CONTROLLERS (Show a little, expand on click)
+     ============================================================ */
+
+  // 1. Works Category Segment Tabs
+  function initWorksSegments() {
+    const tabBtns = document.querySelectorAll('.ws-tab-btn');
+    const panes = document.querySelectorAll('.works-pane');
+    if (!tabBtns.length || !panes.length) return;
+
+    tabBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const view = btn.getAttribute('data-view');
+        tabBtns.forEach((b) => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        panes.forEach((pane) => {
+          pane.classList.remove('active');
+        });
+
+        const targetPane = document.getElementById('pane-' + view);
+        if (targetPane) {
+          targetPane.classList.add('active');
+          // If switching to graphic archive or video motion, trigger reveals
+          if (typeof window.triggerReveals === 'function') {
+            window.triggerReveals();
+          }
+        }
+      });
+    });
+  }
+
+  // 2. Case Study Row Inline Breakdown Drawers
+  function initCaseStudyPeekDrawers() {
+    const peekBtns = document.querySelectorAll('.csr-peek-btn');
+    peekBtns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const row = btn.closest('.case-study-row');
+        const drawer = row ? row.querySelector('.csr-peek-drawer') : null;
+        if (!drawer) return;
+
+        const isOpen = drawer.classList.contains('open');
+
+        // Close all other open drawers first for clean accordion UX
+        document.querySelectorAll('.csr-peek-drawer.open').forEach((d) => {
+          if (d !== drawer) {
+            d.classList.remove('open');
+            const parentRow = d.closest('.case-study-row');
+            if (parentRow) {
+              const otherBtn = parentRow.querySelector('.csr-peek-btn');
+              if (otherBtn) {
+                otherBtn.classList.remove('active');
+                otherBtn.setAttribute('aria-expanded', 'false');
+                otherBtn.innerHTML = '<span>✦ Breakdown</span>';
+              }
+            }
+          }
+        });
+
+        if (!isOpen) {
+          drawer.classList.add('open');
+          btn.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.innerHTML = '<span>✕ Close</span>';
+        } else {
+          drawer.classList.remove('open');
+          btn.classList.remove('active');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.innerHTML = '<span>✦ Breakdown</span>';
+        }
+      });
+    });
+  }
+
+  // 3. Toolkit Capabilities Expanders
+  function initToolkitExpanders() {
+    const expandBtns = document.querySelectorAll('.toolkit-expand-btn');
+    expandBtns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const card = btn.closest('.toolkit-card');
+        const drawer = card ? card.querySelector('.toolkit-drawer') : null;
+        if (!drawer) return;
+
+        const isOpen = drawer.classList.toggle('open');
+        btn.classList.toggle('active', isOpen);
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        const chevron = btn.querySelector('.tk-chevron');
+        if (chevron) chevron.style.transform = isOpen ? 'rotate(180deg)' : '';
+      });
+    });
+  }
+
+  // 4. Certification Grid Accordion Teaser
+  function initCertTeaser() {
+    const teaserCard = document.getElementById('certTeaserCard');
+    const drawer = document.getElementById('certDrawer');
+    const btnTxt = document.getElementById('certTeaserBtnTxt');
+    const chevron = document.getElementById('certTeaserChevron');
+    if (!teaserCard || !drawer) return;
+
+    teaserCard.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      teaserCard.classList.toggle('active', isOpen);
+      teaserCard.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (btnTxt) {
+        btnTxt.textContent = isOpen ? 'Collapse Credentials' : 'View All Credentials (05)';
+      }
+      if (chevron) {
+        chevron.style.transform = isOpen ? 'rotate(180deg)' : '';
+      }
+    });
+
+    teaserCard.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        teaserCard.click();
+      }
+    });
+  }
+
+  // Initialize all interactive extensions
+  initWorksSegments();
+  initCaseStudyPeekDrawers();
+  initToolkitExpanders();
+  initCertTeaser();
+
 })();
