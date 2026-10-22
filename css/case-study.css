@@ -58,6 +58,13 @@ body.case-study-page::before {
   transition: background-color var(--transition-normal), border-color var(--transition-normal);
 }
 
+.cs-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
 .cs-nav-left {
   display: flex;
   align-items: center;
@@ -2254,4 +2261,45 @@ body.case-study-urbancart {
     align-items: flex-start;
     padding: 32px 24px;
   }
+}
+
+
+/* Case Study Nav Right Straight-Line Alignment */
+.cs-nav-right {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-shrink: 0 !important;
+}
+
+.cs-nav-right .cs-back-link,
+.cs-nav-right .cs-contact-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 34px !important;
+  padding: 0 16px !important;
+  box-sizing: border-box !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+}
+
+.cs-nav-right .theme-switch-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 34px !important;
+  padding: 3px 4px !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+}
+
+.cs-nav-right .theme-opt-btn {
+  height: 26px !important;
+  padding: 0 10px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
 }

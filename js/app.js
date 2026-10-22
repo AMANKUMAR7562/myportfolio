@@ -83,6 +83,10 @@
       if (href && href.length > 1) {
         e.preventDefault();
         document.body.classList.remove('menu');
+        if (a.closest('.n-links')) {
+          $$('.n-links a').forEach((l) => l.classList.remove('on'));
+          a.classList.add('on');
+        }
         scrollToTarget(href);
       }
     });
@@ -136,11 +140,13 @@
 
   const sections = [
     { id: 'hero', num: '01', label: 'Intro' },
-    { id: 'about', num: '02', label: 'About' },
-    { id: 'work', num: '03', label: 'Works' },
-    { id: 'skills', num: '04', label: 'Toolkit' },
-    { id: 'experience', num: '05', label: 'Journey' },
-    { id: 'contact', num: '06', label: 'Contact' }
+    { id: 'services', num: '02', label: 'Services' },
+    { id: 'about', num: '03', label: 'About' },
+    { id: 'work', num: '04', label: 'Works' },
+    { id: 'testimonials', num: '05', label: 'Clients' },
+    { id: 'faq', num: '06', label: 'FAQ' },
+    { id: 'experience', num: '07', label: 'Journey' },
+    { id: 'contact', num: '08', label: 'Contact' }
   ];
 
   let lastHudIdx = '01';
@@ -206,12 +212,17 @@
     for (let i = sections.length - 1; i >= 0; i--) {
       const secEl = document.getElementById(sections[i].id);
       if (secEl) {
-        const top = secEl.offsetTop - 220;
+        const top = secEl.offsetTop - 180;
         if (scrollY >= top) {
           current = sections[i].num;
           break;
         }
       }
+    }
+
+    // Edge-case: near bottom of page activates contact
+    if (maxScroll > 0 && scrollY >= maxScroll - 80) {
+      current = sections[sections.length - 1].num;
     }
 
     if (current !== lastHudIdx) {
@@ -480,10 +491,33 @@
     });
   }
 
+  // 5. Portavia FAQ Accordion
+  function initFaqAccordion() {
+    const faqButtons = document.querySelectorAll('.faq-trigger-btn');
+    faqButtons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const item = btn.closest('.faq-accordion-item');
+        if (!item) return;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-accordion-item').forEach((i) => {
+          i.classList.remove('active');
+          const trigger = i.querySelector('.faq-trigger-btn');
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        });
+        if (!wasActive) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  }
+
   // Initialize all interactive extensions
   initWorksSegments();
   initCaseStudyPeekDrawers();
   initToolkitExpanders();
   initCertTeaser();
+  initFaqAccordion();
 
 })();
