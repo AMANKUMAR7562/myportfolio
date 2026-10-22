@@ -66,7 +66,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: clamp(100px, 14vh, 130px) clamp(20px, 4vw, 56px) 60px;
+  padding: clamp(80px, 11vh, 105px) clamp(16px, 3.5vw, 48px) clamp(20px, 3vh, 32px);
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -76,17 +76,17 @@
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  padding: 8px 18px;
+  padding: 7px 18px;
   border-radius: 9999px;
   background: var(--badge-bg);
   border: 1px solid var(--badge-border);
   font-family: var(--body);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink);
-  margin-bottom: clamp(24px, 4vh, 36px);
+  margin-bottom: clamp(14px, 2.2vh, 22px);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -100,24 +100,60 @@
   animation: livePulse 2s infinite ease-in-out;
 }
 
-/* Big Split Headline with Center Avatar Flip Card */
-.hero-split-headline {
-  display: flex;
+/* Staggered Editorial Hero Stage with Floating Blurred Tool Badges */
+.hero-stagger-stage {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   justify-content: center;
-  gap: clamp(14px, 2.2vw, 36px);
+  gap: clamp(16px, 2.5vw, 36px);
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto clamp(16px, 2.5vh, 26px);
   user-select: none;
-  margin-bottom: clamp(20px, 3.5vh, 32px);
-  max-width: 100%;
+}
+
+/* Left & Right Wings */
+.hero-wing {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: clamp(290px, 25vw, 350px);
+  box-sizing: border-box;
+}
+
+.hero-wing-left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero-wing-right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Word Boxes (Red Boxes in User's Diagram) */
+.hero-word-box {
+  display: flex;
+  align-items: center;
+  line-height: 0.85;
+}
+
+.hero-word-product {
+  margin-top: 4px;
+}
+
+.hero-word-designer {
+  margin-bottom: 4px;
 }
 
 .hero-word {
   font-family: var(--disp);
-  font-size: clamp(3.5rem, 8.5vw, 8.5rem);
+  font-size: clamp(3.8rem, 7.6vw, 6.8rem);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: -0.03em;
-  line-height: 0.90;
+  letter-spacing: -0.035em;
+  line-height: 0.86;
   color: var(--ink);
   white-space: nowrap;
 }
@@ -126,13 +162,436 @@
   color: var(--acc);
 }
 
-/* 3D Interactive Flip Avatar Card */
+/* ============================================================
+   FLOATING TOOL ORBS (Frosted Kinetic Hover Icons)
+   ============================================================ */
+.hero-floating-zone {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: clamp(155px, 14vw, 175px);
+  pointer-events: auto;
+}
+
+.hero-wing-left .hero-floating-zone {
+  margin-top: auto;
+}
+
+.hero-wing-right .hero-floating-zone {
+  margin-bottom: auto;
+}
+
+/* Base Floating Orb with Frosted Glass & Depth of Field */
+.floating-orb {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              filter 0.3s ease, 
+              opacity 0.3s ease, 
+              box-shadow 0.35s ease, 
+              border-color 0.35s ease;
+  will-change: transform, filter;
+  z-index: 2;
+}
+
+[data-theme="dark"] .floating-orb {
+  background: rgba(24, 24, 30, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.floating-orb:hover {
+  transform: translateY(-6px) scale(1.18) !important;
+  filter: blur(0px) !important;
+  opacity: 1 !important;
+  z-index: 30 !important;
+  animation-play-state: paused;
+}
+
+/* Orb Tooltip on Hover */
+.orb-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(15, 15, 18, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: var(--body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.floating-orb:hover .orb-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================================
+   LEFT WING ORBS (Design & UI/UX Stack)
+   Randomized Non-Linear 2D Scatter, Varied Sizes & Depth Blur
+   Figma, Sketch, Adobe XD, Photoshop, Illustrator, InDesign, Canva
+   ============================================================ */
+
+/* 1. Figma — Hero Anchor (Large, Sharp Foreground) */
+.orb-figma {
+  width: 64px;
+  height: 64px;
+  top: 24px;
+  left: 16px;
+  z-index: 6;
+  filter: blur(0px);
+  opacity: 1;
+  animation: floatWander1 5.2s ease-in-out infinite;
+}
+.orb-figma:hover {
+  box-shadow: 0 16px 36px rgba(242, 78, 30, 0.45);
+  border-color: rgba(242, 78, 30, 0.7);
+}
+
+/* 2. Sketch — Midground Accent (Medium-Small, Soft Focus) */
+.orb-sketch {
+  width: 44px;
+  height: 44px;
+  top: 108px;
+  left: 82px;
+  z-index: 3;
+  filter: blur(0.8px);
+  opacity: 0.88;
+  animation: floatWander2 5.8s ease-in-out infinite 0.5s;
+}
+.orb-sketch:hover {
+  box-shadow: 0 14px 32px rgba(253, 142, 0, 0.45);
+  border-color: rgba(253, 142, 0, 0.7);
+}
+
+/* 3. Adobe XD — Upper Midground (Medium, Subtle Depth) */
+.orb-xd {
+  width: 50px;
+  height: 50px;
+  top: 6px;
+  left: 142px;
+  z-index: 4;
+  filter: blur(0.3px);
+  opacity: 0.95;
+  animation: floatWander3 5.4s ease-in-out infinite 1.1s;
+}
+.orb-xd:hover {
+  box-shadow: 0 14px 32px rgba(255, 97, 246, 0.45);
+  border-color: rgba(255, 97, 246, 0.7);
+}
+
+/* 4. Photoshop — Foreground Hero (Large, Crisp) */
+.orb-ps {
+  width: 56px;
+  height: 56px;
+  top: 88px;
+  left: 202px;
+  z-index: 5;
+  filter: blur(0px);
+  opacity: 1;
+  animation: floatWander4 6.1s ease-in-out infinite 0.3s;
+}
+.orb-ps:hover {
+  box-shadow: 0 16px 36px rgba(49, 168, 255, 0.45);
+  border-color: rgba(49, 168, 255, 0.7);
+}
+
+/* 5. Illustrator — Upper Right Midground (Medium-Small, Gentle Blur) */
+.orb-ai {
+  width: 42px;
+  height: 42px;
+  top: 16px;
+  left: 274px;
+  z-index: 3;
+  filter: blur(1.0px);
+  opacity: 0.85;
+  animation: floatWander1 5.6s ease-in-out infinite 1.6s;
+}
+.orb-ai:hover {
+  box-shadow: 0 14px 32px rgba(255, 154, 0, 0.45);
+  border-color: rgba(255, 154, 0, 0.7);
+}
+
+/* 6. InDesign — Deep Ambient Background (Small, Dreamy Depth Blur) */
+.orb-id {
+  width: 36px;
+  height: 36px;
+  top: 118px;
+  left: 326px;
+  z-index: 2;
+  filter: blur(1.5px);
+  opacity: 0.78;
+  animation: floatWander2 5.2s ease-in-out infinite 0.8s;
+}
+.orb-id:hover {
+  box-shadow: 0 12px 28px rgba(255, 51, 102, 0.45);
+  border-color: rgba(255, 51, 102, 0.7);
+}
+
+/* 7. Canva — Right Midground (Medium, Soft Focus) */
+.orb-canva {
+  width: 48px;
+  height: 48px;
+  top: 42px;
+  left: 388px;
+  z-index: 4;
+  filter: blur(0.5px);
+  opacity: 0.92;
+  animation: floatWander3 5.9s ease-in-out infinite 1.3s;
+}
+.orb-canva:hover {
+  box-shadow: 0 14px 32px rgba(0, 196, 204, 0.45);
+  border-color: rgba(0, 196, 204, 0.7);
+}
+
+/* ============================================================
+   RIGHT WING ORBS (AI, Motion, Prototyping & Workflow Stack)
+   Randomized Non-Linear 2D Scatter, Varied Sizes & Depth Blur
+   Claude, Cursor, Google Stitch, Framer, Notion, Premiere Pro
+   ============================================================ */
+
+/* 1. Claude AI — Foreground Hero Anchor (Large, Sharp) */
+.orb-claude {
+  width: 64px;
+  height: 64px;
+  top: 20px;
+  left: 16px;
+  z-index: 6;
+  filter: blur(0px);
+  opacity: 1;
+  animation: floatWander3 5.5s ease-in-out infinite;
+}
+.orb-claude:hover {
+  box-shadow: 0 16px 36px rgba(217, 119, 6, 0.45);
+  border-color: rgba(217, 119, 6, 0.7);
+}
+
+/* 2. Cursor AI — Lower Left Midground (Medium, Subtle Depth) */
+.orb-cursor {
+  width: 50px;
+  height: 50px;
+  top: 104px;
+  left: 78px;
+  z-index: 4;
+  filter: blur(0.4px);
+  opacity: 0.94;
+  color: #0F172A;
+  animation: floatWander1 5.9s ease-in-out infinite 0.7s;
+}
+[data-theme="dark"] .orb-cursor {
+  color: #FFFFFF;
+}
+.orb-cursor:hover {
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.45);
+  border-color: rgba(15, 23, 42, 0.7);
+}
+[data-theme="dark"] .orb-cursor:hover {
+  box-shadow: 0 14px 32px rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* 3. Google Stitch — Upper Center Hero (Large, Sharp) */
+.orb-stitch {
+  width: 58px;
+  height: 58px;
+  top: 8px;
+  left: 168px;
+  z-index: 5;
+  filter: blur(0px);
+  opacity: 1;
+  animation: floatWander2 5.3s ease-in-out infinite 1.2s;
+}
+.orb-stitch:hover {
+  box-shadow: 0 16px 36px rgba(66, 133, 244, 0.45);
+  border-color: rgba(66, 133, 244, 0.7);
+}
+
+/* 4. Framer — Lower Right Midground (Medium-Small, Soft Focus) */
+.orb-framer {
+  width: 44px;
+  height: 44px;
+  top: 108px;
+  left: 240px;
+  z-index: 3;
+  filter: blur(0.8px);
+  opacity: 0.88;
+  animation: floatWander4 5.7s ease-in-out infinite 0.4s;
+}
+.orb-framer:hover {
+  box-shadow: 0 14px 32px rgba(0, 85, 255, 0.45);
+  border-color: rgba(0, 85, 255, 0.7);
+}
+
+/* 5. Notion — Deep Ambient Background (Small, Dreamy Depth Blur) */
+.orb-notion {
+  width: 36px;
+  height: 36px;
+  top: 14px;
+  left: 318px;
+  z-index: 2;
+  filter: blur(1.5px);
+  opacity: 0.80;
+  animation: floatWander1 5.4s ease-in-out infinite 1.5s;
+}
+.orb-notion:hover {
+  box-shadow: 0 12px 28px rgba(180, 180, 180, 0.5);
+  border-color: var(--ink);
+}
+
+/* 6. Premiere Pro — Right Midground (Medium, Subtle Depth) */
+.orb-premier {
+  width: 48px;
+  height: 48px;
+  top: 86px;
+  left: 382px;
+  z-index: 4;
+  filter: blur(0.4px);
+  opacity: 0.94;
+  animation: floatWander3 6.0s ease-in-out infinite 0.9s;
+}
+.orb-premier:hover {
+  box-shadow: 0 14px 32px rgba(234, 119, 255, 0.45);
+  border-color: rgba(234, 119, 255, 0.7);
+}
+
+/* Icon / SVG sizing tailored to varied orb diameters */
+.orb-svg {
+  display: block;
+}
+
+.orb-figma .orb-svg {
+  width: 23px;
+  height: 34px;
+}
+
+.orb-sketch .orb-svg {
+  width: 22px;
+  height: 22px;
+}
+
+.orb-xd .orb-svg {
+  width: 29px;
+  height: 28px;
+}
+
+.orb-ps .orb-svg {
+  width: 30px;
+  height: 30px;
+}
+
+.orb-ai .orb-svg {
+  width: 22px;
+  height: 22px;
+}
+
+.orb-id .orb-svg {
+  width: 20px;
+  height: 19px;
+}
+
+.orb-canva .orb-svg {
+  width: 26px;
+  height: 26px;
+}
+
+.orb-claude .orb-svg {
+  width: 32px;
+  height: 32px;
+}
+
+.orb-cursor .orb-svg {
+  width: 24px;
+  height: 24px;
+}
+
+.orb-stitch .orb-svg {
+  width: 28px;
+  height: 28px;
+}
+
+.orb-framer .orb-svg {
+  width: 20px;
+  height: 20px;
+}
+
+.orb-notion .orb-svg {
+  width: 19px;
+  height: 19px;
+}
+
+.orb-premier .orb-svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* Organic 2D Floating & Wandering Keyframe Animations */
+@keyframes floatWander1 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  25% { transform: translate(4px, -6px) rotate(2deg); }
+  50% { transform: translate(-3px, -10px) rotate(-1deg); }
+  75% { transform: translate(-5px, -4px) rotate(-3deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+@keyframes floatWander2 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  25% { transform: translate(-5px, 6px) rotate(-2deg); }
+  50% { transform: translate(4px, 9px) rotate(2deg); }
+  75% { transform: translate(5px, 3px) rotate(1deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+@keyframes floatWander3 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  33% { transform: translate(5px, -8px) rotate(-2deg); }
+  66% { transform: translate(-4px, 5px) rotate(3deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+@keyframes floatWander4 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  33% { transform: translate(-5px, -5px) rotate(2deg); }
+  66% { transform: translate(5px, -8px) rotate(-2deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+/* Center Column: Tall Portrait Card (Green Box Area) */
+.hero-center-portrait {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .hero-avatar-flip-card {
-  width: clamp(100px, 10vw, 140px);
-  height: clamp(100px, 10vw, 140px);
-  perspective: 1000px;
+  width: clamp(200px, 17vw, 255px);
+  height: clamp(280px, 24vw, 340px);
+  perspective: 1200px;
   cursor: pointer;
   flex-shrink: 0;
+  border-radius: 28px;
 }
 
 .avatar-flip-inner {
@@ -140,14 +599,16 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.75s var(--ease-spring);
+  transition: transform 0.75s var(--ease-spring), box-shadow 0.4s var(--ease);
   transform-style: preserve-3d;
-  border-radius: 30px;
+  border-radius: 28px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.14);
 }
 
 .hero-avatar-flip-card:hover .avatar-flip-inner,
 .hero-avatar-flip-card:focus .avatar-flip-inner {
   transform: rotateY(180deg);
+  box-shadow: 0 20px 50px rgba(168, 85, 247, 0.42);
 }
 
 .avatar-flip-front,
@@ -158,10 +619,9 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 30px;
+  border-radius: 28px;
   overflow: hidden;
   border: 2px solid var(--badge-border);
-  box-shadow: var(--card-shadow);
 }
 
 .avatar-flip-front {
@@ -177,16 +637,60 @@
   display: block;
 }
 
+.avatar-glass-pill {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(15, 15, 15, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-family: var(--body);
+  font-size: 0.70rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+
+.avatar-glass-pill .agp-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+}
+
+.avatar-glass-pill .agp-dot.purple-dot {
+  background: #A855F7;
+  box-shadow: 0 0 8px #A855F7;
+}
+
 .avatar-flip-back {
   z-index: 1;
-  background: var(--bg-card-solid);
+  background: #0F0A1C;
   transform: rotateY(180deg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-  gap: 6px;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.avatar-flip-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .hero-avatar-flip-card:hover .avatar-flip-front,
@@ -199,37 +703,13 @@
   z-index: 2;
 }
 
-.avatar-flip-back .af-spark {
-  font-size: 1.4rem;
-  color: var(--acc);
-  animation: livePulse 2s infinite ease-in-out;
-}
-
-.avatar-flip-back .af-name {
-  font-family: var(--disp);
-  font-size: 1.15rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--ink);
-  line-height: 1.1;
-}
-
-.avatar-flip-back .af-sub {
-  font-family: var(--body);
-  font-size: 0.65rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--mut);
-}
-
 .hero-lead-text {
   font-family: var(--body);
-  font-size: clamp(1rem, 1.35vw, 1.25rem);
-  line-height: 1.6;
+  font-size: clamp(0.92rem, 1.1vw, 1.05rem);
+  line-height: 1.5;
   color: var(--mut);
-  max-width: 660px;
-  margin: 0 auto 36px;
+  max-width: 600px;
+  margin: 0 auto clamp(16px, 2.5vh, 22px);
 }
 
 .hero-lead-text strong {
@@ -237,14 +717,14 @@
   font-weight: 600;
 }
 
-/* Hero Action CTAs */
+/* Hero Action CTAs (Red Box Area) */
 .hero-actions-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
-  margin-bottom: clamp(40px, 6vh, 60px);
+  margin-bottom: clamp(24px, 3.5vh, 36px);
 }
 
 .portavia-btn {
@@ -1161,6 +1641,12 @@
    09. RESPONSIVE MEDIA QUERIES (DESKTOP / TABLET / MOBILE)
    ============================================================ */
 @media (max-width: 1024px) {
+  .hero-stagger-stage {
+    gap: clamp(12px, 2vw, 20px);
+  }
+  .hero-word {
+    font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  }
   .services-grid {
     grid-template-columns: 1fr;
   }
@@ -1184,14 +1670,50 @@
   }
 }
 
-@media (max-width: 768px) {
-  .hero-split-headline {
+@media (max-width: 860px) {
+  .hero-stagger-stage {
+    display: flex;
     flex-direction: column;
-    gap: 16px;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+  .hero-wing {
+    height: auto;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+  .hero-wing-right {
+    flex-direction: column-reverse;
   }
   .hero-word {
-    font-size: clamp(3.6rem, 16vw, 6.5rem);
+    font-size: clamp(3.2rem, 14vw, 5.2rem);
   }
+  .hero-floating-zone {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    max-width: 100%;
+    padding: 8px 0;
+  }
+  .floating-orb {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+  .hero-avatar-flip-card {
+    width: clamp(200px, 52vw, 250px);
+    height: clamp(270px, 68vw, 330px);
+  }
+}
+
+@media (max-width: 768px) {
   .collab-huge-title {
     font-size: clamp(2.8rem, 12vw, 4.8rem);
   }
