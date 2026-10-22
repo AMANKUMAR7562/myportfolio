@@ -100,91 +100,76 @@
   animation: livePulse 2s infinite ease-in-out;
 }
 
-/* Staggered Editorial Hero Stage (Red: Product / Yellow: Picture / Green: Designer) */
-.hero-stagger-stage {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: auto auto;
+/* Big Split Headline with Center Avatar Flip Card */
+.hero-split-headline {
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto clamp(24px, 4vh, 36px);
-  column-gap: clamp(16px, 2.8vw, 48px);
-  row-gap: 0;
+  gap: clamp(14px, 2.2vw, 36px);
   user-select: none;
+  margin-bottom: clamp(20px, 3.5vh, 32px);
+  max-width: 100%;
 }
 
-/* Red Box: Top-Left "PRODUCT" */
-.hero-box-product {
-  grid-column: 1;
-  grid-row: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: clamp(10px, 1.5vw, 20px);
-}
-
-.hero-box-product .hero-word {
+.hero-word {
   font-family: var(--disp);
-  font-size: clamp(4.5rem, 11.5vw, 11rem);
+  font-size: clamp(3.5rem, 8.5vw, 8.5rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.03em;
-  line-height: 0.88;
+  line-height: 0.90;
   color: var(--ink);
-  text-align: right;
-  margin: 0;
+  white-space: nowrap;
 }
 
-/* Yellow Box: Center Portrait Picture (Spans Rows 1 & 2) */
-.hero-box-portrait {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 3;
+.hero-word.accent {
+  color: var(--acc);
 }
 
-.hero-portrait-card {
-  width: clamp(210px, 19vw, 290px);
-  height: clamp(280px, 25vw, 370px);
-  perspective: 1200px;
+/* 3D Interactive Flip Avatar Card */
+.hero-avatar-flip-card {
+  width: clamp(100px, 10vw, 140px);
+  height: clamp(100px, 10vw, 140px);
+  perspective: 1000px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
-.portrait-card-inner {
+.avatar-flip-inner {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.75s var(--ease-spring), box-shadow 0.4s var(--ease);
+  transition: transform 0.75s var(--ease-spring);
   transform-style: preserve-3d;
-  border-radius: 28px;
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.16);
+  border-radius: 30px;
 }
 
-.hero-portrait-card:hover .portrait-card-inner,
-.hero-portrait-card:focus .portrait-card-inner {
+.hero-avatar-flip-card:hover .avatar-flip-inner,
+.hero-avatar-flip-card:focus .avatar-flip-inner {
   transform: rotateY(180deg);
-  box-shadow: 0 24px 60px var(--acc-glow);
 }
 
-.portrait-front,
-.portrait-back {
+.avatar-flip-front,
+.avatar-flip-back {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 28px;
+  border-radius: 30px;
   overflow: hidden;
   border: 2px solid var(--badge-border);
+  box-shadow: var(--card-shadow);
 }
 
-.portrait-front img {
+.avatar-flip-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.avatar-flip-front img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -192,129 +177,50 @@
   display: block;
 }
 
-.portrait-glass-pill {
-  position: absolute;
-  bottom: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 6px 14px;
-  border-radius: 9999px;
-  background: rgba(15, 15, 15, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  font-family: var(--body);
-  font-size: 0.70rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  white-space: nowrap;
-}
-
-.portrait-glass-pill .pgp-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #10B981;
-  box-shadow: 0 0 8px #10B981;
-}
-
-.portrait-back {
+.avatar-flip-back {
+  z-index: 1;
   background: var(--bg-card-solid);
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 24px;
-  gap: 10px;
+  padding: 12px;
+  gap: 6px;
 }
 
-.portrait-back .af-spark {
-  font-size: 2rem;
+.hero-avatar-flip-card:hover .avatar-flip-front,
+.hero-avatar-flip-card:focus .avatar-flip-front {
+  z-index: 1;
+}
+
+.hero-avatar-flip-card:hover .avatar-flip-back,
+.hero-avatar-flip-card:focus .avatar-flip-back {
+  z-index: 2;
+}
+
+.avatar-flip-back .af-spark {
+  font-size: 1.4rem;
   color: var(--acc);
   animation: livePulse 2s infinite ease-in-out;
 }
 
-.portrait-back .af-name {
+.avatar-flip-back .af-name {
   font-family: var(--disp);
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--ink);
   line-height: 1.1;
 }
 
-.portrait-back .af-sub {
+.avatar-flip-back .af-sub {
   font-family: var(--body);
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--mut);
-}
-
-/* Green Box: Lower-Right "DESIGNER" */
-.hero-box-designer {
-  grid-column: 3;
-  grid-row: 2;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: clamp(10px, 1.5vw, 20px);
-}
-
-.hero-box-designer .hero-word {
-  font-family: var(--disp);
-  font-size: clamp(4.5rem, 11.5vw, 11rem);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -0.03em;
-  line-height: 0.88;
-  color: var(--acc);
-  text-align: left;
-  margin: 0;
-}
-
-/* Responsive: Tablet & Mobile Stacking */
-@media (max-width: 900px) {
-  .hero-stagger-stage {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 16px;
-  }
-  .hero-box-product {
-    grid-column: 1;
-    grid-row: 1;
-    justify-content: center;
-    padding: 0;
-  }
-  .hero-box-product .hero-word {
-    text-align: center;
-    font-size: clamp(3.8rem, 15vw, 6.5rem);
-  }
-  .hero-box-portrait {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  .hero-portrait-card {
-    width: clamp(180px, 50vw, 240px);
-    height: clamp(230px, 60vw, 300px);
-  }
-  .hero-box-designer {
-    grid-column: 1;
-    grid-row: 3;
-    justify-content: center;
-    padding: 0;
-  }
-  .hero-box-designer .hero-word {
-    text-align: center;
-    font-size: clamp(3.8rem, 15vw, 6.5rem);
-  }
 }
 
 .hero-lead-text {

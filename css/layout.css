@@ -58,10 +58,11 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: clamp(12px, 1.8vh, 18px) clamp(20px, 4vw, 56px);
+  padding: clamp(10px, 1.4vh, 16px) clamp(16px, 3vw, 44px);
   transition: transform 0.45s var(--ease), background 0.3s, padding 0.3s, border-color 0.3s;
   max-width: 100vw;
   box-sizing: border-box;
+  gap: clamp(10px, 1.5vw, 24px);
 }
 
 nav.scrolled {
@@ -81,10 +82,11 @@ nav.hide {
 .n-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
   cursor: pointer;
   user-select: none;
+  flex-shrink: 0;
 }
 
 .logo-mark {
@@ -154,19 +156,22 @@ nav.hide {
 /* Nav Links */
 .n-links {
   display: flex;
-  gap: clamp(16px, 1.8vw, 32px);
+  gap: clamp(6px, 1.1vw, 20px);
   list-style: none;
   align-items: center;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 1;
 }
 
 .n-links a {
-  font: 600 clamp(0.70rem, 0.85vw, 0.78rem) var(--body);
-  letter-spacing: 0.14em;
+  font: 600 clamp(0.68rem, 0.72vw, 0.75rem) var(--body);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--mut);
   transition: color 0.25s ease;
   position: relative;
-  padding: 6px 0;
+  padding: 5px 2px;
   white-space: nowrap;
 }
 
@@ -190,7 +195,8 @@ nav.hide {
 .n-right {
   display: flex;
   align-items: center;
-  gap: clamp(10px, 1.2vw, 18px);
+  gap: clamp(8px, 1vw, 14px);
+  flex-shrink: 0;
 }
 
 /* Interactive Theme / Mood Switcher Pill */
@@ -200,22 +206,24 @@ nav.hide {
   background: var(--badge-bg);
   border: 1px solid var(--badge-border);
   border-radius: 999px;
-  padding: 3px 4px;
+  padding: 2px 4px;
   gap: 2px;
   backdrop-filter: blur(10px);
+  flex-shrink: 0;
 }
 
 .theme-opt-btn {
-  font: 600 0.65rem var(--body);
-  letter-spacing: 0.08em;
+  font: 600 0.62rem var(--body);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--mut);
-  padding: 5px 10px;
+  padding: 4px 8px;
   border-radius: 999px;
   transition: all 0.25s var(--ease);
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
+  white-space: nowrap;
 }
 
 .theme-opt-btn:hover {
@@ -293,17 +301,24 @@ body.menu .burger span:nth-child(3) {
   position: fixed;
   inset: 0;
   background: var(--bg);
-  z-index: 110;
-  display: flex;
+  z-index: 150;
+  display: none;
   flex-direction: column;
   justify-content: center;
-  padding: 40px;
-  gap: 20px;
-  transform: translateY(-100%);
-  transition: transform 0.45s var(--ease);
+  padding: clamp(24px, 5vw, 48px);
+  gap: 16px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease), visibility 0.35s ease;
 }
 
 body.menu .mobile-menu {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
   transform: translateY(0);
 }
 
@@ -441,12 +456,32 @@ footer {
 }
 
 /* Responsive Navigation Breakpoints */
-@media (max-width: 1100px) {
+@media (max-width: 1400px) {
+  .n-right .h-available {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1220px) {
   .n-links {
-    display: none;
+    display: none !important;
   }
   .burger {
-    display: flex;
+    display: flex !important;
+  }
+  .n-right .h-available {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1221px) {
+  .mobile-menu {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+  .burger {
+    display: none !important;
   }
 }
 
