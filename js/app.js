@@ -60,11 +60,14 @@
           }
         });
       }, {
-        threshold: 0.08,
-        rootMargin: '0px 0px -30px 0px'
+        threshold: 0.01,
+        rootMargin: '100px 0px 100px 0px'
       });
 
       $$('.rv').forEach((el) => observer.observe(el));
+      setTimeout(() => {
+        $$('.rv').forEach((el) => el.classList.add('in'));
+      }, 1000);
     } else {
       $$('.rv').forEach((el) => el.classList.add('in'));
     }
@@ -100,11 +103,17 @@
   }
 
   const burgerBtn = $('#burger');
+  const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
   if (burgerBtn) {
     burgerBtn.addEventListener('click', function () {
       document.body.classList.toggle('menu');
     });
   }
+  mobileMenuLinks.forEach((link) => {
+    link.addEventListener('click', function () {
+      document.body.classList.remove('menu');
+    });
+  });
 
   /* ============ COLOR SWATCHES CLICK TO COPY ============ */
   function initColorSwatches() {

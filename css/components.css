@@ -2730,3 +2730,27 @@ body:not([data-theme="cream"]) .ws-tab-btn:not(.active) .ws-tab-count {
   opacity: 1;
   margin-top: 24px;
 }
+
+@media (max-width: 768px) {
+  .cert-teaser-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 16px;
+  }
+  .cert-teaser-left {
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .cert-teaser-title {
+    font-size: 0.98rem;
+  }
+  .cert-teaser-sub {
+    font-size: 0.8rem;
+  }
+  .cert-teaser-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

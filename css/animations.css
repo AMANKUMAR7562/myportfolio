@@ -48,6 +48,15 @@
   transform: translateY(0);
 }
 
+/* Mobile Fallback: Always display content immediately on mobile */
+@media (max-width: 860px) {
+  .rv {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 /* Accessibility: Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   * {
